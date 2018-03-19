@@ -33,9 +33,15 @@
 
   <%= f.fields_for :startup_technologies do |f| %>
 
-
-    <%= f.hidden_field :technology_id, :value => '1' %>
-    <%= f.hidden_field :user_id, :value => '1' %>
+    <div class="field">
+    <%= f.label :technology_id %><br />
+    <%= f.text_field :technology_id, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id, autocomplete: "off" %>
+  </div>
+    
 
   <%end%>
 
