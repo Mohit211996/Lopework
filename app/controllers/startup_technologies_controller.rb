@@ -4,7 +4,7 @@ class StartupTechnologiesController < ApplicationController
   # GET /startup_technologies
   # GET /startup_technologies.json
   def index
-    byebug
+    
     @startup_technologies = StartupTechnology.all
   end
 
