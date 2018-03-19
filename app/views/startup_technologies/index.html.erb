@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Startup Technologies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @startup_technologies.each do |startup_technology| %>
+      <tr>
+        <td><%= link_to 'Show', startup_technology %></td>
+        <td><%= link_to 'Edit', edit_startup_technology_path(startup_technology) %></td>
+        <td><%= link_to 'Destroy', startup_technology, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Startup Technology', new_startup_technology_path %>

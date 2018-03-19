@@ -1,0 +1,17 @@
+<%= form_with(model: startup_technology, local: true) do |form| %>
+  <% if startup_technology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(startup_technology.errors.count, "error") %> prohibited this startup_technology from being saved:</h2>
+
+      <ul>
+      <% startup_technology.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
