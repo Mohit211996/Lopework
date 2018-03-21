@@ -24,11 +24,13 @@ class User::RegistrationsController < Devise::RegistrationsController
 
 # before_action :sign_up_params
 
-  def new_client
+  def new
     build_resource
     yield resource if block_given?
     respond_with resource
   end
+
+
 
 
 #   def sign_up_params
