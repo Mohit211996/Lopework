@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   resources :roles
 	resources :technology
 	resources :startup_technology
+	resources :sign
 
   devise_for :users
 
  devise_scope :user do
   get 'client/register', to: 'user/registrations#new_client'
+  root to:"homes#index"
 
 end
 
