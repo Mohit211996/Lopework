@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :startup_technologies, :dependent => :destroy
-  accepts_nested_attributes_for :startup_technologies
   
+has_one :approval
+has_one :role
+  has_many :startup_technologies, :dependent => :destroy
+accepts_nested_attributes_for :startup_technologies
 end
