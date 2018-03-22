@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<nav>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-bottom: 0px;">
   <div class="container-fluid">
     <div class="navbar-header navbar-left navbar navbar-fixed-top">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -32,15 +32,26 @@
         <li>
          <%= link_to 'Contact Us', root_path %> 
         </li>
-        <li>
-         <%= link_to 'Login',  new_user_session_path %> 
-        </li>
-        <li>
+         <li>
          <%= link_to 'Sign-Up',  sign_index_path %> 
         </li>
+         <% if signed_in? %>
+       <li>
+          <%= link_to "Logout", destroy_user_session_path %>
+        </li>
+          <% else %>
+          <li>
+          <%= link_to "Login", new_user_session_path %>
+        </li>
+        <% end %>
+        <!-- <li>
+         <%= link_to 'Login',  new_user_session_path %> 
+        </li> -->
+       
       </ul>
     </div>
-  </div></div>
+  </div>
+  </div>
 </nav>
    <script>
             $(document).ready(function(){
@@ -67,31 +78,34 @@
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <img src="/assets/3.png" height="40">
-            <span class="line hidden-xs">LOPEWORK</span>
+            <span class="line">LOPEWORK</span>
             <p>
-              A community of curated freelance talent available to work for you remotely at the click of a button
+              A community of curated startup talent available to work for you remotely at the click of a button.
 
             </p>
 
             
           </div>
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <h5>Contact Us</h5>
+            <h5 style="text-align: center;">Contact Us</h5>
             <ul style="list-style-type: none;">
             <li>
-          <%= link_to 'Our team', root_path %>
+
+          <%= link_to 'Our team', root_path, :class => "colo" %><i class="fa fa-angle-right"></i>
         </li>
         <li>
-         <%= link_to 'Contact Us', root_path %> 
+         <%= link_to 'Contact Us', root_path, :class => "colo" %>
+         <i class="fa fa-angle-right"></i> 
         </li>
              </ul>
            </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-             <p>Contact us and we'll get back to you within 24 hours.</p>
+             <p>Contact us and we'll get back to you within 24 hours:</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Chandigarh, india</p>
       <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
       <p><span class="glyphicon glyphicon-envelope"></span> lopework@gmail.com</p> 
               
+            </div>
             </div>
           </div>
         </div>

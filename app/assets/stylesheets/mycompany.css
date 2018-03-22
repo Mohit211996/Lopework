@@ -12,7 +12,9 @@ nav li {
 .navbar-header {
     background-color: white;
 }
-.outer>#logo>a>img{
+ 
+
+  .outer>#logo>a>img{
    
     
     float: left;
@@ -23,6 +25,21 @@ height: 50px;
     
 
 }
+
+/*@media(max-width:1100px) {
+  .outer>#logo>a>img{
+   
+    
+    float: left;
+height: 50px;
+    
+    margin-top: 5px;
+    margin-left: 6px;
+    
+
+}
+ 
+}*/
 .footer {
 position: relative;
 
@@ -30,7 +47,7 @@ position: relative;
     bottom: 0;
     
 }
-.wrapper {
+/*.wrapper {
   min-height: 100%;
   margin: 0 ,auto -100px;
 }
@@ -38,7 +55,7 @@ position: relative;
   overflow: auto;
   padding-bottom: 20px;
 }
-
+*/
 .site-footer {
    
     color: #666666;
@@ -52,7 +69,10 @@ position: relative;
     width: 100%;
 }
 .person {
-      border: 2px solid transparent;
+
+      padding-left: 80px;
+     height: 200px;
+     border-radius: 200px;
      
     
   }
@@ -110,12 +130,21 @@ position: relative;
     text-align: right;
     float: left;
     text-align: left;
-    margin-top: 23px;
+    margin-top: 9px;
 }
 .but{
   margin-top: 50px;
- 
+
 }
+.navbar-nav>li>a:hover {
+  background-color: white;
+  color: #F08080;
+
+}
+.navbar-nav>li>a {
+  color: black;
+}
+
 .line{
    position: absolute;
     font-size: 20px;
@@ -124,8 +153,32 @@ position: relative;
     text-align: right;
     float: left;
     text-align: left;
-    margin-top: 15px;
+    margin-top: 5px;
    
 
 }
 
+.im{
+  width: 100px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.indexno{
+  margin-top: 30px;
+
+}
+span.icon-bar{
+    background-color: black;
+
+}
+.colo{
+  color: black;
+}
+.colo:hover{
+  text-decoration: none;
+  color:  #F08080;
+}
+/*.collapse{
+  padding-left: 30px;
+}*/

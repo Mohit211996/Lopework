@@ -9,12 +9,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to:"homes#index"
+
 
  get '/client', to: 'client#index'
  get '/startup', to: 'startup#index' 
 
-  
+  root to:"homes#index"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

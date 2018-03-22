@@ -43,8 +43,8 @@
   <%#= f.fields_for :startup_technologies, @start do |ft| %>
 
     <div class="field">
-    <%= ft.label :technology_ids %><br />
-<%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true},:required => true%>
+    <%#= f.label :technology_ids %><br />
+<%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true}%>
       </div>
 
 <%#@users = User.last%>
