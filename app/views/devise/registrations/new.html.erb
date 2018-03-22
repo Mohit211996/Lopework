@@ -1,59 +1,88 @@
-<h2>Sign up</h2>
+
+  <div class="container-fluid">
+  <div class="row">
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 img2">
+    <div class="log">
+<h2 style="text-align: center;">Sign up</h2>
 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),html: {:id => 'new_registration'}) do |f| %>
+  <%#= devise_error_messages! %>
+  <% @role_id = params[:role_id]%>
+  <%= hidden_field_tag :role_id, params[:role_id]   %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:required => true %>
+
   </div>
 
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off" ,:required => true%>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" ,:required => true%>
   </div>
 
   <div class="field">
-    <%= f.label :company_name %><br />
-    <%= f.text_field :company_name, autocomplete: "off" %>
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name, autocomplete: "off",:required => true %>
   </div>
 
   <div class="field">
-    <%= f.label :experience %><br />
-    <%= f.text_field :experience, autocomplete: "off" %>
+    <%= f.label :experience %>
+    <%= f.text_field :experience, autocomplete: "off",:required => true %>
   </div>
+
+<% if params[:role_id] == '1'%>
 
 <% @start = StartupTechnology.new %>
 <% @technology = Technology.all %>
 
-  <%= f.fields_for :startup_technologies, @start do |ft| %>
+  <%#= f.fields_for :startup_technologies, @start do |ft| %>
 
     <div class="field">
-    <%= ft.label :technology_id %><br />
-    <%= ft.text_field :technology_id %>
-  </div>
-  <div class="field">
-    <%= ft.label :user_id %><br />
-    <%= ft.text_field :user_id, autocomplete: "off" %>
-  </div>
-    
+    <%= f.label :technology_ids %>
+    <br>
+<%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true}%>
+      </div>
 
-  <%end%>
+<%#@users = User.last%>
+<%#@index=@users.id + 1%>
+
+
+<%#= f.hidden_field :user_id, :value => @index %>
+  
+  <%#end%>
+
+<%end%>
+  <%= f.hidden_field :role_id, :value => params[:role_id] %>
+<%= f.hidden_field :approval_id, :value => '1' %>
+<br>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+    $('#new_registration').validate({
+
+      
+    });
+  });
+
+</script>
+
+
+
 <%= render "devise/shared/links" %>
+</div></div></div></div>

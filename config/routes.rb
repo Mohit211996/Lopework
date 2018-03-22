@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
 
 
+ get '/client', to: 'client#index'
+ get '/startup', to: 'startup#index' 
 
   root to:"homes#index"
 

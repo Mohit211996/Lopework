@@ -1,4 +1,9 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+  <div class="container-fluid">
+  <div class="row">
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 img2">
+    <div class="log">
+<h2  style="text-align: center;">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -31,6 +36,27 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :company_name %><br />
+    <%= f.text_field :company_name, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.text_field :experience, autocomplete: "off"%>
+  </div>
+
+  <% @start = StartupTechnology.new %>
+<% @technology = Technology.all %>
+
+  <div class="field">
+    <%= f.label :technology %><br />
+<%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true}%>
+      </div>
+
+
+
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
@@ -41,3 +67,4 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div></div></div></div>

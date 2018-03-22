@@ -1,21 +1,21 @@
 <div class="container-fluid">
 <div class="row imgg" style="height: 500px;">
 	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 but">
-		<button>
-		<%= link_to 'Sign-Up',  new_user_registration_path %>
+		<button class="button button5">
+		<%= link_to 'Startup',  new_user_registration_path(:role_id => '1') %>
 		</button> 
 		<br>
-		<button>
+		<button class="button button5">
 		<%= link_to 'Login',  new_user_session_path %> 
 		</button>
 		
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 but">
-		<button>
-		<%= link_to 'Sign-Up',  new_user_registration_path %> 
+		<button class="button button5">
+		<%= link_to 'Client',  new_user_registration_path(:role_id => '2') %> 
 		</button>
 		<br>
-		<button>
+		<button class="button button5">
 		<%= link_to 'Login',  new_user_session_path %> 
 		</button>
 		

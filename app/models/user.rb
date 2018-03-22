@@ -7,6 +7,23 @@ class User < ApplicationRecord
   
 has_one :approval
 has_one :role
-  has_many :startup_technologies, :dependent => :destroy
-accepts_nested_attributes_for :startup_technologies
+has_many :startup_technologies, :dependent => :destroy
+has_many :technologies, through: :startup_technologies
+# accepts_nested_attributes_for :technologies
+
+ 
+# after_create do 
+ 
+	#  if User.last.role_id == 1
+	# redirect_to startup_path
+	
+	#   else
+	# 	redirect_to client_path
+	#   end
+
+
+  # end
+
+
+
 end

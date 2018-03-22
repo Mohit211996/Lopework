@@ -22,6 +22,10 @@ gem 'uglifier', '>= 1.3.0'
 #devise gem for authentication
 gem 'devise'
 
+#jquery validator
+gem 'jquery-validation-rails'
+
+
 gem 'jquery-rails'
 
 
