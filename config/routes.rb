@@ -11,12 +11,12 @@ Rails.application.routes.draw do
 
  devise_scope :user do
   get 'client/register', to: 'user/registrations#new_client'
-  root to:"homes#index"
+  
 
 end
 
 
-  
+  root to:"homes#index"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
