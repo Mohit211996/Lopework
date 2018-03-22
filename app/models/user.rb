@@ -20,8 +20,6 @@ after_create do
 	# if User.last.role_id == 1
 	# 	redirect_to startup_path
 	# else
-	# 	redirect_to client_path
-	# end
 
 
   end
