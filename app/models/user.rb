@@ -14,6 +14,9 @@ has_many :technologies, through: :startup_technologies
  
 after_create do 
 
+	UserMailer.sign_up(User.last).deliver
+
+
 	# if User.last.role_id == 1
 	# 	redirect_to startup_path
 	# else

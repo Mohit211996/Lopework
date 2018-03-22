@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 	resources :startup_technology
 	resources :sign
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
 
 
 

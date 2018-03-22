@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",:required => true %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:id => 'email_field' %>
 
   </div>
 
@@ -17,22 +17,22 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" ,:required => true%>
+    <%= f.password_field :password, autocomplete: "off" ,:id => 'password_field'%>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" ,:required => true%>
+    <%= f.password_field :password_confirmation, autocomplete: "off" ,:required => true, :id => 'c_password_field'%>
   </div>
 
   <div class="field">
     <%= f.label :company_name %><br />
-    <%= f.text_field :company_name, autocomplete: "off",:required => true %>
+    <%= f.text_field :company_name, autocomplete: "off", :id => 'company_name_field' %>
   </div>
 
   <div class="field">
     <%= f.label :experience %><br />
-    <%= f.text_field :experience, autocomplete: "off",:required => true %>
+    <%= f.text_field :experience, autocomplete: "off",:required => true, :id => 'experience_field' %>
   </div>
 
 <% if params[:role_id] == '1'%>
@@ -44,7 +44,7 @@
 
     <div class="field">
     <%#= f.label :technology_ids %><br />
-<%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true}%>
+<%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},:multiple => true%>
       </div>
 
 <%#@users = User.last%>
@@ -71,6 +71,21 @@
 
       
     });
+    $( "#email_field" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "Email id mandatory",
+    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+  }
+  });
+    $( "#article_body" ).rules( "add", {
+  required: true,
+  minlength: 100,
+  messages: {
+    required: "Required input",
+    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+  }
+  });
   });
 
 </script>

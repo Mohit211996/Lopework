@@ -1,3 +1,16 @@
+<style type="text/css">
+  label.error {
+    display: block;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .7);
+    padding: 2px 5px;
+    color: red;
+}
+</style>
+
+
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -41,6 +54,9 @@
     <%= f.text_field :experience, autocomplete: "off"%>
   </div>
 
+<% if current_user.role_id == '1' %>
+
+
   <% @start = StartupTechnology.new %>
 <% @technology = Technology.all %>
 
@@ -49,7 +65,7 @@
 <%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true}%>
       </div>
 
-
+<% end %>
 
 
   <div class="actions">

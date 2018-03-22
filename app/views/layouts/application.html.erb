@@ -26,6 +26,13 @@
     
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+
+        <%if user_signed_in?%>
+        <li><%= link_to 'LOG OUT', destroy_user_session_path,method: :get%></li>
+        <li>
+          <%= link_to 'EDIT', edit_user_registration_path(current_user)%>
+        </li>
+        <%else%>
         <li>
           <%= link_to 'Our team', root_path %>
         </li>
@@ -34,20 +41,12 @@
         </li>
          <li>
          <%= link_to 'Sign-Up',  sign_index_path %> 
-        </li>
-         <% if signed_in? %>
-       <li>
-          <%= link_to "Logout", destroy_user_session_path %>
-        </li>
-          <% else %>
+        </li>      
           <li>
           <%= link_to "Login", new_user_session_path %>
         </li>
-        <% end %>
-        <!-- <li>
-         <%= link_to 'Login',  new_user_session_path %> 
-        </li> -->
-       
+        <%end%>
+        
       </ul>
     </div>
   </div>
