@@ -72,6 +72,7 @@
  background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
+ 
 
   }
   .img1 {
@@ -111,6 +112,78 @@
     text-decoration: none;
     color: black;
 }
+.glysize{
+  font-size: 30px;
+}
+/*.button1 {
+   
+    background-color: #F08080; 
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+     color: black;
+     float: left;
+     margin-top: 200px;
+    
+    
+    
+}
+.button1>a{
+  color: black;
+  font-size: 30px;
+}
+.button1>a:hover {
+   
+    text-decoration: none;
+    color: black;
+}
+.button2 {
+   
+    background-color: #F08080; 
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+     color: black;
+     float: right;
+     margin-top: 200px;
+    
+    
+}
+.button2>a{
+  color: black;
+   font-size: 30px;
+}
+.button2>a:hover {
+   
+    text-decoration: none;
+    color: black;
+}*/
+.button2>a{
+  color: black;
+   font-size: 30px;
+}
+.button2>a:hover {
+   
+    text-decoration: none;
+    color: black;
+}
+.register-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 120px;
+    min-width: 200px;
+}
+
 
 .tag-line {
     position: absolute;

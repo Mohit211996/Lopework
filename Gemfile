@@ -27,6 +27,8 @@ gem 'jquery-validation-rails'
 
 
 gem 'jquery-rails'
+gem 'ckeditor'
+gem 'paperclip'
 
 
 # Use CoffeeScript for .coffee assets and views

@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+    <script src="https://cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>
   </head>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-bottom: 0px;">
   <div class="container-fluid">
@@ -28,7 +29,7 @@
       <ul class="nav navbar-nav navbar-right">
 
         <%if user_signed_in?%>
-        <li><%= link_to 'LOG OUT', destroy_user_session_path,method: :get%></li>
+        <li><%= link_to 'LOG OUT', destroy_user_session_path,method: :delete%></li>
         <li>
           <%= link_to 'EDIT', edit_user_registration_path(current_user)%>
         </li>
@@ -52,19 +53,7 @@
   </div>
   </div>
 </nav>
-   <script>
-            $(document).ready(function(){
-            $(window).on("scroll",function(){
-            var wn = $(window).scrollTop();
-            if(wn > 120){
-            $(".navbar").css("background","rgba(255,255,255,1)");
-            }
-            else{
-            $(".navbar").css("background","rgba(255,255,255,1)");
-            }
-             });
-            });
-          </script>
+
   <body>
 <div class="content">
 
@@ -113,5 +102,19 @@
           </div>
         </footer>
       </div>
+       <script>
+            $(document).ready(function(){
+            $(window).on("scroll",function(){
+            var wn = $(window).scrollTop();
+            if(wn > 120){
+            $(".navbar").css("background","rgba(255,255,255,1)");
+            }
+            else{
+            $(".navbar").css("background","rgba(255,255,255,1)");
+            }
+             });
+            });
+          </script>
+          
   </body>
 </html>

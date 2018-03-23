@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<!--  <%# @projects.each do |project| %> -->
+<%=  @project.name %>
+<br>
+<%=  @project.technology_id %>
+
+<br>
+<%=  @project.time %>
+<br>
+<%=  @project.budget %>
+<br>
+<%=  raw @project.requirement %>
+
+
+
+
+
+
+  <%# end %>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
