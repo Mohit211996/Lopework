@@ -5,7 +5,9 @@
 <h2  style="text-align: center;">Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
   <%= devise_error_messages! %>
+
 
   <div class="field">
     <%= f.label :email %><br />
@@ -19,3 +21,17 @@
 
 <%= render "devise/shared/links" %>
 </div></div></div></div>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    setTimeout(function(){
+      $('#error_explanation').fadeOut("slow",function(){
+        $(this).remove();
+      })
+    },2000);
+  });
+    
+</script>
+
+

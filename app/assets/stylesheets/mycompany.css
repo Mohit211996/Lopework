@@ -1,3 +1,47 @@
+#error_explanation {
+  background-color: #F3CF49;
+  border-radius: 10px;
+  padding: 5px;
+}
+#error_explanation h2 {
+  display: none;
+}
+
+#error_explanation ul li {
+  font-size: 20px;
+  padding: 0px;
+}
+
+
+.center-block {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.notice_wrapper {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  background-color: skyblue;
+  }
+
+.notice_wrapper p{
+      text-align: center;
+    margin: 0px;
+    padding: 20px 0px;
+}
 
 .navbar-header {
     background-color: white;
@@ -10,41 +54,35 @@
 }
 
 
-  .outer>#logo>a>img{
-   
-    
+.outer>#logo>a>img{ 
     float: left;
     height: 50px;
     
     margin-top: 5px;
     margin-left: 6px;
-
-    
-
 }
 
 
-/*.wrapper {
+./*wrapper {
   min-height: 100%;
   margin: 0 ;
 }
 #main {
   overflow: auto;
 }*/
-.content {
-  min-height: calc(100vh - 70px;);
-  
+.wrapper {
+  flex: 1;
+}
+.main {
+  overflow: auto;
 }
 .footer {
- 
- 
-
+  position: relative;
 }
 
 
 
 .site-footer {
-   
     color: #666666;
     border-top: 0px solid #fff;
     margin: 0px auto;
@@ -55,14 +93,11 @@
     text-align: center;
     width: 100%;
 }
-.person {
-
-      padding-left: 100px;
+.person {   
      height: 200px;
-     border-radius: 200px;
-     
-    
+     border-radius: 200px;     
   }
+
   .person:hover {
       border-color: #f1f1f1;
       opacity: 0.7;
@@ -87,7 +122,7 @@
  background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
-
+ height: 100%;
   }
 
 .button5 {
@@ -101,10 +136,7 @@
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     cursor: pointer;
-     color: black;
-    
-    
-    
+     color: black;   
 }
 .button5:hover {
    
@@ -227,6 +259,7 @@ input[type=submit]:hover {
 }
 #user_technology_ids{
   width: 340px;
+  
   text-align: center;
 }
 @media (max-width: 390px){
