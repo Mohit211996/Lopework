@@ -1,3 +1,17 @@
+<style type="text/css">
+  label.error {
+    display: block;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .9);
+    padding: 2px 5px;
+    color: red;
+    margin-top: -20px;
+}
+</style>
+
+
+
 
   <div class="container-fluid">
   <div class="row">
@@ -14,7 +28,7 @@
   <div class="field">
 
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",:id => 'email_field' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:id => 'email_field',placeholder: "Enter email" %>
 
 
   </div>
@@ -25,22 +39,22 @@
     <em>(<%= @minimum_password_length %> characters minimum)</em>
 
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" ,:id => 'password_field'%>
+    <%= f.password_field :password, autocomplete: "off" ,:id => 'password_field',placeholder: "Enter password"%>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" ,:required => true, :id => 'c_password_field'%>
+    <%= f.password_field :password_confirmation, autocomplete: "off" ,:required => true, :id => 'c_password_field', placeholder: "Confirm password"%>
   </div>
 
   <div class="field">
     <%= f.label :company_name %><br />
-    <%= f.text_field :company_name, autocomplete: "off", :id => 'company_name_field' %>
+    <%= f.text_field :company_name, autocomplete: "off", :id => 'company_name_field',placeholder: "Company name" %>
   </div>
 
   <div class="field">
     <%= f.label :experience %><br />
-    <%= f.text_field :experience, autocomplete: "off",:required => true, :id => 'experience_field' %>
+    <%= f.text_field :experience, autocomplete: "off",:required => true, :id => 'experience_field',placeholder: "In years" %>
 
   </div>
 
@@ -54,7 +68,7 @@
     <div class="field">
 
     <%= f.label :technology_ids %>
-    <br>
+    
 <%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true}%>
 
       </div>
@@ -87,18 +101,53 @@
     $( "#email_field" ).rules( "add", {
     required: true,
   messages: {
-    required: "Email id mandatory",
-    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+    required: "Email is mandatory"
   }
   });
-    $( "#article_body" ).rules( "add", {
+    $( "#password_field" ).rules( "add", {
   required: true,
-  minlength: 100,
+  minlength: 6,
   messages: {
-    required: "Required input",
+    required: "Password is required",
     minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
   }
   });
+
+    $("#c_password_field").rules("add",{
+      required: true,
+      equalTo: "#password_field",
+      messages: {
+        required: "enter your password",
+        equalTo: "enter correct password"
+      }
+    });
+
+    $("#company_name_field").rules("add",{
+      required: true,
+      minlength: 2,
+      messages: {
+        required: "company name is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+
+    $("#experience_field").rules("add",{
+      required: true,
+      number: true,
+      messages: {
+        required: "enter 0 if no experience",
+        number: "experience can only be integer"
+      }
+    });
+
+    $("#user_technology_ids").rules("add",{
+      required: true,
+      messages: {
+        required: "Select atleast one"
+      }
+    });
+
+
   });
 
 </script>

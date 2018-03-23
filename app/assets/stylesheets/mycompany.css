@@ -3,12 +3,18 @@
     background-color: white;
 }
  
+.flash_message {
+  background-color: #F3CF49;
+
+  border-radius: 10px;
+}
+
 
   .outer>#logo>a>img{
    
     
     float: left;
-height: 50px;
+    height: 50px;
     
     margin-top: 5px;
     margin-left: 6px;

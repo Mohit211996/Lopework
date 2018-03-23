@@ -8,15 +8,22 @@
  
 <h2  style="text-align: center;">Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name),html: {:id => 'new_session'}) do |f| %>
+<div class="flash_message">
+ <% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %> 
+</div>
+
+
   <div class="field">
     <%= f.label :email %><br >
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:require=> true %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br >
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off",:require=> true %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -40,3 +47,24 @@
 </div>
 </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    setTimeout(function(){
+      $('.flash_message').fadeOut("slow",function(){
+        $(this).remove();
+      })
+    },2500);
+  });
+
+$(document).ready(function(){
+    $('#new_session').validate({
+
+    });
+  });
+
+    
+</script>
+
+
+
