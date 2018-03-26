@@ -42,7 +42,7 @@
           <%= link_to 'Our team', root_path %>
         </li>
         <li>
-         <a href="#footer">Contact Us </a>
+         <a href="#footer1">Contact Us </a>
         </li>
          <li>
          <%= link_to 'Sign-Up',  sign_index_path %> 
@@ -78,15 +78,14 @@
 
 
     <div class="wrapper">
-    <div class="main">
-
+      <div class="main">
 
     <%= yield %>
-
-  </div>
+</div>
+ 
 </div>
 
-      <footer id="footer">
+      <footer class="footer" id="footer1">
         <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -140,7 +139,26 @@
             }
              });
             });
+
+            $(window).bind("load", function(){
+              var wn = $(window).height();
+              var ft = $('.footer').height();
+              var h = $('.navbar').height();
+              var calculate = wn - ft - h ;
+              $(".wrapper").css("min-height",calculate);
+            });
+
+            window.onresize = resize;
+function resize() {
+   var wn = $(window).height();
+              var ft = $('.footer').height();
+              var h = $('.navbar').height();
+              var calculate = wn - ft - h ;
+              $(".wrapper").css("min-height",calculate);
+}
+
           </script>
+<!-- <<<<<<< HEAD
          <script type="text/javascript">
   $(document).ready(function() {
  $(window).bind("load", function() {
@@ -169,6 +187,9 @@
 });
 });
 </script> 
+=======
+   
+>>>>>>> 51c7f2f44df317f17c00b69b92bd7f51de3f2587 -->
           
   </body>
 </html>

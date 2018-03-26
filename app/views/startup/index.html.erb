@@ -1,31 +1,48 @@
 
-<h2>STARTUP</h2>
-
-
-
-<% @projects.each do |project| %>
-<%=  project.name %>
-<br>
-<%=  project.technology_id %>
-
-<br>
-<%=  project.time %>
-<br>
-<%=  project.budget %>
-<br>
-<%=  raw project.requirement %>
-<%= link_to 'project details',project_detail_path %>
-<br>
-
-	<% end %>
-	
-
 <% if notice %>
 <div class="notice_wrapper">
   <p id="notice"><%= notice %></p>
 </div>
 <% end %>
 
+
+<h2>STARTUP</h2>
+<table>
+	<thead>
+		<th>Project Name</th>
+		<th>Technology Id</th>
+		<th>Time</th>
+		<th>Budget</th>
+		<th>Requirement</th>
+	
+
+
+<% @projects.each do |project| %>
+</thead>
+<tbody>
+	<tr>
+		<td>
+<%=  project.name %></td>
+<td>
+
+<%=  project.technology_id %></td>
+
+<td>
+<%=  project.time %></td>
+<td>
+
+<%=  project.budget %></td>
+<td>
+<%=  raw project.requirement %></td>
+<td>
+<%= link_to 'project details',project_detail_path %></td>
+
+</tr>
+
+	<% end %>
+	
+</tbody>
+</table>
 
 
 <script type="text/javascript">

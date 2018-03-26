@@ -31,6 +31,23 @@ ActiveRecord::Schema.define(version: 20180323161342) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
+  create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_clients_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
+  end
+
   create_table "project_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -41,11 +58,13 @@ ActiveRecord::Schema.define(version: 20180323161342) do
     t.string "name"
     t.bigint "technology_id"
     t.bigint "user_id"
+    t.bigint "project_status_id"
     t.text "requirement"
     t.integer "budget"
     t.integer "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_status_id"], name: "index_projects_on_project_status_id"
     t.index ["technology_id"], name: "index_projects_on_technology_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
@@ -63,6 +82,23 @@ ActiveRecord::Schema.define(version: 20180323161342) do
     t.datetime "updated_at", null: false
     t.index ["technology_id"], name: "index_startup_technologies_on_technology_id"
     t.index ["user_id"], name: "index_startup_technologies_on_user_id"
+  end
+
+  create_table "startups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_startups_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_startups_on_reset_password_token", unique: true
   end
 
   create_table "technologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
