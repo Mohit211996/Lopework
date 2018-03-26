@@ -78,15 +78,14 @@
 
 
     <div class="wrapper">
-    <div class="main">
-
+      <div class="main">
 
     <%= yield %>
-
-  </div>
+</div>
+ 
 </div>
 
-      <footer id="footer">
+      <footer class="footer">
         <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -140,35 +139,26 @@
             }
              });
             });
+
+            $(window).bind("load", function(){
+              var wn = $(window).height();
+              var ft = $('.footer').height();
+              var h = $('.navbar').height();
+              var calculate = wn - ft - h ;
+              $(".wrapper").css("min-height",calculate);
+            });
+
+            window.onresize = resize;
+function resize() {
+   var wn = $(window).height();
+              var ft = $('.footer').height();
+              var h = $('.navbar').height();
+              var calculate = wn - ft - h ;
+              $(".wrapper").css("min-height",calculate);
+}
+
           </script>
-          <!-- <script type="text/javascript">
-  $(document).ready(function() {
- $(window).bind("load", function() {
-
-  var $footer = $("#footer");
-
-   positionFooter();
-
-   function positionFooter() {
-
-          if ( $(document.body).height() < $(window).height() ) {
-               //must stick to bottom
-               $footer.css({
-                    position: "fixed",
-                    bottom: 0,
-                    left:0,
-                    right:0
-               })
-           } else {
-               $footer.attr("style", "");
-           }
-
-   }
-
-   $(window).resize(positionFooter);
-});
-});
-</script> -->
+   
           
   </body>
 </html>

@@ -33,14 +33,17 @@
    display:block;
 }
 
-html {
-  height: 100%;
-}
+html ,
 body {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  
+
+}
+.wrapper {
+  height: calc(~"100vh-100px");
+}
+
+
+.footer {
 }
 
 
@@ -84,15 +87,7 @@ body {
 #main {
   overflow: auto;
 }*/
-.wrapper {
-  flex: 1;
-}
-.main {
-  overflow: auto;
-}
-.footer {
-  position: relative;
-}
+
 
 
 
