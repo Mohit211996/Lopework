@@ -11,8 +11,9 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+   
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email",:disabled=>true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -73,3 +74,14 @@
 
 <%= link_to "Back", :back %>
 </div></div></div></div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    setTimeout(function(){
+      $('#error_explanation').fadeOut("slow",function(){
+        $(this).remove();
+      })
+    },2000);
+  });
+    
+</script>
