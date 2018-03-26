@@ -9,6 +9,7 @@ has_one :approval
 has_one :role
 has_many :startup_technologies, :dependent => :destroy
 has_many :technologies, through: :startup_technologies
+has_many :projects
 # accepts_nested_attributes_for :technologies
 
  

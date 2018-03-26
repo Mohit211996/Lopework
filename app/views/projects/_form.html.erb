@@ -1,0 +1,55 @@
+<%= form_with(model: project, local: true) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <p>
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+  </p>
+   <p>
+
+<% @start = StartupTechnology.new %>
+<% @technology = Technology.all %>
+ <div class="field">
+
+     <%= form.label :technology_ids %>
+    
+<%= form.collection_select :technology_id, @technology,:id, :technology_name,{}%>
+   
+  </p> 
+</div>
+
+
+
+  <p>
+   
+    <%= form.hidden_field :user_id, :value => current_user.id %>
+  </p>
+  <p>
+    
+    <%= form.hidden_field :project_status_id, :value => '1' %>
+  </p>
+     <p>
+    <%= form.label :requirement %><br />
+    <%= form.cktext_area :requirement,:class => 'ckeditor' %>
+  </p>
+  <p>
+    <%= form.label :budget %><br />
+    <%= form.text_field :budget %>
+  </p>
+  <p>
+    <%= form.label :time %><br />
+    <%= form.text_field :time %>
+  </p>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

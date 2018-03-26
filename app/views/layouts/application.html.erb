@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+    <script src="https://cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>
   </head>
 
   <body>
@@ -37,10 +38,11 @@
         </li>
         <%else%>
         <li>
+
           <%= link_to 'Our team', root_path %>
         </li>
         <li>
-         <%= link_to 'Contact Us', root_path %> 
+         <a href="#footer">Contact Us </a>
         </li>
          <li>
          <%= link_to 'Sign-Up',  sign_index_path %> 
@@ -55,6 +57,11 @@
   </div>
   </div>
 </nav>
+
+
+ 
+<div class="content">
+
    <script>
             $(document).ready(function(){
             $(window).on("scroll",function(){
@@ -72,6 +79,7 @@
 
     <div class="wrapper">
     <div class="main">
+
 
     <%= yield %>
 
@@ -120,6 +128,48 @@
           </div>
         </footer>
       </div>
+       <script>
+            $(document).ready(function(){
+            $(window).on("scroll",function(){
+            var wn = $(window).scrollTop();
+            if(wn > 120){
+            $(".navbar").css("background","rgba(255,255,255,1)");
+            }
+            else{
+            $(".navbar").css("background","rgba(255,255,255,1)");
+            }
+             });
+            });
+          </script>
+          <!-- <script type="text/javascript">
+  $(document).ready(function() {
+ $(window).bind("load", function() {
+
+  var $footer = $("#footer");
+
+   positionFooter();
+
+   function positionFooter() {
+
+          if ( $(document.body).height() < $(window).height() ) {
+               //must stick to bottom
+               $footer.css({
+                    position: "fixed",
+                    bottom: 0,
+                    left:0,
+                    right:0
+               })
+           } else {
+               $footer.attr("style", "");
+           }
+
+   }
+
+   $(window).resize(positionFooter);
+});
+});
+</script> -->
+          
   </body>
 </html>
 
