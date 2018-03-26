@@ -1,2 +1,35 @@
+
+<% if notice %>
+<div class="notice_wrapper">
+  <p id="notice"><%= notice %></p>
+</div>
+<%end %>
+
 <h2>CLIENT</h2>
-<%= link_to 'add project', new_project_path %>
+
+<%#= @project.technology_id %>
+
+<%#=  @project.time %>
+
+<%#=  @project.budget %>
+<%#=  raw @project.requirement %>
+
+	
+	<%#= link_to 'project details' %>
+	
+
+<%#= link_to 'add project', new_project_path %>
+
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		setTimeout(function(){
+			$('.notice_wrapper').fadeOut("slow",function(){
+				$(this).remove();
+			})
+		},2000);
+	});
+    
+</script>
+

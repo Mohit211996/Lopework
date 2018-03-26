@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
  
   def sign_up(user)
     @user = user
-    @url  = 'http://localhost3000/login'
+    @url  = 'http://localhost3000/users/sign_in'
     mail(to: @user.email, subject: 'Welcome to LOPE WORK')
   end
 

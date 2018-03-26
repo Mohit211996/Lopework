@@ -1,3 +1,11 @@
+
+<% if notice %>
+<div class="notice_wrapper">
+  <p id="notice"><%= notice %></p>
+</div>
+<%end %>
+
+
 <div class="container-fluid">
   <div class="row">
    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 img1 img-responsive" style="padding-left: 0px; padding-right: 0px;">
@@ -14,7 +22,8 @@
     <img src="/assets/company.png" class="im img-responsive" align="right">
   </div>
    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top: 25px;">
-    <h4>Total companies</h4>
+    <h1 style="display: inline;"><%= @all %></h1>
+    <h4 style="display: inline;">Total companies</h4>
 
   </div>
 </div>
@@ -27,7 +36,8 @@
     
   </div>
    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top: 25px;">
-    <h4>Startups</h4>
+    <h1 style="display: inline;"><%= @startup_count %></h1>
+    <h4 style="display: inline;">Startups</h4>
 
   </div>
 
@@ -41,7 +51,8 @@
     
   </div>
    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top: 25px;">
-    <h4>Clients</h4>
+    <h1 style="display: inline;"><%= @client_count %></h1>
+    <h4 style="display: inline;">Clients</h4>
 
   </div>
 </div>
@@ -49,26 +60,27 @@
    </div>
     
   </div>
-<!-- </div>
-<div class="container"> -->
+
   <h2 style="text-align: center; color:   #F08080;">Meet Our Team</h2>
   <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-toggle="collapse" data-target="#demo">
       
       <a href="#demo" data-toggle="collapse">
-        <img src="/assets/6.png" class="img-circle person img-responsive" alt="Random Name">
+        <img src="/assets/6.png" class="img-circle person img-responsive" style="margin: 0 auto;" alt="Random Name">
       </a>
-     <!--  <p class="text-center"><strong>Name</strong></p><br> -->
+   
+
        <div id="demo" class="collapse">
         <p style="text-align: center;">Ceo</p>
         <p style="text-align: center;">B-tech</p>
         <p style="text-align: center;">Member since 1988</p>
       </div> 
     </div>
+
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
       
       <a href="#demo2" data-toggle="collapse">
-        <img src="/assets/6.png" class="img-circle person img-responsive" alt="Random Name">
+        <img src="/assets/6.png" class="img-circle person img-responsive" style="margin: 0 auto;" alt="Random Name">
       </a>
      <!--  <p class="text-center"><strong>Name</strong></p><br> -->
      <div id="demo2" class="collapse">
@@ -80,7 +92,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
      
       <a href="#demo3" data-toggle="collapse">
-        <img src="/assets/6.png" class="img-circle person img-responsive" alt="Random Name">
+        <img src="/assets/6.png" class="img-circle person img-responsive" style="margin: 0 auto;" alt="Random Name">
       </a>
       <!--  <p class="text-center"><strong>Name</strong></p><br> -->
   <div id="demo3" class="collapse">
@@ -91,3 +103,20 @@
     </div>
   </div>
 </div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    setTimeout(function(){
+      $('.notice_wrapper').fadeOut("slow",function(){
+        $(this).remove();
+      })
+    },2000);
+  });
+    
+</script>
+
+
+
+
