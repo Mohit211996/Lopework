@@ -115,13 +115,21 @@
     minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
   }
   });
+    $.validator.addMethod('positiveNumber',
+          function (value) {
+              return Number(value) > 0;
+          }, 'Enter a positive number.');
+    $.validator.addMethod('limitNumber',
+          function (value) {
+              return Number(value) < 999;
+          }, 'Enter a valid experience.');
 
     $("#c_password_field").rules("add",{
       required: true,
       equalTo: "#password_field",
       messages: {
         required: "enter your password",
-        equalTo: "enter correct password"
+        equalTo: "Confirm password doesn't match"
       }
     });
 
@@ -137,9 +145,13 @@
     $("#experience_field").rules("add",{
       required: true,
       number: true,
+      positiveNumber:true,
+      limitNumber:true,
       messages: {
         required: "enter 0 if no experience",
         number: "experience can only be integer"
+        
+
       }
     });
 

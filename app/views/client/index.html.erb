@@ -6,19 +6,35 @@
 <%end %>
 
 <h2>CLIENT</h2>
+<table>
+	<thead>
+		<th>Technology Id</th>
+		<th>Total Time</th>
+		<th>Total Budget</th>
+		<th>Requirement</th>
+	
+<% @projects.each do |project| %>
+</thead>
+<tbody>
+	<tr>
+	<td>
 
-<%#= @project.technology_id %>
-
-<%#=  @project.time %>
-
-<%#=  @project.budget %>
-<%#=  raw @project.requirement %>
+<%= project.technology_id %></td>
+<td>
+<%=  project.time %></td>
+<td>
+<%=  project.budget %></td>
+<td>
+<%=  raw project.requirement %></td>
 
 	
-	<%#= link_to 'project details' %>
+	
 	
 
-<%#= link_to 'add project', new_project_path %>
+</tr>
+<% end %>
+</tbody></table>
+<%= link_to 'add project', new_project_path %>
 
 
 

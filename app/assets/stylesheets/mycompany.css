@@ -90,7 +90,6 @@ body {
 
 
 
-
 .site-footer {
     color: #666666;
     border-top: 0px solid #fff;
@@ -285,7 +284,7 @@ span.icon-bar{
   color:  #F08080;
 }
 .log{
-    width: 400px;
+    width: 360px;
      padding: 1% 0 0;
      margin: auto;
       position: relative;
@@ -298,7 +297,7 @@ span.icon-bar{
 
 }
 .log1{
-    width: 400px;
+    width: 360px;
      padding: 1% 0 0;
      margin: auto;
       position: relative;
@@ -312,6 +311,15 @@ span.icon-bar{
 }
 @media(max-width: 390px){
   .log{
+   
+    width: auto !important;
+
+
+}
+
+}
+@media(max-width: 390px){
+  .log1{
    
     width: auto !important;
 
@@ -353,7 +361,7 @@ input[type=submit]:hover {
 
 }
 #user_technology_ids{
-  width: 340px;
+  width: 300px;
   
   text-align: center;
 }

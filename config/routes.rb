@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
  get '/client', to: 'client#index'
  get '/startup', to: 'startup#index' 
- get '/startup', to: 'startup#project_detail', :as => :project_detail
+ get '/startup/project_detail', to: 'startup#project_detail', :as => :project_detail
 
   root to:"homes#index"
  
