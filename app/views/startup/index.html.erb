@@ -1,3 +1,5 @@
+<div class="container">
+	
 
 <% if notice %>
 <div class="notice_wrapper">
@@ -5,46 +7,22 @@
 </div>
 <% end %>
 
-
-<h2>STARTUP</h2>
-<table>
-	<thead>
-		<th>Project Name</th>
-		<th>Technology Id</th>
-		<th>Time</th>
-		<th>Budget</th>
-		<th>Requirement</th>
-	
+<div>
+	<h2>
+		Available Projects
+	</h2>
+</div>
 
 
-<% @projects.each do |project| %>
-</thead>
-<tbody>
-	<tr>
-		<td>
-<%=  project.name %></td>
-<td>
+<% @projects.each do|project| %>
 
-<%=  project.technology_id %></td>
+<%= render(partial: '/startup/project_preview',locals: {project: project}) %> 
 
-<td>
-<%=  project.time %></td>
-<td>
-
-<%=  project.budget %></td>
-<td>
-<%=  raw project.requirement %></td>
-<td>
-<%= link_to 'project details',project_detail_path %></td>
-
-</tr>
-
-	<% end %>
-	
-</tbody>
-</table>
+<% end %>
 
 
+
+</div>
 <script type="text/javascript">
 	$(document).ready(function() {
 		setTimeout(function(){

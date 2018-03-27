@@ -1,0 +1,16 @@
+<div>
+	Company name: <%= project.user.company_name%>
+	<br>
+	Email id: <%= project.user.email %>
+</div>
+
+<div>
+	Project name: <%= project.name %>
+	<br>
+	Technology: <%= project.technology.technology_name %>
+</div>
+
+<div>
+	Project Description: <br>
+	<%= raw project.requirement.first(100) %>
+</div>

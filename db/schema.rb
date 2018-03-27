@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323161342) do
+ActiveRecord::Schema.define(version: 20180327083702) do
 
   create_table "approvals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "approval_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bids", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_bids_on_project_id"
+    t.index ["user_id"], name: "index_bids_on_user_id"
   end
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -48,6 +57,16 @@ ActiveRecord::Schema.define(version: 20180323161342) do
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
   end
 
+  create_table "installments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "bid_id"
+    t.integer "time"
+    t.text "details"
+    t.bigint "budget"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bid_id"], name: "index_installments_on_bid_id"
+  end
+
   create_table "project_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -60,7 +79,7 @@ ActiveRecord::Schema.define(version: 20180323161342) do
     t.bigint "user_id"
     t.bigint "project_status_id"
     t.text "requirement"
-    t.integer "budget"
+    t.bigint "budget"
     t.integer "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
