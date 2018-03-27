@@ -11,8 +11,11 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+   
     <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email",:disable => true %>
+
+    <%= f.email_field :email, autocomplete: "email",:disabled=>true %>
+
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -48,7 +51,7 @@
     <%= f.text_field :experience, autocomplete: "off"%>
   </div>
 
-<% if current_user.role_id == '1' %>
+<% if current_user.role_id == 1 %>
 
 
   <% @start = StartupTechnology.new %>
@@ -58,7 +61,7 @@
     <%= f.label :technology %><br />
 <%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true}%>
       </div>
-
+<br>
 <% end %>
 
 
@@ -73,3 +76,14 @@
 
 <%= link_to "Back", :back %>
 </div></div></div></div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    setTimeout(function(){
+      $('#error_explanation').fadeOut("slow",function(){
+        $(this).remove();
+      })
+    },2000);
+  });
+    
+</script>

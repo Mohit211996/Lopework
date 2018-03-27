@@ -19,17 +19,17 @@
 
   <div class="field">
     <%= f.label :email %><br >
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",:require=> true %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:require=> true, :id => "email_field" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br >
-    <%= f.password_field :password, autocomplete: "off",:require=> true %>
+    <%= f.password_field :password, autocomplete: "off",:require=> true,:id => "password_field" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
-      <%= f.check_box :remember_me %>
+      <%= f.check_box :remember_me,:name=>"user[remember_me]", :value=>"1" %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
@@ -63,12 +63,27 @@
         $(this).remove();
       })
     },2500);
+
+
   });
 
 $(document).ready(function(){
     $('#new_session').validate({
 
     });
+    $( "#email_field" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "Email is mandatory"
+  }
+  });
+    $( "#password_field" ).rules( "add", {
+  required: true,
+  messages: {
+    required: "Password is required",
+  
+  }
+  });
   });
 
     
