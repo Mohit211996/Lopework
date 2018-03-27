@@ -234,7 +234,7 @@ body {
     text-align: right;
     float: left;
     text-align: left;
-   margin-left: 65px;
+   margin-left: 70px;
     font-family: oblique;
 }
 .but{
@@ -253,12 +253,13 @@ body {
 .line{
    position: absolute;
     font-size: 20px;
-    margin: 0;
+    
    width: auto;
     text-align: right;
     float: left;
     text-align: left;
     margin-top: 5px;
+    margin-left: 5px;
      font-family:  oblique;
    
 
