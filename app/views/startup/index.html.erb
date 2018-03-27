@@ -21,6 +21,9 @@
 </thead>
 <tbody>
 	<tr>
+		<%= project.id %>
+
+
 		<td>
 <%=  project.name %></td>
 <td>
@@ -35,7 +38,8 @@
 <td>
 <%=  raw project.requirement %></td>
 <td>
-<%= link_to 'project details',project_detail_path %></td>
+	
+<%= link_to 'project details',project_detail_path(project.id) %></td>
 
 </tr>
 

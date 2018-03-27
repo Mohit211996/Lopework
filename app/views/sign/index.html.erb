@@ -1,19 +1,28 @@
+
 <div class="container-fluid">
+	
 <div class="row imgg" style="height: 500px;">
 	<h1 style="text-align: center;">Registration</h1>
-	<h2 style="text-align: center;">Choose account type</h2>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<h2 style="text-align: center;">Choose Account Type</h2>
+	 
+	  	<div class="center-block">
+	  		 <div class="col-lg-6 col-md-6  col-sm-12 col-xs-12">  
 		<%= link_to new_user_registration_path(:role_id => '1') do %>
-		<button class="btn btn-success btn-lg col-md-3 col-xs-8 col-md-offset-2 col-xs-offset-2 register-btn button2"><span class="glyphicon glyphicon-user glysize"></span><br />Startup
+		<button class="btn btn-success btn-lg col-lg-offset-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 register-btn button2"><span class="glyphicon glyphicon-user glysize"></span><br />Startup
 			<%#= link_to 'Startup',  new_user_registration_path(:role_id => '1') %>
 		</button>
 		<% end %>
+	</div>
+	 <!-- </div>
+		<div class="col-md-2"> --> 
+		<div class="col-lg-6 col-md-6  col-sm-12 col-xs-12">	
 		<%= link_to new_user_registration_path(:role_id => '2') do %>
-	<button class="btn btn-warning btn-lg col-md-3 col-xs-8 col-md-offset-2 col-xs-offset-2 register-btn button2"><span class="glyphicon glyphicon-equalizer glysize"></span><br />
+	<button class="btn btn-warning btn-lg col-lg-offset-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 register-btn button2"><span class="glyphicon glyphicon-equalizer glysize"></span><br />
 		Client
 		 </button>
 		 <% end %>
-
+		
+	</div>	 
 </div>
 </div>
 </div>

@@ -10,9 +10,8 @@ class StartupController < ApplicationController
 		@project_status = Project_status.find(params[:id])
 	end
 	def project_detail
-		@projects = Project.all
-
-
+		
+	@project = Project.find(params[:format])
 	end
 	
 end

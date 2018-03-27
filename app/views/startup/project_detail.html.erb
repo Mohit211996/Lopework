@@ -1,7 +1,10 @@
+
+
 <h1>Project Details</h1>
 <table>
 <thead>
 	<tr>
+		
 		<th>
 			Project name
 		</th>
@@ -10,18 +13,19 @@
 		</th>
 	</tr>
 
-<% @projects.each do |project| %>
+<%# @projects.each do |project| %>
 </thead>
 <tbody>
+
 <td>
-<%= project.name %>
+<%= @project.name %>
 </td>
 
 <%#= @project.user_id.company_name %>
 <td>
-<%=   User.find(project.user_id).company_name %>
+<%=   User.find(@project.user_id).company_name %>
 </td>
-<% end %>
+<%# end %>
 
 </tbody>
 </table>
