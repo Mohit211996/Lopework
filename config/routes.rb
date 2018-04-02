@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 	
   
  
+  resources :client_preferences
   resources :installments
+  resources :bids
   mount Ckeditor::Engine => '/ckeditor'
   resources :project_statuses
   resources :projects
@@ -19,6 +21,9 @@ Rails.application.routes.draw do
  get '/client', to: 'client#index'
  get '/startup', to: 'startup#index' 
  get '/startup/project_page', to: 'startup#project_page', :as => :project_page
+ get '/client/all_bids', to: 'client#all_bidding_page'
+ get '/client/project', to: 'client#project_display_page'
+ get '/client/project2', to: 'client#project_display_page_2'
 
   root to:"homes#index"
  

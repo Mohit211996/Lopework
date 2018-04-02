@@ -26,6 +26,9 @@ gem 'devise'
 gem 'jquery-validation-rails'
 
 
+gem "nested_form"
+
+
 gem 'jquery-rails'
 gem 'ckeditor'
 gem 'paperclip'

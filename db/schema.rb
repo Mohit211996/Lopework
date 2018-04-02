@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327083702) do
+ActiveRecord::Schema.define(version: 20180402084229) do
 
   create_table "approvals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "approval_name"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20180327083702) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "client_preferences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.bigint "startup_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_client_preferences_on_project_id"
+    t.index ["startup_status_id"], name: "index_client_preferences_on_startup_status_id"
+    t.index ["user_id"], name: "index_client_preferences_on_user_id"
   end
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -90,6 +101,12 @@ ActiveRecord::Schema.define(version: 20180327083702) do
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "role_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "startup_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "startup_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -147,6 +164,9 @@ ActiveRecord::Schema.define(version: 20180327083702) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "client_preferences", "projects"
+  add_foreign_key "client_preferences", "startup_statuses"
+  add_foreign_key "client_preferences", "users"
   add_foreign_key "startup_technologies", "technologies"
   add_foreign_key "startup_technologies", "users"
 end

@@ -1,4 +1,143 @@
-  label.error {
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre');
+@import url('https://fonts.googleapis.com/css?family=Limelight');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+
+.border {
+  border:3px solid #CBCBCB;
+  padding: 10px;
+  border-radius: 0px;
+}
+
+.startup_details span {
+  display: inline;
+  padding: 4px;
+  background-color: #CED0D3;
+}
+
+.startup_details hr {
+  size: 10px;
+  color: black;
+}
+
+.requirements {
+  border-radius: 15px;
+  padding-top:10px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+
+}
+
+.startup_brief {
+  /*border:1px solid black;*/
+  text-align: center;
+  padding: 5px;
+}
+
+.startup_brief p {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.p_req {
+  letter-spacing: 0px;
+  word-spacing: 3px;
+  text-align: justify;
+  font-family: 'Lora', serif;
+}
+
+.card {
+  display: table;
+  padding: 10px;
+}
+.project_preview {
+  height: 400px;
+  border: 15px white solid;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: #021227;
+  /*background-image: url('/assets/card_bg.jpg');*/
+  background-position: center-left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.project_preview:hover {
+  box-shadow: 0px 10px 10px 0px #A9BCCD;
+
+}
+
+.inner_bg {
+  width: 100%;
+  padding: 5px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255,0.8);
+  padding-bottom: 8px;
+}
+.inner_bg h3 {
+  margin: 0px;
+  padding-bottom: 7px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+
+}
+.inner_bg p {
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.view_button {
+  width: 100%;
+  background-color: #778DA0;
+  border:0px;
+  border-radius: 5px;
+  color: white;
+}
+.view_button:hover {
+  background-color: #9EB2C3;
+  box-shadow: 0px 2px 2px 0px #8C99A4;
+}
+.heading h2 {
+  text-align: center;
+  font-family: 'Limelight', cursive;
+ 
+}
+
+.p_head {
+  font-size: 30px;
+  font-weight: 300;
+  font-family: 'Orbitron', sans-serif;
+}
+.p_tech {
+  font-size: 20px;
+  font-weight: 300;
+}
+.h_bidding {
+  font-size: 30px;
+  font-weight: 300;
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 10px;
+}
+.client_pic {
+  border-radius: 50%;
+  height: 150px;
+  display: inline-block;
+  border: 6px solid #E7E9EC;
+}
+
+
+
+
+
+
+
+label.error {
     display: block;
     background: transparent;
     border-color: transparent;

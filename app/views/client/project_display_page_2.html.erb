@@ -1,0 +1,172 @@
+<div class="container">
+	<div class="row" style="padding: 10px;">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 h_bidding">
+			Biddings 
+			<%= render '/client_preferences/form',client_preference: @client_preference ,project_id: @project_id%>
+		</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6" style="padding: 10px;">
+	<div class="border">
+		<div class="startup_brief">
+			<img src="/assets/client_1.jpg" class="client_pic">
+			<p>Company</p>
+		</div>
+		<div class="startup_details" >
+			<hr style="margin-top: 0px;">
+			<p>Rating</p>
+			<hr>
+			<p>Experience</p>
+			<hr>
+			
+			<span>JAVA</span> <span>JAVA</span> <span>JAVA</span>
+			<hr>
+			<button class="pref" id="10">preferences</button>
+				
+		</div>
+	</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6" style="padding: 10px;">
+	<div class="border">
+		<div class="startup_brief">
+			<img src="/assets/client_1.jpg" class="client_pic">
+			<p>Company</p>
+		</div>
+		<div class="startup_details" >
+			<hr style="margin-top: 0px;">
+			<p>Rating</p>
+			<hr>
+			<p>Experience</p>
+			<hr>
+			
+			<span>JAVA</span> <span>JAVA</span> <span>JAVA</span>
+			<hr>
+			<button class="pref" id="2">preferences</button>
+				
+		</div>
+	</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6" style="padding: 10px;">
+	<div class="border">
+		<div class="startup_brief">
+			<img src="/assets/client_1.jpg" class="client_pic">
+			<p>Company</p>
+		</div>
+		<div class="startup_details" >
+			<hr style="margin-top: 0px;">
+			<p>Rating</p>
+			<hr>
+			<p>Experience</p>
+			<hr>
+			
+			<span>JAVA</span> <span>JAVA</span> <span>JAVA</span>
+			<hr>
+			<button class="pref" id="3">preferences</button>
+				
+		</div>
+	</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6" style="padding: 10px;">
+	<div class="border">
+		<div class="startup_brief">
+			<img src="/assets/client_1.jpg" class="client_pic">
+			<p>Company</p>
+		</div>
+		<div class="startup_details" >
+			<hr style="margin-top: 0px;">
+			<p>Rating</p>
+			<hr>
+			<p>Experience</p>
+			<hr>
+			
+			<span>JAVA</span> <span>JAVA</span> <span>JAVA</span>
+			<hr>
+			<button class="pref" id="4">preferences</button>
+				
+		</div>
+	</div>
+	</div>
+
+
+
+	
+</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var id_array=[];
+		var temp=0;
+		var pos=0;
+		var change=0;
+		var count=0;
+		$(".pref").click(function(){
+			var id = $(this).attr('id');
+			
+			while(temp!=count)
+			{
+				if(id==id_array[temp])
+				{
+					change=1;
+					pos=temp;
+					break;
+				}
+				temp++;
+			}
+			if(change==1)
+			{
+				$(this).text("preferences");
+				for(var i=temp;i<count;i++)
+				{
+					id_array[i]=id_array[i+1];
+					var str1=id_array[i];
+					var str2 ="#";
+					var str3=str2.concat(str1);
+					$(str3).text(i+1);
+				}
+				count--;
+				change=0;
+			}
+			else
+			{
+				id_array[count]=id;
+				count++;
+				$(this).text(count);
+			}
+			temp=0;
+		});
+
+
+	$("#form").submit( function(eventObj) {
+		
+		// for(i=0;i<id_array.length;i++)
+		// {
+		// 	var str1="[";
+		// 	var str2="]";
+		// 	var str3=str1.concat(id_array[i]);
+		// 	var str4=str3.concat(str2);
+		// 	id_array[i]=str4;
+		// }
+		// alert(id_array);
+      $('<input />').attr('type', 'hidden')
+          .attr('name', "user_id")
+          .attr('value', id_array.join(""))
+          .appendTo('#form');
+      $('<input />').attr('type', 'hidden')
+          .attr('name', "project_id")
+          .attr('value', <%= @project_id%>)
+          .appendTo('#form');
+      $('<input />').attr('type', 'hidden')
+          .attr('name', "startup_status_id")
+          .attr('value', 1)
+          .appendTo('#form');
+  });
+
+
+	})
+</script>
+
+

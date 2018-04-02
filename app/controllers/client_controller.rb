@@ -5,9 +5,13 @@ class ClientController < ApplicationController
 		 @projects = Project.where(user_id: current_user.id).all
 		 
 	end
-# 	def client_params
-#       # params.fetch(:project, {},:id,:body)
-#        params.require(:client).permit(:id,:technology_id,:user_id,:project_status_id, :name, :budget, :time, :requirement
-# )
-#     end
+
+	def all_bidding_page
+	end
+	def project_display_page
+	end
+	def project_display_page_2
+		@client_preference = ClientPreference.new
+		@project_id =1
+	end
 end

@@ -1,0 +1,21 @@
+<%= form_with(model: client_preference, local: true,:html => { :id => "form" }) do |form| %>
+  <% if client_preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client_preference.errors.count, "error") %> prohibited this client_preference from being saved:</h2>
+
+      <ul>
+      <% client_preference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%#= form.hidden_field :user_id, :value => current_user.id %>
+  <%#= form.hidden_field :project_id, :value => project_id %>
+  <%#= form.hidden_field :startup_status_id, :value => 1 %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
