@@ -1,0 +1,45 @@
+<%= form_with(model: installment, local: true) do |form| %>
+  <% if installment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(installment.errors.count, "error") %> prohibited this installment from being saved:</h2>
+
+      <ul>
+      <% installment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+ 
+  <!-- <p>
+    <%#= form.label :name %><br />
+    <%#= form.text_field :name %>
+  </p>
+  <%#= form.fields_with :installments do |builder| %>
+    <%#= render "installment_fields", :f => builder %>
+  <%# end %>
+  <div class="actions">
+    <%= form.submit %>
+  </div> -->
+<% end %>
+<!-- <script type="text/javascript">
+$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_text      = $(".add_field_text"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_text).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script> -->

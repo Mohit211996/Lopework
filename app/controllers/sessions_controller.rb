@@ -12,6 +12,11 @@ class SessionsController < Devise::SessionsController
       end
 
     end
+    # def new
+    #   @user = user.new
+    # end
+    # def before_sign_in_path_for(resource)
+    # end
   #   def remember_me
   #   true
   # end

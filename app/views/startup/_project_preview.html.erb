@@ -1,0 +1,23 @@
+
+	
+		<div>
+		<h3 style="color: blue"><b><%= project.name %></b></h3>
+	</div>
+	<div>
+		<b>Technology: </b><%= project.technology.technology_name %>
+		
+	</div>
+	<div><b>Requirement:</b>
+		<%= raw project.requirement.first(300) %>...........
+	</div>
+	<div>
+		<b>Company Email: </b><%= project.user.email %>
+	</div>
+	<div>
+		<b>Total Time: </b><%= project.time %> weeks
+	</div>
+	<div>
+
+		<%= link_to 'View Details',:controller=> "startup",:action=> "project_page", :project => project %>
+	</div>
+

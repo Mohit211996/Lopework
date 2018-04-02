@@ -300,6 +300,27 @@ span.icon-bar{
 
 
 }
+.log2{
+    width: auto;
+     padding: 1% 0 0;
+     margin: auto;
+      position: relative;
+     background: rgba(255,255,255,0);
+     padding-left: 30px;
+     padding-right: 30px;
+     margin-top: 30px;
+     margin-bottom: 30px;
+
+
+
+}
+/*@media(max-width: 390px){
+  .log2{
+   
+    width: auto !important;
+
+
+}*/
 .log1{
     width: 360px;
      padding: 1% 0 0;
@@ -348,6 +369,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
      border: 1px solid black; 
   
   }
+ 
 input[type=submit] {
     width: 100%;
     background-color: black;
@@ -393,3 +415,132 @@ input[type=submit]:hover {
     margin: 0 auto;
 }
 */
+/*.container1 {
+  float: right;
+  position: relative;
+  width: 150px;
+  height: 45px;
+  border: thin solid grey;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.switch {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  transition: all 0.15s ease;
+  left: 0;
+  z-index: -1;
+}
+
+.container1.off {
+
+  border: thin solid #FFE4C4;
+}
+
+.container1.off .switch {
+  left: 50%;
+  background-color: #FFE4C4;
+}
+
+
+.label {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  color:grey;
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.label.right {
+  left: 50%;
+}
+
+*/
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    
+    float: right;
+    margin-right: 30px;
+    margin-top: 10px;
+     margin-bottom: 10px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    color: hotpink;
+
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+   
+    background-color: black;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+   
+    border-top: none;
+}
+ .pro_detail{
+  margin: auto;
+
+ }
+ .thumbnail{
+  border: 2px blue;
+  border-bottom-style: dotted;
+  
+
+ }
+ 
+ #myform {
+  display:none;
+
+}
+.startupindex{
+  background-image: url('/assets/project2.jpg');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
+}
+.startup_proj{
+  background-image: url('/assets/p5.png');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
+}
+.pro_page{
+  background-image: url('/assets/project.jpg');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
+}
+.pro_form{
+  background: rgba(255,255,255,0.3);
+  margin-top: 30px;
+     margin-bottom: 30px;
+}

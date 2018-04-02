@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 	
   
- 
+  
+  resources :startup_statuses
+  resources :installments
   mount Ckeditor::Engine => '/ckeditor'
   resources :project_statuses
   resources :projects
@@ -17,8 +19,12 @@ Rails.application.routes.draw do
 
  get '/client', to: 'client#index'
  get '/startup', to: 'startup#index' 
- get '/startup/project_detail', to: 'startup#project_detail', :as => :project_detail
+ get '/startup/project_page', to: 'startup#project_page', :as => :project_page
+ get '/startup/job_offer', to: 'startup#job_offer', :as => :job_offer
+ get '/bids', to: 'bids#index'
+  post '/bids', to: 'bids#create'
 
+ get '/bids/new', to: 'bids#new', :as => :new
   root to:"homes#index"
  
 

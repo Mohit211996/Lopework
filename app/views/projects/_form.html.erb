@@ -1,3 +1,10 @@
+<div class="container-fluid">
+  <div class="row img2">
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+    </div>
+   <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pro_form">
+    <h2 style="text-align: center;">New Project</h2>
+    
 <%= form_with(model: project, local: true) do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
@@ -10,46 +17,44 @@
       </ul>
     </div>
   <% end %>
- <p>
-    <%= form.label :name %><br />
-    <%= form.text_field :name %>
-  </p>
-   <p>
-
+ 
+    <%= form.label :name %>
+   
+  <%= form.text_field :name %>
 <% @start = StartupTechnology.new %>
 <% @technology = Technology.all %>
- <div class="field">
-
+ 
      <%= form.label :technology_ids %>
-    
-<%= form.collection_select :technology_id, @technology,:id, :technology_name,{}%>
    
-  </p> 
-</div>
-
-
-
-  <p>
+<%= form.collection_select :technology_id, @technology,:id, :technology_name,{} %>
    
-    <%= form.hidden_field :user_id, :value => current_user.id %>
-  </p>
-  <p>
+ <br>
+
+
+
+ 
+   
+<%= form.hidden_field :user_id, :value => current_user.id %>
+
     
-    <%= form.hidden_field :project_status_id, :value => '1' %>
-  </p>
-     <p>
-    <%= form.label :requirement %><br />
-    <%= form.cktext_area :requirement,:class => 'ckeditor' %>
-  </p>
-  <p>
-    <%= form.label :budget %><br />
-    <%= form.text_field :budget %>
-  </p>
-  <p>
-    <%= form.label :time %><br />
-    <%= form.text_field :time %>
-  </p>
+  <%= form.hidden_field :project_status_id, :value => '1' %>
+  
+    <%= form.label :requirement %>
+  <%= form.cktext_area :requirement,:class => 'ckeditor' %> 
+  
+    <%= form.label :budget %>
+  <%= form.text_field :budget %>
+  
+    <%= form.label :time %>
+   <%= form.text_field :time %>
+  
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+</div>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+    </div>

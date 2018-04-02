@@ -1,52 +1,27 @@
 
+	<div class="container startupindex">
+
 <% if notice %>
 <div class="notice_wrapper">
   <p id="notice"><%= notice %></p>
 </div>
 <% end %>
 
-
-<h2>STARTUP</h2>
-<table>
-	<thead>
-		<th>Project Name</th>
-		<th>Technology Id</th>
-		<th>Time</th>
-		<th>Budget</th>
-		<th>Requirement</th>
-	
+<div>
+	<h2 style="text-align: center;">
+		Available Projects
+	</h2>
+</div>
 
 
-<% @projects.each do |project| %>
-</thead>
-<tbody>
-	<tr>
-		<%= project.id %>
+<% @projects.each do|project| %>
+	<div class="thumbnail">
 
+<%= render(partial: '/startup/project_preview',locals: {project: project}) %> 
+</div>
+<% end %>
 
-		<td>
-<%=  project.name %></td>
-<td>
-
-<%=  project.technology_id %></td>
-
-<td>
-<%=  project.time %></td>
-<td>
-
-<%=  project.budget %></td>
-<td>
-<%=  raw project.requirement %></td>
-<td>
-	
-<%= link_to 'project details',project_detail_path(project.id) %></td>
-
-</tr>
-
-	<% end %>
-	
-</tbody>
-</table>
+</div>
 
 
 <script type="text/javascript">

@@ -1,17 +1,19 @@
 class StartupController < ApplicationController
+
 	def index
-
-		@projects = Project.all
-
-
-
+		@projects = Project.where(project_status_id: 1);
 	end
-	def project_status
-		@project_status = Project_status.find(params[:id])
-	end
-	def project_detail
+
+	def project_page
+		@project = Project.where(id: params[:project]).first
+		@installment = Installment.new
+		@bid = Bid.new
+
 		
-	@project = Project.find(params[:format])
 	end
-	
+
+def job_offer
+	@projects = Project.all
+end
+
 end

@@ -1,0 +1,73 @@
+<!-- <form id="form">
+ 
+      <div>
+
+<input type="text" name="no_of_installments" id="install" >
+</div>   -->
+
+<!--  <input type="text" name="no_of_installments" id="install" >
+<INPUT type="button" value="Add" onclick="" id="button"/>
+<div id="fn" hidden>
+  <input type="text" />
+</div>
+<br>
+<div id="ln" hidden>
+  <input type="text" />
+</div> --> 
+<!-- <span id="fooBar">&nbsp;</span> 
+ -->
+
+
+<%= nested_form_for @bid do |form| %>
+  <% if @bid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bid.errors.count, "error") %> prohibited this bid from being saved:</h2>
+
+      <ul>
+      <% bid.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <%= form.hidden_field :project_id, :value => params[:project] %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+  <%= form.link_to_add "Add a installment", :installments %>
+ 
+  <% form.fields_for :installments do |fi| %>
+
+  <div>
+    <%= fi.label :time,"Time" %><br>
+    <%= fi.text_field :time %>
+     <%#= fi.hidden_field :_destroy %>
+    <%#= link_to_remove_fields "remove", "remove_fields(this)" %>
+  </div>
+  <div>
+    <%= fi.label :details,"Details" %><br>
+    <%= fi.text_area :details %>
+     <%#= fi.hidden_field :_destroy %>
+   <%#= link_to_remove_fields "remove", "remove_fields(this)" %>
+  </div>
+  <div>
+    <%= fi.label :budget,"Budget" %><br>
+    <%= fi.text_field :budget %>
+     <%#= fi.hidden_field :_destroy %>
+     <%#= link_to_remove_fields "remove", "remove_fields(this)" %>
+    
+  </div>
+ <%#= form.link_to_remove "delete a installment", :installments %>
+ <%#= link_to 'Destroy', bids, method: :delete, data: { confirm: 'Are you sure?' } %>
+ <%= link_to 'Destroy', installment_path(fi), method: :delete, data: { confirm: 'Are you sure?' } %>
+ 
+  <%end%>
+  
+
+<br>
+<br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+  
