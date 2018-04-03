@@ -5,7 +5,7 @@
    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pro_form">
     <h2 style="text-align: center;">New Project</h2>
     
-<%= form_with(model: project, local: true) do |form| %>
+<%= form_with(model: project, local: true),html: {:id => 'projs'} do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -58,3 +58,75 @@
 </div>
 <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
     </div>
+    <script type="text/javascript">
+  
+  $(document).ready(function(){
+    $('#new_registration').validate({
+
+      
+    });
+    $( "#email_field" ).rules( "add", {
+    required: true,
+  messages: {
+    required: "Email is mandatory"
+  }
+  });
+    $( "#password_field" ).rules( "add", {
+  required: true,
+  minlength: 6,
+  messages: {
+    required: "Password is required",
+    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+  }
+  });
+    $.validator.addMethod('positiveNumber',
+          function (value) {
+              return Number(value) > 0;
+          }, 'Enter a positive number.');
+    $.validator.addMethod('limitNumber',
+          function (value) {
+              return Number(value) < 999;
+          }, 'Enter a valid experience.');
+
+    $("#c_password_field").rules("add",{
+      required: true,
+      equalTo: "#password_field",
+      messages: {
+        required: "enter your password",
+        equalTo: "Confirm password doesn't match"
+      }
+    });
+
+    $("#company_name_field").rules("add",{
+      required: true,
+      minlength: 2,
+      messages: {
+        required: "company name is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+
+    $("#experience_field").rules("add",{
+      required: true,
+      number: true,
+      positiveNumber:true,
+      limitNumber:true,
+      messages: {
+        required: "enter 0 if no experience",
+        number: "experience can only be integer"
+        
+
+      }
+    });
+
+    $("#user_technology_ids").rules("add",{
+      required: true,
+      messages: {
+        required: "Select atleast one"
+      }
+    });
+
+
+  });
+
+</script>

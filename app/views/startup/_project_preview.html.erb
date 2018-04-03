@@ -1,8 +1,10 @@
 
-	
-		<div>
-		<h3 style="color: blue"><b><%= project.name %></b></h3>
+
+		<div class="pro">
+		<h3><b><%= project.name %></b></h3>
+		<hr>
 	</div>
+	
 	<div>
 		<b>Technology: </b><%= project.technology.technology_name %>
 		
@@ -16,7 +18,8 @@
 	<div>
 		<b>Total Time: </b><%= project.time %> weeks
 	</div>
-	<div>
+<hr>
+	<div class="job_offer1">
 
 		<%= link_to 'View Details',:controller=> "startup",:action=> "project_page", :project => project %>
 	</div>

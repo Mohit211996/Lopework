@@ -11,8 +11,7 @@ class StartupController < ApplicationController
 	end
 
 def job_offer
-	@projects = Project.all
-	
+	@client = ClientPreference.where("user_id = ? AND startup_status_id = ?", current_user.id,4)
 end
 
 end

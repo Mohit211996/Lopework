@@ -648,8 +648,7 @@ input[type=submit]:hover {
  }
  .thumbnail{
   border: 2px blue;
-  border-bottom-style: dotted;
-  
+ background-color: #F5F5F5;
 
  }
  
@@ -658,7 +657,7 @@ input[type=submit]:hover {
 
 }
 .startupindex{
-  background-image: url('/assets/project2.jpg');
+  background-image: url('/assets/com1.jpg');
   background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
@@ -678,6 +677,19 @@ input[type=submit]:hover {
  background-size: cover;
 
 }
+/*.pro{
+   background-image: url('/assets/projecthead.png');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+}*/
+.tog_row{
+ background-image: url('/assets/tog.jpg');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover; 
+
+}
 .pro_form{
   background: rgba(255,255,255,0.3);
   margin-top: 30px;
@@ -687,12 +699,26 @@ input[type=submit]:hover {
   color: hotpink;
   float: right;
   font-size: 15px;
+  margin-top: 20px;
+  text-decoration: none;
 
 }
+.job_offer1>a{
+  color: hotpink;
+  float: right;
+  font-size: 15px;
+  text-decoration: none;
+  margin-top: -20px;
+
+}
+
 .accept_btn{
   float: right;
   margin-bottom: 20px;
+
 }
 .accept_btn>a{
   font-size: 15px;
+  text-decoration: none;
+  color: black;
 }
