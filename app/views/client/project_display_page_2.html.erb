@@ -151,9 +151,10 @@
 		// 	id_array[i]=str4;
 		// }
 		// alert(id_array);
+		console.log(id_array)
       $('<input />').attr('type', 'hidden')
-          .attr('name', "user_id")
-          .attr('value', id_array.join(""))
+          .attr('name', "user_ids[]")
+          .attr('value', id_array)
           .appendTo('#form');
       $('<input />').attr('type', 'hidden')
           .attr('name', "project_id")
