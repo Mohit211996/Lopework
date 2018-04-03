@@ -6,6 +6,7 @@ class Project < ApplicationRecord
 
 	has_many :client_preferences
 	
+	
 
 
 end

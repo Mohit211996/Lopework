@@ -32,7 +32,6 @@ gem "nested_form"
 gem 'jquery-rails'
 gem 'ckeditor'
 gem 'paperclip'
-gem "nested_form"
 
 
 # Use CoffeeScript for .coffee assets and views
