@@ -26,22 +26,22 @@ class ClientPreferencesController < ApplicationController
   def create
     byebug
 
-   @temp = params[user_id].length
+   @temp = params[:user_id].length
+   @temp=@temp-1;
    @count =0 
-  while(temp!=count)
-    {
-      
-    }
-    @client_preference = ClientPreference.new(client_preference_params)
+  while @temp>=@count
+    @client_preference = ClientPreference.new
+    @client_preference.project_id=params[:project_id];
+    @client_preference.startup_status_id=params[:startup_status_id];
+    @client_preference.user_id=params[:user_id][@count];
+    @client_preference.save
+    @count=@count+2;
+  end
+    
 
     respond_to do |format|
-      if @client_preference.save
         format.html { redirect_to @client_preference, notice: 'Client preference was successfully created.' }
         format.json { render :show, status: :created, location: @client_preference }
-      else
-        format.html { render :new }
-        format.json { render json: @client_preference.errors, status: :unprocessable_entity }
-      end
     end
   end
 
