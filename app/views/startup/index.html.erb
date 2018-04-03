@@ -1,6 +1,6 @@
-<div class="container">
-	
 
+	<div class="container startupindex">
+<h1>hey</h1>
 <% if notice %>
 <div class="notice_wrapper">
   <p id="notice"><%= notice %></p>
@@ -8,20 +8,18 @@
 <% end %>
 
 <div>
-	<h2>
+	<h2 style="text-align: center;">
 		Available Projects
 	</h2>
 </div>
 
 
 <% @projects.each do|project| %>
+	<div class="thumbnail">
 
 <%= render(partial: '/startup/project_preview',locals: {project: project}) %> 
-
+</div>
 <% end %>
-
-
-
 
 </div>
 <script type="text/javascript">

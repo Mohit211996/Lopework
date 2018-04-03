@@ -6,9 +6,13 @@ class StartupController < ApplicationController
 
 	def project_page
 		@project = Project.where(id: params[:project]).first
-		
+		@installment = Installment.new
+		@bid = Bid.new
 	end
 
-
+def job_offer
+	@projects = Project.all
+	
+end
 
 end

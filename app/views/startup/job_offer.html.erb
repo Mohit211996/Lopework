@@ -1,0 +1,83 @@
+<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
+	
+
+
+<div class="row" style="height: 300px;">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 startup_proj" style="height: 300px;">
+    
+  </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+	<div class="tab">
+
+  <button class="tablinks" onclick="openProject(event, 'Toggle1')">Selected Projects</button>
+  <button class="tablinks" onclick="openProject(event, 'Toggle2')">Bidded Projects</button>
+</div>
+</div>
+</div>
+<div class="row pro_page">
+  
+<div id="Toggle1" class="tabcontent">
+  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+  </div>
+  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+	<h1 style="text-align: center;">Selected Projects</h1>
+	<% @projects.each do|project| %>
+	<div class="thumbnail">
+
+<%= render(partial: '/startup/form_job_offer',locals: {project: project}) %> 
+</div>
+<% end %>
+
+	<%#= render(partial: '/projects/project_details',locals: {project: @project}) %> 
+	</div>
+  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+  </div>
+</div>
+	<div id="Toggle2" class="tabcontent">
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+  </div>
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+	<h1 style="text-align: center;">Bidded projects</h1>
+   </div>
+  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+  </div>
+</div>
+</div>
+<script>
+function openProject(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+function showInput() {
+      var count = $("#user_input").val()
+     
+      $(".fields").each(function(){
+        $(this).remove()
+      })
+      for (var i=1; i<=count; i++)
+      {
+        $(".add_nested_fields").click()
+      }
+  }
+  $(window).load(function() {
+  $("#Toggle1").show();
+ 
+});
+</script>
+
+     
+	
+</div>
+ 

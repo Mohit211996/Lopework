@@ -17,5 +17,6 @@
 //= require rails-ujs
 
 //= require ckeditor/init
+//= require jquery_nested_form
 
 //= require_tree .

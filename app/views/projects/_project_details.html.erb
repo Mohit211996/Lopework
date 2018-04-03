@@ -1,16 +1,21 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
 <div>
-	Company name: <%= project.user.company_name%>
+	<b>Company name:</b> <%= project.user.company_name%>
 	<br>
-	Email id: <%= project.user.email %>
+	<b>Email id: </b><%= project.user.email %>
 </div>
 
 <div>
-	Project name: <%= project.name %>
+	<b>Project name: </b><%= project.name %>
 	<br>
-	Technology: <%= project.technology.technology_name %>
+<b>	Technology:</b> <%= project.technology.technology_name %>
 </div>
 
 <div>
-	Project Description: <br>
-	<%= raw project.requirement.first(100) %>
+	<b>
+	Project Description: </b> <br>
+	<%= raw project.requirement %>
 </div>
+</div>
+<%= link_to 'Back', startup_path %>

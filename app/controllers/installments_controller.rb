@@ -24,8 +24,8 @@ class InstallmentsController < ApplicationController
   # POST /installments
   # POST /installments.json
   def create
+    byebug
     @installment = Installment.new(installment_params)
-
     respond_to do |format|
       if @installment.save
         format.html { redirect_to @installment, notice: 'Installment was successfully created.' }
@@ -56,8 +56,11 @@ class InstallmentsController < ApplicationController
   def destroy
     @installment.destroy
     respond_to do |format|
+      if @installment.destroy
       format.html { redirect_to installments_url, notice: 'Installment was successfully destroyed.' }
       format.json { head :no_content }
+      format.js 
+      end 
     end
   end
 
@@ -69,6 +72,8 @@ class InstallmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def installment_params
+    # params.fetch(:installment, {})
+     
       params.require(:installment).permit(:id,:bid_id,:time,:budget,:details)
     end
 end

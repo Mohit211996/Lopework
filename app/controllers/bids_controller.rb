@@ -15,10 +15,11 @@ class BidsController < ApplicationController
   # GET /bids/new
   def new
     @bid = Bid.new
-    @bid.installments.new
-  
 
-  end
+     @bid.installments.new
+
+end
+
 
   # GET /bids/1/edit
   def edit
@@ -27,17 +28,20 @@ class BidsController < ApplicationController
   # POST /bids
   # POST /bids.json
   def create
-    @bid = Bid.new(bid_params)
-      respond_to do |format|
+
+ @bid = Bid.new(bid_params)
+
+    respond_to do |format|
       if @bid.save
-        format.html { redirect_to @bid, notice: 'Bid was successfully created.' }
-        format.json { render :show, status: :created, location: @bid }
+        format.html { redirect_to bids_url, notice: 'Bid was successfully created.' }
+        format.json { render :show, status: :created, location: @bids }
       else
         format.html { render :new }
-        format.json { render json: @bid.errors, status: :unprocessable_entity }
-      end
+        format.json { render json: @bids.errors, status: :unprocessable_entity }
+
     end
   end
+end
 
   # PATCH/PUT /bids/1
   # PATCH/PUT /bids/1.json
@@ -57,10 +61,15 @@ class BidsController < ApplicationController
   # DELETE /bids/1.json
   def destroy
     @bid.destroy
+
+
     respond_to do |format|
+      if @bids.destroy
       format.html { redirect_to bids_url, notice: 'Bid was successfully destroyed.' }
       format.json { head :no_content }
-    end
+      format.js  
+   end
+  end
   end
 
   private

@@ -1,6 +1,7 @@
 class Bid < ApplicationRecord
+	 has_many :installments
 	belongs_to :project
 	belongs_to :user
-	has_many :installments, :dependent => :destroy
-	accepts_nested_attributes_for :installments
+	 accepts_nested_attributes_for :installments, allow_destroy: true
+	
 end

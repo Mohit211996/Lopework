@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class BidsControllerTest < ActionDispatch::IntegrationTest
+<<<<<<< HEAD
+  # test "the truth" do
+  #   assert true
+  # end
+=======
   setup do
     @bid = bids(:one)
   end
@@ -45,4 +50,5 @@ class BidsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to bids_url
   end
+>>>>>>> f1590d1cd206c8f31defc2ead3109a7cffc1baac
 end

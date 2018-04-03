@@ -1,19 +1,23 @@
-<div class="col-lg-12" style="border: solid 2px black ">
 
-	<div>
-		<h3 style="margin-top: 0px;"><b><%= project.name %></b></h3>
+	
+		<div>
+		<h3 style="color: blue"><b><%= project.name %></b></h3>
 	</div>
 	<div>
-		Technology: <%= project.technology.technology_name %>
+		<b>Technology: </b><%= project.technology.technology_name %>
 		
 	</div>
-	<div style="background-color: #FAD7A0; padding: 5px">
-		<%= raw project.requirement.first(200) %>...........
+	<div><b>Requirement:</b>
+		<%= raw project.requirement.first(300) %>...........
 	</div>
 	<div>
-		<b>Company name: <%= project.user.email %></b>
+		<b>Company Email: </b><%= project.user.email %>
 	</div>
 	<div>
+		<b>Total Time: </b><%= project.time %> weeks
+	</div>
+	<div>
+
 		<%= link_to 'View Details',:controller=> "startup",:action=> "project_page", :project => project %>
 	</div>
-</div>
+
