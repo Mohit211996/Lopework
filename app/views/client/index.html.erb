@@ -4,38 +4,9 @@
   <p id="notice"><%= notice %></p>
 </div>
 <%end %>
-
-<h2>CLIENT</h2>
-<table>
-	<thead>
-		<th>Technology Id</th>
-		<th>Total Time</th>
-		<th>Total Budget</th>
-		<th>Requirement</th>
-	
-<% @projects.each do |project| %>
-</thead>
-<tbody>
-	<tr>
-	<td>
-
-<%= project.technology_id %></td>
-<td>
-<%=  project.time %></td>
-<td>
-<%=  project.budget %></td>
-<td>
-<%=  raw project.requirement %></td>
-
-	
-	
-	
-
-</tr>
-<% end %>
-</tbody></table>
-<%= link_to 'add project', new_project_path %>
-
+<div class="container" style="background-color: #E8EAEA;">
+<%= render(partial: '/client/currently_underbidding') %>
+</div>
 
 
 <script type="text/javascript">

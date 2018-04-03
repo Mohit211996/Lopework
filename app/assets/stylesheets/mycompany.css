@@ -57,13 +57,14 @@
   padding: 10px;
 }
 .project_preview {
-  height: 400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   border: 15px white solid;
   width: 100%;
   display: table-cell;
   vertical-align: middle;
-  background-color: #021227;
-  /*background-image: url('/assets/card_bg.jpg');*/
+  /*background-color: #021227;*/
+  background-image: url('/assets/bg.jpg');
   background-position: center-left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,6 +75,7 @@
 }
 
 .inner_bg {
+  
   width: 100%;
   padding: 5px;
   display: inline-block;
@@ -94,13 +96,13 @@
 
 .view_button {
   width: 100%;
-  background-color: #778DA0;
+  background-color: #415D52;
   border:0px;
   border-radius: 5px;
   color: white;
 }
 .view_button:hover {
-  background-color: #9EB2C3;
+  background-color: #70B79C;
   box-shadow: 0px 2px 2px 0px #8C99A4;
 }
 .heading h2 {

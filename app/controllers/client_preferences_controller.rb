@@ -24,18 +24,13 @@ class ClientPreferencesController < ApplicationController
   # POST /client_preferences
   # POST /client_preferences.json
   def create
-    byebug
-
-   @temp = params[:user_id].length
-   @temp=@temp-1;
-   @count =0 
-  while @temp>=@count
+  @temp = params[:user_id].split(",");
+  @temp.each do |temp|
     @client_preference = ClientPreference.new
     @client_preference.project_id=params[:project_id];
     @client_preference.startup_status_id=params[:startup_status_id];
-    @client_preference.user_id=params[:user_id][@count];
+    @client_preference.user_id=temp;
     @client_preference.save
-    @count=@count+2;
   end
     
 
@@ -77,6 +72,6 @@ class ClientPreferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_preference_params
-      params.permit(:id,:project_id,:startup_status_id,:user_ids => [])
+      params.permit(:id,:project_id,:startup_status_id,:user_id)
     end
 end
