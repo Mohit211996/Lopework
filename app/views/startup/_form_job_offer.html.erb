@@ -1,8 +1,15 @@
 <div>
-		<h3 style="color: blue"><b><%= project.name %></b></h3>
+		<h3 style="color: blue"><b><%= project.name %>
+		<div class="job_offer">
+		
+		<%= link_to 'View',:controller=> "startup",:action=> "project_page", :project => project %>
+	</div>	
+		</b></h3>
+		
 	</div>
 	<div>
 	Company Name:	<%= project.user.company_name %>
+	
 	</div>
 	<div>
 	Company Logo:	<%= %>
@@ -15,12 +22,14 @@
 		Few Lines: <%=  raw project.requirement.first(300) %>........... 
 	</div>
 	 <div>
-		<%= link_to 'Accept'%>
+		<%#= link_to 'Accept'%>
 	<!-- </div> 
 	<div> -->
-		<%= link_to 'Reject'%>
+		<%#= link_to 'Reject'%>
 	</div> 
-	<div>
-		
-		<%= link_to 'View',:controller=> "startup",:action=> "project_page", :project => project %>
+	
+	<div class="accept_btn">
+		<%= link_to 'Accept'%>
+	<%= link_to 'Reject'%>
 	</div>
+	<br>

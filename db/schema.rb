@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 20180402123003) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
+  create_table "client_preferences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.bigint "startup_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_client_preferences_on_project_id"
+    t.index ["startup_status_id"], name: "index_client_preferences_on_startup_status_id"
+    t.index ["user_id"], name: "index_client_preferences_on_user_id"
+  end
+
   create_table "installments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "bid_id"
     t.integer "time"
@@ -77,7 +88,7 @@ ActiveRecord::Schema.define(version: 20180402123003) do
   end
 
   create_table "startup_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "status"
+    t.string "startup_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -119,6 +130,9 @@ ActiveRecord::Schema.define(version: 20180402123003) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "client_preferences", "projects"
+  add_foreign_key "client_preferences", "startup_statuses"
+  add_foreign_key "client_preferences", "users"
   add_foreign_key "startup_technologies", "technologies"
   add_foreign_key "startup_technologies", "users"
 end

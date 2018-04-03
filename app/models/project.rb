@@ -4,4 +4,8 @@ class Project < ApplicationRecord
 	belongs_to :project_status
 	has_many :bids
 
+	has_many :client_preferences
+	
+
+
 end

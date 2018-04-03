@@ -15,9 +15,11 @@ class BidsController < ApplicationController
   # GET /bids/new
   def new
     @bid = Bid.new
-    # @bid.installments.new
+
+     @bid.installments.new
 
 end
+
 
   # GET /bids/1/edit
   def edit
@@ -35,14 +37,14 @@ end
       else
         format.html { render :new }
         format.json { render json: @bids.errors, status: :unprocessable_entity }
-      end
+
     end
   end
+end
 
   # PATCH/PUT /bids/1
   # PATCH/PUT /bids/1.json
   def update
-    byebug
     respond_to do |format|
       if @bid.update(bid_params)
         format.html { redirect_to @bid, notice: 'Bid was successfully updated.' }
@@ -58,6 +60,7 @@ end
   # DELETE /bids/1.json
   def destroy
     @bid.destroy
+
 
     respond_to do |format|
       if @bids.destroy

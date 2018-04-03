@@ -72,8 +72,12 @@ class InstallmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def installment_params
+<<<<<<< HEAD
     # params.fetch(:installment, {})
        params.require(:installment).permit(:id)
    
+=======
+      params.require(:installment).permit(:id,:bid_id,:time,:budget,:details)
+>>>>>>> f1590d1cd206c8f31defc2ead3109a7cffc1baac
     end
 end

@@ -20,7 +20,12 @@
 
 <%= nested_form_for @bid do |form| %>
   <% if @bid.errors.any? %>
-    <div id="error_explanation">
+
+<input type="text" name="no_of_installments" id="number">
+
+<%= nested_form_for @bid do |form| %>
+  <% if bid.errors.any? %>
+      <div id="error_explanation">
       <h2><%= pluralize(bid.errors.count, "error") %> prohibited this bid from being saved:</h2>
 
       <ul>
@@ -30,11 +35,12 @@
       </ul>
     </div>
   <% end %>
+
  
   <%= form.hidden_field :project_id, :value => params[:project] %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
   <%= form.link_to_add "Add a installment", :installments %>
- 
+
   <% form.fields_for :installments do |fi| %>
 
   <div>
@@ -62,12 +68,31 @@
  
   <%end%>
   
+<% end %>
+<% end %>
 
 <br>
-<br>
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
-  
+
+
+
+<script type="text/javascript">
+   $(document).ready(function(){
+        $("#number").keyup(function(){
+          var no = $(this).val();
+          $(".my_insta").hide();
+            for(i=0;i<no;i++)
+            {
+              $("#insta").click();
+            }
+
+
+
+        });
+    })
+</script>

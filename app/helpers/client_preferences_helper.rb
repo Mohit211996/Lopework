@@ -1,0 +1,2 @@
+module ClientPreferencesHelper
+end
