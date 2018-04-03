@@ -29,7 +29,7 @@ Rails.application.routes.draw do
  get '/client/all_bids', to: 'client#all_bidding_page'
  get '/client/project', to: 'client#project_display_page'
  get '/client/project2', to: 'client#project_display_page_2'
-
+ post '/startup/job_offer1', to: 'startup#request_method'
  # get '/bids/new', to: 'bids#new', :as => :new
   root to:"homes#index"
  

@@ -24,10 +24,11 @@
   </div>
   <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 	<h1 style="text-align: center;">Selected Projects</h1>
-	<% @projects.each do|project| %>
-	<div class="thumbnail">
+	<% @startups.each do|startup| %>
 
-<%= render(partial: '/startup/form_job_offer',locals: {project: project}) %> 
+	<div class="thumbnail">
+<%@temp=@projects.find(startup.project_id)%>
+<%= render(partial: '/startup/form_job_offer',locals: {project: @temp}) %> 
 </div>
 <% end %>
 
@@ -36,6 +37,9 @@
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
   </div>
 </div>
+
+
+
 	<div id="Toggle2" class="tabcontent">
     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
   </div>
@@ -46,6 +50,11 @@
   </div>
 </div>
 </div>
+
+
+
+
+
 <script>
 function openProject(evt, cityName) {
     var i, tabcontent, tablinks;

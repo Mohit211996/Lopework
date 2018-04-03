@@ -25,14 +25,19 @@ class ClientPreferencesController < ApplicationController
   # POST /client_preferences.json
   def create
   @temp = params[:user_id].split(",");
-  @temp.each do |temp|
+  
+  @temp.each_with_index do |temp, index|
     @client_preference = ClientPreference.new
     @client_preference.project_id=params[:project_id];
+    if(index==0)
+      @client_preference.startup_status_id=4;
+    else
     @client_preference.startup_status_id=params[:startup_status_id];
+    end
     @client_preference.user_id=temp;
     @client_preference.save
   end
-    
+      
 
     respond_to do |format|
         format.html { redirect_to @client_preference, notice: 'Client preference was successfully created.' }

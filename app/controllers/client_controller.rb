@@ -12,6 +12,6 @@ class ClientController < ApplicationController
 	end
 	def project_display_page_2
 		@client_preference = ClientPreference.new
-		@project_id =1
+		@project_id =2
 	end
 end
