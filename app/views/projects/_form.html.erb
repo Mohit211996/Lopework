@@ -5,7 +5,7 @@
    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pro_form">
     <h2 style="text-align: center;">New Project</h2>
     
-<%= form_with(model: project, local: true),html: {:id => 'projs'} do |form| %>
+<%= form_with(model: project, local: true,html: {:id => 'projects'} ) do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -20,16 +20,16 @@
  
     <%= form.label :name %>
    
-  <%= form.text_field :name %>
+  <%= form.text_field :name,:required => true, :id => 'name' %>
 <% @start = StartupTechnology.new %>
 <% @technology = Technology.all %>
  
      <%= form.label :technology_ids %>
    
-<%= form.collection_select :technology_id, @technology,:id, :technology_name,{}, :id =>'technology_id' %>
+<%= form.collection_select :technology_id, @technology,:id, :technology_name,{}, :id =>'technology_id',:required => true %>
    
  <br>
-
+<br>
 
 
  
@@ -40,13 +40,13 @@
   <%= form.hidden_field :project_status_id, :value => '1' %>
   
     <%= form.label :requirement %>
-  <%= form.cktext_area :requirement,:class => 'ckeditor', :id =>'requirement' %> 
+  <%= form.cktext_area :requirement,:class => 'ckeditor', :required => true %> 
   
     <%= form.label :budget %>
-  <%= form.text_field :budget, :id =>'budget' %>
+  <%= form.text_field :budget, :id =>'budget',:required => true %>
   
     <%= form.label :time %>
-   <%= form.text_field :time, :id =>'time'%>
+   <%= form.text_field :time, :id =>'time',:required => true%>
   
   <div class="actions">
     <%= form.submit %>
@@ -61,65 +61,45 @@
     <script type="text/javascript">
   
   $(document).ready(function(){
-    $('#projs').validate({
+    $('#projects').validate({
 
       
     });
-    $( "#" ).rules( "add", {
-    required: true,
-  messages: {
-    required: "Email is mandatory"
-  }
-  });
-    $( "#password_field" ).rules( "add", {
-  required: true,
-  minlength: 6,
-  messages: {
-    required: "Password is required",
-    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
-  }
-  });
-    $.validator.addMethod('positiveNumber',
-          function (value) {
-              return Number(value) > 0;
-          }, 'Enter a positive number.');
-    $.validator.addMethod('limitNumber',
-          function (value) {
-              return Number(value) < 999;
-          }, 'Enter a valid experience.');
-
-    $("#c_password_field").rules("add",{
-      required: true,
-      equalTo: "#password_field",
-      messages: {
-        required: "enter your password",
-        equalTo: "Confirm password doesn't match"
-      }
-    });
-
-    $("#company_name_field").rules("add",{
+  
+    $("#name").rules("add",{
       required: true,
       minlength: 2,
       messages: {
-        required: "company name is mandatory",
+        required: "Project name is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+    $("#budget").rules("add",{
+      required: true,
+      minlength: 2,
+      messages: {
+        required: "budget is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+    $("#time").rules("add",{
+      required: true,
+      minlength: 2,
+      messages: {
+        required: "time is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+$(".ckeditor").rules("add",{
+      required: true,
+      minlength: 200,
+      messages: {
+        required: "requirement is mandatory",
         minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
       }
     });
 
-    $("#experience_field").rules("add",{
-      required: true,
-      number: true,
-      positiveNumber:true,
-      limitNumber:true,
-      messages: {
-        required: "enter 0 if no experience",
-        number: "experience can only be integer"
-        
-
-      }
-    });
-
-    $("#user_technology_ids").rules("add",{
+    $("#technology_id").rules("add",{
       required: true,
       messages: {
         required: "Select atleast one"

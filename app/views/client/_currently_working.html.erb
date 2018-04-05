@@ -1,0 +1,23 @@
+ <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card">
+  	<div class="project_preview">
+  		<div class="inner_bg">
+		  	<h3><%= project.name %></h3>
+		  	<p>
+		  		<%= raw project.requirement.first(400) %> 
+		  	</p>
+		  	
+		  	<img src="/assets/money_icon.png" height="40px" width="40px" style="padding: 5px;">
+		  	<%= project.budget %>
+		
+		  	<img src="/assets/clock.png" height="40px" width="40px" style="padding: 5px;">
+		  	<%= project.time %>
+		  	
+		  	<img src="/assets/bids.png" height="40px" width="40px" style="padding: 5px;">
+		  	<%= project.bids.count %>
+		  	<br>
+		  	<%=link_to client_project_path(:project_id => project) do%>
+		  	<button class="view_button">view button</button>
+		  	<%end%>
+		</div>
+    </div>
+  </div>

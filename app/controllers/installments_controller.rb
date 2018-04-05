@@ -15,10 +15,7 @@ class InstallmentsController < ApplicationController
   # GET /installments/new
   def new
     @installment = Installment.new
-#     if current_user.bid.empty?
-# @bid.installments.new
-# else
-#   redirect_to startup_path
+
 end
 
   end

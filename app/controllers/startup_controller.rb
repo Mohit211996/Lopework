@@ -21,7 +21,6 @@ class StartupController < ApplicationController
 def job_offer
 
 	@startups = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,4)
-
 	@projects = Project.all;
 
 end

@@ -12,7 +12,6 @@
   border:3px solid #CBCBCB;
   padding: 10px;
   border-radius: 0px;
-  height: 480px;
 }
 
 .startup_details span {
@@ -724,4 +723,11 @@ input[type=submit]:hover {
   font-size: 15px;
   text-decoration: none;
   color: black;
+}
+.create_bid>input[type=submit]{
+  width: auto;
+
+}
+#details_field{
+  width: 100%;
 }

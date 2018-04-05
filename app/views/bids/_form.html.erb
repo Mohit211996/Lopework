@@ -11,7 +11,8 @@
       </ul>
     </div>
   <% end %>
-  <%= form.hidden_field :project_id, :value => project.id%>
+
+  <%= form.hidden_field :project_id, :value => project.id %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
 
   <%= form.link_to_add "Add a installment", :installments %>
@@ -38,43 +39,13 @@
 
 <br>
 <br>
-  <div class="actions">
+  <div class="actions create_bid">
     <%= form.submit %>
   </div>
 
 <% end %>
-
-
-
- <script type="text/javascript">
-   // $(document).ready(function(){
-   //      $("#number").keyup(function(){
-   //        var no = $(this).val();
-   //        $(".my_insta").hide();
-   //          for(i=0;i<no;i++)
-   //          {
-   //            $("#insta").click();
-   //          }
-
-
-
-   //      });
-   //  })
-  //  function showInput() {
-  //     var count = $("#user_input").val()
-     
-  //     $(".fields").each(function(){
-  //       $(this).remove()
-  //     })
-  //     for (var i=1; i<=count; i++)
-  //     {
-  //       $(".add_nested_fields").click()
-  //     }
-  // }
-
-  
-  
-  $(document).ready(function(){
+<script type="text/javascript">
+   $(document).ready(function(){
     $('#installments').validate({
 
       
