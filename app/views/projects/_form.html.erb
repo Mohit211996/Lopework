@@ -26,7 +26,7 @@
  
      <%= form.label :technology_ids %>
    
-<%= form.collection_select :technology_id, @technology,:id, :technology_name,{} %>
+<%= form.collection_select :technology_id, @technology,:id, :technology_name,{}, :id =>'technology_id' %>
    
  <br>
 
@@ -40,13 +40,13 @@
   <%= form.hidden_field :project_status_id, :value => '1' %>
   
     <%= form.label :requirement %>
-  <%= form.cktext_area :requirement,:class => 'ckeditor' %> 
+  <%= form.cktext_area :requirement,:class => 'ckeditor', :id =>'requirement' %> 
   
     <%= form.label :budget %>
-  <%= form.text_field :budget %>
+  <%= form.text_field :budget, :id =>'budget' %>
   
     <%= form.label :time %>
-   <%= form.text_field :time %>
+   <%= form.text_field :time, :id =>'time'%>
   
   <div class="actions">
     <%= form.submit %>
@@ -61,11 +61,11 @@
     <script type="text/javascript">
   
   $(document).ready(function(){
-    $('#new_registration').validate({
+    $('#projs').validate({
 
       
     });
-    $( "#email_field" ).rules( "add", {
+    $( "#" ).rules( "add", {
     required: true,
   messages: {
     required: "Email is mandatory"

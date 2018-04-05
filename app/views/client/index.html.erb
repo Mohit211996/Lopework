@@ -6,7 +6,15 @@
 <%end %>
 <div class="container">
 	<div>
-<%= render(partial: '/client/currently_underbidding') %>
+		<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 heading">
+		<h2>YOUR PROJECTS</h2>
+	</div>
+</div>
+		<% @project.each_with_index do|project,index|%>
+
+			<%= render(partial: '/client/currently_underbidding', :locals => {:project => project,:bid_count => @bid_count[index]}) %>
+		<%end%>
 	</div>
 </div>
 

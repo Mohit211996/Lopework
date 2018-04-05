@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container-fluid pro_page">
 	<!-- <div class="requirements"> -->
 	<!-- <div class="row">
@@ -19,16 +20,134 @@
 			<%= link_to 'Bid', client_project2_path %>
 			<p>
 				Charles Dillon "Casey" Stengel (/ˈstɛŋɡəl/; July 30, 1890 – September 29, 1975) was an American Major League Baseball right fielder and manager best known as the manager of both the championship New York Yankees of the 1950s, and later of the hapless expansion New York Mets. He was elected to the Baseball Hall of Fame in 1966.
+=======
+<div class="container">
+	
+<%= render(partial: '/client/project_details', :locals => {:project => @project}) %>
 
-				Stengel was born in Kansas City, Missouri. In 1910, he began a professional baseball career that would span over half a century. After almost three seasons in the minor leagues, Stengel reached the major leagues as an outfielder for the Brooklyn Dodgers. His six seasons there saw some success, including as a member of Brooklyn's 1916 National League championship team, but he also developed a reputation as a clown. After repeated clashes over pay with the Dodgers owner, Charlie Ebbets, Stengel was traded to the Pittsburgh Pirates in 1918, but that summer enlisted in the Navy for the remainder of World War I. He continued his pay disputes, resulting in trades to the Philadelphia Phillies in 1919, and to the New York Giants in 1921. There he learned much about baseball from the manager, John McGraw, and had some of the glorious moments in his career, such as hitting an inside-the-park home run in Game 1 of the 1923 World Series to defeat the Yankees. His major league playing career ended with the Boston Braves in 1925, but he then began a career as a manager.
 
-				The first twenty years of Stengel's second career brought mostly poor finishes, especially during his MLB managerial stints with the Dodgers (1934–1936) and Braves (1938–1943). He thereafter enjoyed some success on the minor league level, and Yankee general manager George Weiss hired him as manager in October 1948. Stengel's Yankees won the World Series five consecutive times (1949–1953), the only time that has been achieved. Although the team won ten pennants in his twelve seasons, and won seven World Series, his final two years brought less success, with a third-place finish in 1959, and a loss in the 1960 World Series. By then aged 70, he was dismissed by the Yankees shortly after the defeat.
+<%if @total == 0%>
+<div class="row" style="padding: 10px;">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 h_bidding">
+			Biddings 
+			<%= render '/client_preferences/form',client_preference: @client_preference ,project_id: @project_id%>
+		</div>
+	</div>
+>>>>>>> 385ab09d2e5f96ba4a18eb590250ada4beb6899a
 
+<% @all_users.each do|startup| %>
+
+<%= render(partial: '/client/startups', :locals => {:startup => startup}) %>
+
+<<<<<<< HEAD
 				Stengel had become famous for his humorous and sometimes disjointed way of speech while with the Yankees, and these skills of showmanship served the expansion Mets well when they hired him in late 1961. He promoted the team tirelessly, as well as managing it to a 40–120 win–loss record, the most losses of any 20th century MLB team. The team finished last all four years he managed it, but was boosted by considerable support from fans. Stengel retired in 1965, and became a fixture at baseball events for the rest of his life. Although Stengel is sometimes described as one of the great managers in major league history, others have contrasted his success during the Yankee years with his lack of success at other times, and concluded he was only a good manager when given good players. Stengel is remembered as one of the great characters in baseball history.
 			</p>
 		</div>
 		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p_req">
 		</div>
 	</div>
+=======
+<script type="text/javascript">
+	$(document).ready(function(){
+		var count=0;
+		$("#show_insta_<%= startup.user.id %>").click(function(){
+			if(count==0)
+			{
+				$("#brief_<%= startup.user.id %>").css("display","none");
+				$("#insta_<%= startup.user.id %>").css("display","inline");
+				count++;	
+			}
+			else
+			{
+				$("#insta_<%= startup.user.id %>").css("display","none");
+				$("#brief_<%= startup.user.id %>").css("display","inline");
+				count--;
+			}
+			
+		});
+	})
+</script>
+
+<%end%>
+<%end%>
+>>>>>>> 385ab09d2e5f96ba4a18eb590250ada4beb6899a
 </div>
-</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var id_array=[];
+		var tep=0;
+		var pos=0;
+		var change=0;
+		var count=0;
+		$(".pref").click(function(){
+			var id = $(this).attr('id');
+			
+			while(temp!=count)
+			{
+				if(id==id_array[temp])
+				{
+					change=1;
+					pos=temp;
+					break;
+				}
+				temp++;
+			}
+			if(change==1)
+			{
+				$(this).text("preferences");
+				for(var i=temp;i<count;i++)
+				{
+					id_array[i]=id_array[i+1];
+					var str1=id_array[i];
+					var str2 ="#";
+					var str3=str2.concat(str1);
+					$(str3).text(i+1);
+				}
+				count--;
+				change=0;
+			}
+			else
+			{
+				id_array[count]=id;
+				count++;
+				$(this).text(count);
+			}
+			temp=0;
+		});
+
+	
+
+
+
+
+	$("#form").submit( function(eventObj) {
+		
+		// for(i=0;i<id_array.length;i++)
+		// {
+		// 	var str1="[";
+		// 	var str2="]";
+		// 	var str3=str1.concat(id_array[i]);
+		// 	var str4=str3.concat(str2);
+		// 	id_array[i]=str4;
+		// }
+		// alert(id_array);
+		console.log(id_array)
+      $('<input />').attr('type', 'hidden')
+          .attr('name', "user_id")
+          .attr('value', id_array)
+          .appendTo('#form');
+      $('<input />').attr('type', 'hidden')
+          .attr('name', "project_id")
+          .attr('value', <%= @project_id%>)
+          .appendTo('#form');
+      $('<input />').attr('type', 'hidden')
+          .attr('name', "startup_status_id")
+          .attr('value', 3)
+          .appendTo('#form');
+  });
+
+
+	})
+</script>
