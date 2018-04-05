@@ -1,18 +1,19 @@
 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6" style="padding: 10px;">
 	<div class="border">
-		<div id="brief_<%= startup.user.id %>">
+		
 			<div class="startup_brief">
 				<img src="/assets/client_1.jpg" class="client_pic">
-				<p><%= startup.user.company_name %></p>
+				<p><%= bid.user.company_name %></p>
 			</div>
+			<div id="brief_<%= bid.user.id %>">
 			<div class="startup_details" >
 				<hr style="margin-top: 0px;">
 				<p>Rating</p>
 				<hr>
-				<p>Experience : <%= startup.user.experience %></p>
+				<p>Experience : <%= bid.user.experience %></p>
 
 				<hr>
-				<%@technologies=startup.user.technologies.ids %>
+				<%@technologies=bid.user.technologies.ids %>
 				<%@technologies.each do|tech|%>
 				<span><%= Technology.find(tech).technology_name%></span>
 				<%end%>
@@ -21,24 +22,24 @@
 			</div>
 		</div>
 		
-		<div id="insta_<%= startup.user.id %>" style="display: none;">
-			<%startup.installments.each do |insta|%>
+		<div id="insta_<%= bid.user.id %>" style="display: none;">
+			<%bid.installments.each do |insta|%>
 				<div>
 					<img src="/assets/money_icon.png" height="40px" width="40px" style="padding: 5px;">
-		  			<%= insta.budget %>
+		  			Rs.<%= insta.budget %>
 		
 		  			<img src="/assets/clock.png" height="40px" width="40px" style="padding: 5px;">
-		  			<%= insta.time %>
+		  			<%= insta.time %> Weeks
 		  			<br>
 		  			
-		  				<%= raw insta.details %>
+		  				<p style="word-break: break-word"><%= raw insta.details %></p>
 		  			<hr>
 		  				
 		  			
 				</div>
 			<%end%>
 		</div>
-		<button class="pref" id="<%= startup.user.id %>">Preferences</button>
-		<button class="pref" id="show_insta_<%= startup.user.id %>">Installments</button>
+		<button class="pref" id="<%= bid.user.id %>">Preferences</button>
+		<button class="" id="show_insta_<%= bid.user.id %>">Installments</button>
 	</div>
 </div>

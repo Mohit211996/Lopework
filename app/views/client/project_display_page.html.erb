@@ -1,9 +1,13 @@
 <div class="container">
-	
+
 <%= render(partial: '/client/project_details', :locals => {:project => @project}) %>
 
+<% if @project.project_status_id == 2%>
 
-<%if @total == 0%>
+Under bidding
+
+<% elsif @project.project_status_id == 1%>
+
 <div class="row" style="padding: 10px;">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 h_bidding">
 			Biddings 
@@ -11,40 +15,97 @@
 		</div>
 	</div>
 
-<% @all_users.each do|startup| %>
+<% @project.bids.each do|bid| %>
 
-<%= render(partial: '/client/startups', :locals => {:startup => startup}) %>
+<%#= render(partial: '/client/startups', :locals => {:bid => bid}) %>
 
-<script type="text/javascript">
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6" style="padding: 10px;">
+	<div class="border">
+		
+			<div class="startup_brief">
+				<img src="/assets/client_1.jpg" class="client_pic">
+				<p><%= bid.user.company_name %></p>
+			</div>
+			<div id="brief_<%= bid.user.id %>">
+			<div class="startup_details" >
+				<hr style="margin-top: 0px;">
+				<p>Rating</p>
+				<hr>
+				<p>Experience : <%= bid.user.experience %></p>
+
+				<hr>
+				<%@technologies=bid.user.technologies.ids %>
+				<%@technologies.each do|tech|%>
+				<span><%= Technology.find(tech).technology_name%></span>
+				<%end%>
+				<hr>
+				
+			</div>
+		</div>
+		
+		<div id="insta_<%= bid.user.id %>" style="display: none;">
+			<%bid.installments.each do |insta|%>
+				<div>
+					<img src="/assets/money_icon.png" height="40px" width="40px" style="padding: 5px;">
+		  			Rs.<%= insta.budget %>
+		
+		  			<img src="/assets/clock.png" height="40px" width="40px" style="padding: 5px;">
+		  			<%= insta.time %> Weeks
+		  			<br>
+		  			
+		  				<p style="word-break: break-word"><%= raw insta.details %></p>
+		  			<hr>
+		  				
+		  			
+				</div>
+			<%end%>
+		</div>
+		<button class="pref" id="<%= bid.user.id %>">Preferences</button>
+		<button class="" id="show_insta_<%= bid.user.id %>">Installments</button>
+	</div>
+</div>
+
+<!-- <script type="text/javascript">
 	$(document).ready(function(){
-		var count=0;
-		$("#show_insta_<%= startup.user.id %>").click(function(){
-			if(count==0)
+		var count_temp=0;
+		$("#show_insta_<%= bid.user.id %>").click(function(){
+			if(count_temp==0)
 			{
-				$("#brief_<%= startup.user.id %>").css("display","none");
-				$("#insta_<%= startup.user.id %>").css("display","inline");
-				count++;	
+				$("#brief_<%= bid.user.id %>").css("display","none");
+				$("#insta_<%= bid.user.id %>").css("display","inline");
+				count_temp++;	
 			}
 			else
 			{
-				$("#insta_<%= startup.user.id %>").css("display","none");
-				$("#brief_<%= startup.user.id %>").css("display","inline");
-				count--;
+				$("#insta_<%= bid.user.id %>").css("display","none");
+				$("#brief_<%= bid.user.id %>").css("display","inline");
+
+				count_temp--;
 			}
 			
 		});
 	})
-</script>
+</script> -->
 
 <%end%>
+ 
+<% elsif @project.project_status_id == 3%>
+
+
+
+<% elsif @project.project_status_id == 4%>
+Completed
 <%end%>
+
+
 </div>
 
 
 <script type="text/javascript">
+
 	$(document).ready(function(){
 		var id_array=[];
-		var tep=0;
+		var temp=0;
 		var pos=0;
 		var change=0;
 		var count=0;
@@ -90,30 +151,27 @@
 
 
 	$("#form").submit( function(eventObj) {
-		
-		// for(i=0;i<id_array.length;i++)
-		// {
-		// 	var str1="[";
-		// 	var str2="]";
-		// 	var str3=str1.concat(id_array[i]);
-		// 	var str4=str3.concat(str2);
-		// 	id_array[i]=str4;
-		// }
-		// alert(id_array);
-		console.log(id_array)
+
       $('<input />').attr('type', 'hidden')
           .attr('name', "user_id")
           .attr('value', id_array)
           .appendTo('#form');
       $('<input />').attr('type', 'hidden')
           .attr('name', "project_id")
-          .attr('value', <%= @project_id%>)
+          .attr('value', <%= @project.id%>)
           .appendTo('#form');
       $('<input />').attr('type', 'hidden')
           .attr('name', "startup_status_id")
           .attr('value', 3)
           .appendTo('#form');
-  });
+
+          debugger
+       
+
+  	});
+
+
+
 
 
 	})
