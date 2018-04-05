@@ -24,20 +24,20 @@ class ClientPreferencesController < ApplicationController
   # POST /client_preferences
   # POST /client_preferences.json
   def create
-    byebug
-
-   @temp = params[:user_id].length
-   @temp=@temp-1;
-   @count =0 
-  while @temp>=@count
+  @temp = params[:user_id].split(",");
+  
+  @temp.each_with_index do |temp, index|
     @client_preference = ClientPreference.new
     @client_preference.project_id=params[:project_id];
+    if(index==0)
+      @client_preference.startup_status_id=4;
+    else
     @client_preference.startup_status_id=params[:startup_status_id];
-    @client_preference.user_id=params[:user_id][@count];
+    end
+    @client_preference.user_id=temp;
     @client_preference.save
-    @count=@count+2;
   end
-    
+      
 
     respond_to do |format|
         format.html { redirect_to @client_preference, notice: 'Client preference was successfully created.' }
@@ -77,6 +77,6 @@ class ClientPreferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_preference_params
-      params.permit(:id,:project_id,:startup_status_id,:user_ids => [])
+      params.permit(:id,:project_id,:startup_status_id,:user_id)
     end
 end

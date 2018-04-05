@@ -30,7 +30,7 @@
 	</div> 
 	
 	<div class="accept_btn">
-		<%= link_to 'Accept'%>
-	<%= link_to 'Reject'%>
+		<%= link_to 'Accept',startup_job_offer1_path(:decide => 'accept',:project_id => project.id),method: :post %>
+	<%= link_to 'Reject',startup_job_offer1_path(:decide => 'reject',:project_id => project.id ),method: :post%>
 	</div>
 	<br>

@@ -2,7 +2,7 @@
 
 		<div class="pro">
 		<h3><b><%= project.name %></b></h3>
-		<hr>
+		<hr style="margin-top: 0px; margin-bottom: 0px;">
 	</div>
 	
 	<div>
@@ -18,7 +18,7 @@
 	<div>
 		<b>Total Time: </b><%= project.time %> weeks
 	</div>
-<hr>
+<hr style="margin-top: 0px;">
 	<div class="job_offer1">
 
 		<%= link_to 'View Details',:controller=> "startup",:action=> "project_page", :project => project %>
