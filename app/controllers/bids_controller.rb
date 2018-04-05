@@ -15,9 +15,13 @@ class BidsController < ApplicationController
   # GET /bids/new
   def new
     @bid = Bid.new
-
-     @bid.installments.new
-
+@bid.installments.new
+#     if bid.project_id.empty?
+#   @bid = Bid.new
+# @bid.installments.new
+# else
+#   redirect_to startup_path
+# end
 end
 
 
@@ -33,7 +37,7 @@ end
 
     respond_to do |format|
       if @bid.save
-        format.html { redirect_to :controller =>'startup',:action =>'project_page' , notice: 'Bid was successfully created.' }
+        format.html { redirect_to bids_url , notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bids }
       else
         format.html { render :new }
