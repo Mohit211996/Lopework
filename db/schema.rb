@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402084229) do
+ActiveRecord::Schema.define(version: 20180404054103) do
 
   create_table "approvals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "approval_name"
@@ -105,6 +105,15 @@ ActiveRecord::Schema.define(version: 20180402084229) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "startup_projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_startup_projects_on_project_id"
+    t.index ["user_id"], name: "index_startup_projects_on_user_id"
+  end
+
   create_table "startup_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "startup_status"
     t.datetime "created_at", null: false
@@ -168,6 +177,8 @@ ActiveRecord::Schema.define(version: 20180402084229) do
   add_foreign_key "client_preferences", "projects"
   add_foreign_key "client_preferences", "startup_statuses"
   add_foreign_key "client_preferences", "users"
+  add_foreign_key "startup_projects", "projects"
+  add_foreign_key "startup_projects", "users"
   add_foreign_key "startup_technologies", "technologies"
   add_foreign_key "startup_technologies", "users"
 end

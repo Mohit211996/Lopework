@@ -3,7 +3,7 @@ class Project < ApplicationRecord
 	belongs_to :user
 	belongs_to :project_status
 	has_many :bids
-
+	has_one :startup_project
 	has_many :client_preferences
 	
 	
