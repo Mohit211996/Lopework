@@ -22,8 +22,13 @@ def job_offer
 
 	@startups = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,4)
 	@projects = Project.all;
- #    @startups_bidded = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,3)
- # @bids = Bid.all
+	@bids = Bid.where(user_id:current_user.id)
+	@projects1 = Project.where("project_status_id=? OR project_status_id=?",1,2)
+	
+
+
+	# @client_preference = ClientPreference.where("user_id=? AND project_id",current_user.id,current_user.project)
+	
  end
 	def request_method
 		@client_preference = ClientPreference.where(project_id: params[:project_id], user_id: current_user.id).first 

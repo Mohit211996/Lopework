@@ -11,7 +11,7 @@ has_one :role
 has_many :startup_technologies, :dependent => :destroy
 has_many :technologies, through: :startup_technologies
 has_many :projects
-has_one :bid
+has_many :bids
 has_many :startup_projects
 has_one :client_preference
 # validates_uniqueness_of :user_id, :scope => [:project_id, :bid_id]
