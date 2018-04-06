@@ -15,6 +15,9 @@ class InstallmentsController < ApplicationController
   # GET /installments/new
   def new
     @installment = Installment.new
+
+end
+
   end
 
   # GET /installments/1/edit
@@ -24,7 +27,6 @@ class InstallmentsController < ApplicationController
   # POST /installments
   # POST /installments.json
   def create
-    byebug
     @installment = Installment.new(installment_params)
     respond_to do |format|
       if @installment.save

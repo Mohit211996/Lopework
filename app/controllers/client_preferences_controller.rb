@@ -42,7 +42,7 @@ class ClientPreferencesController < ApplicationController
       
 
     respond_to do |format|
-        format.html { redirect_to @client_preference, notice: 'Client preference was successfully created.' }
+        format.html { redirect_to :controller => 'client', :action => 'index', notice: 'Client preference was successfully created.' }
         format.json { render :show, status: :created, location: @client_preference }
     end
   end

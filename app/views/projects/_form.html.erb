@@ -5,7 +5,7 @@
    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pro_form">
     <h2 style="text-align: center;">New Project</h2>
     
-<%= form_with(model: project, local: true) do |form| %>
+<%= form_with(model: project, local: true,html: {:id => 'projects'} ) do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -20,16 +20,16 @@
  
     <%= form.label :name %>
    
-  <%= form.text_field :name %>
+  <%= form.text_field :name,:required => true, :id => 'name' %>
 <% @start = StartupTechnology.new %>
 <% @technology = Technology.all %>
  
      <%= form.label :technology_ids %>
    
-<%= form.collection_select :technology_id, @technology,:id, :technology_name,{} %>
+<%= form.collection_select :technology_id, @technology,:id, :technology_name,{}, :id =>'technology_id',:required => true %>
    
  <br>
-
+<br>
 
 
  
@@ -40,13 +40,13 @@
   <%= form.hidden_field :project_status_id, :value => '1' %>
   
     <%= form.label :requirement %>
-  <%= form.cktext_area :requirement,:class => 'ckeditor' %> 
+  <%= form.cktext_area :requirement,:class => 'ckeditor', :required => true %> 
   
     <%= form.label :budget %>
-  <%= form.text_field :budget %>
+  <%= form.text_field :budget, :id =>'budget',:required => true %>
   
     <%= form.label :time %>
-   <%= form.text_field :time %>
+   <%= form.text_field :time, :id =>'time',:required => true%>
   
   <div class="actions">
     <%= form.submit %>
@@ -58,3 +58,55 @@
 </div>
 <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
     </div>
+    <script type="text/javascript">
+  
+  $(document).ready(function(){
+    $('#projects').validate({
+
+      
+    });
+  
+    $("#name").rules("add",{
+      required: true,
+      minlength: 2,
+      messages: {
+        required: "Project name is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+    $("#budget").rules("add",{
+      required: true,
+      minlength: 2,
+      messages: {
+        required: "budget is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+    $("#time").rules("add",{
+      required: true,
+      minlength: 2,
+      messages: {
+        required: "time is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+$(".ckeditor").rules("add",{
+      required: true,
+      minlength: 200,
+      messages: {
+        required: "requirement is mandatory",
+        minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+      }
+    });
+
+    $("#technology_id").rules("add",{
+      required: true,
+      messages: {
+        required: "Select atleast one"
+      }
+    });
+
+
+  });
+
+</script>

@@ -3,30 +3,59 @@
 @import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre');
 @import url('https://fonts.googleapis.com/css?family=Limelight');
 @import url('https://fonts.googleapis.com/css?family=Lora');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+.error {
+  background-color: #69B9A9;
+  display: block;
+  border-radius: 10px;
+}
+
+#client_preference_submit {
+  width: 200px;
+  height: 50px;
+  background-color: #284949;
+  display: inline-block;
+  float: right;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+#client_preference_submit:hover {
+  box-shadow: 0px 5px 5px 0px #A9BCCD;
+}
 
 .text {
   padding: 0px;
 }
 .text p {
   color: #F1C688;
+  font-family: 'PT Serif', serif;
+
 }
 
 .buttons button {
   background-color: #F1C688;
   border: 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.buttons button:hover {
+  box-shadow: 0px 5px 5px 0px #A9BCCD;
 }
 
 .company_name {
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 40px;
-  display: block;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0px;
+  font-family: 'Source Sans Pro', sans-serif;
   word-break: break-word;
-  position: absolute;
-  background-color: rgba(40, 82, 72,0.6);
-  bottom: 30px;
+  background-color: #284949;
   color: rgb(245, 199, 149);
   /*245, 199, 149*/
   
@@ -75,8 +104,9 @@
 .startup_details span {
   display: inline;
   padding: 4px;
+  border: 1px solid rgb(245, 199,149);
   color: #F1C688;
-  background-color: rgba(245, 199, 149,0.5);
+  background-color: rgba(245, 199, 149,0);
 }
 
 
@@ -86,7 +116,7 @@
   padding-top:10px;
   margin-top: 20px;
   padding: 20px;
-  background-color: white;
+  background-color: #CACCCC;
 
 }
 
@@ -144,6 +174,7 @@
 .inner_bg h3 {
   text-align: center;
   padding-bottom: 7px;
+  margin-top: 0px;
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
 
@@ -186,9 +217,10 @@
   font-weight: 300;
 }
 .h_bidding {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 300;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+
   margin-top: 10px;
 }
 .client_pic {
@@ -714,8 +746,7 @@ input[type=submit]:hover {
  }
  .thumbnail{
   border: 2px blue;
-  border-bottom-style: dotted;
-  
+ background-color: #F5F5F5;
 
  }
  
@@ -724,7 +755,7 @@ input[type=submit]:hover {
 
 }
 .startupindex{
-  background-image: url('/assets/project2.jpg');
+  background-image: url('/assets/com1.jpg');
   background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
@@ -744,21 +775,55 @@ input[type=submit]:hover {
  background-size: cover;
 
 }
+/*.pro{
+   background-image: url('/assets/projecthead.png');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+}*/
+.tog_row{
+ background-image: url('/assets/tog.jpg');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover; 
+
+}
 .pro_form{
   background: rgba(255,255,255,0.3);
   margin-top: 30px;
      margin-bottom: 30px;
 }
 .job_offer>a{
-  color: hotpink;
+  color: black;
   float: right;
   font-size: 15px;
+  margin-top: 20px;
+  text-decoration: none;
 
 }
+.job_offer1>a{
+  color: black;
+  float: right;
+  font-size: 15px;
+  text-decoration: none;
+  margin-top: -20px;
+
+}
+
 .accept_btn{
   float: right;
   margin-bottom: 20px;
+
 }
 .accept_btn>a{
   font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+.create_bid>input[type=submit]{
+  width: auto;
+
+}
+#details_field{
+  width: 100%;
 }
