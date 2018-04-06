@@ -22,9 +22,9 @@ def job_offer
 
 	@startups = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,4)
 	@projects = Project.all;
-
-end
-
+ #    @startups_bidded = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,3)
+ # @bids = Bid.all
+ end
 	def request_method
 		@client_preference = ClientPreference.where(project_id: params[:project_id], user_id: current_user.id).first 
 		if params[:decide]== 'accept'			
@@ -42,7 +42,7 @@ end
 				@client_preference = ClientPreference.find(@temp)
 				@client_preference.update_attribute(:startup_status_id,4)
 			else
-				# dubara project post karana hai
+				# dubara project post karna hai
 			end	
 		end
 		

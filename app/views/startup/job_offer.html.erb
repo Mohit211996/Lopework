@@ -51,8 +51,9 @@
 	<div class="thumbnail">
 <%@temp=@projects.find(startup.project_id)%>
 <%= render(partial: '/startup/form_job_offer',locals: {project: @temp}) %> 
-</div>
 <% end %>
+</div>
+
 
 	<%#= render(partial: '/projects/project_details',locals: {project: @project}) %> 
 	</div>
@@ -67,14 +68,19 @@
   </div>
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
 	<h1 style="text-align: center;">Bidded projects</h1>
-   </div>
+
+<%#  @startups_bidded.each do|startup| %>
+  <%= render(partial: '/startup/form_job_offer2',locals: {project: @temp}) %> 
+<%# end %>
+ </div>
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
   </div>
 </div>
+
 </div>
 
 
-
+</div>
 
 
 <script>
@@ -110,5 +116,4 @@ function showInput() {
 
      
 	
-</div>
  

@@ -698,7 +698,7 @@ input[type=submit]:hover {
      margin-bottom: 30px;
 }
 .job_offer>a{
-  color: hotpink;
+  color: black;
   float: right;
   font-size: 15px;
   margin-top: 20px;
@@ -706,7 +706,7 @@ input[type=submit]:hover {
 
 }
 .job_offer1>a{
-  color: hotpink;
+  color: black;
   float: right;
   font-size: 15px;
   text-decoration: none;

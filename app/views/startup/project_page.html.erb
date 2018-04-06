@@ -2,8 +2,8 @@
 	
 
 
-<div class="row">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="row" style="margin-right: 0px; margin-left: 0px;">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-right: 0px; padding-left: 0px;">
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -58,9 +58,9 @@
        <!--       
 </div> 
  -->
-  <div class="row">
+  <div class="row" >
 
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tog_row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tog_row" style="margin-right: 0px; margin-left: 0px;">
 	<div class="tab">
 <button class="tablinks" onclick="openProject(event, 'Toggle1')">Project</button>
   <button class="tablinks" onclick="openProject(event, 'Toggle2')">Bidding</button>
@@ -84,25 +84,8 @@
   </div>
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
  	<h1 style="text-align: center;">Bid for project</h1>
-   <!--  <form>
-    <label><b>Enter No of installments</b></label>
-    <input type="text" name="message" id="user_input">
-
-  </form>
-
- <input type="submit" onclick="showInput();"><br/>   -->
-   
-  
-	<%= render(partial: '/bids/form',locals: {bid: @bid, project: @project}) %> 
-
-  <%#= render(partial: '/bids/installment_fields',locals: {bid: @bid, project: @project.id}) %> 
-	
-  <%#= link_to "button","#", id: "Button" %>
- <!--  <div id="myForm">
-  <%#=  render(partial: '/bids/form',locals: {bid: @bid, project: @project.id}) %>
-</div> -->
-
-  </div>
+  <%= render(partial: '/bids/form',locals: {bid: @bid, project: @project}) %> 
+</div>
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
   </div>
 </div>

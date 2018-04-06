@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-  <%= form.hidden_field :project_id, :value => project.id %>
+  <%= form.hidden_field :project_id, :value => params[:project_id] %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
 
   <%= form.link_to_add "Add a installment", :installments %>
