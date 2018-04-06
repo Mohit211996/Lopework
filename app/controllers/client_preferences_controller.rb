@@ -24,7 +24,7 @@ class ClientPreferencesController < ApplicationController
   # POST /client_preferences
   # POST /client_preferences.json
   def create
-    byebug
+
     
   @temp = params[:user_id].split(",");
   

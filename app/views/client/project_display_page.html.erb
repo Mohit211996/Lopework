@@ -15,36 +15,61 @@ Under bidding
 		</div>
 	</div>
 
+
 <% @project.bids.each do|bid| %>
 
 <%#= render(partial: '/client/startups', :locals => {:bid => bid}) %>
 
-<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6" style="padding: 10px;">
-	<div class="border">
+	<div class=" col-lg-4 border">
 		
-			<div class="startup_brief">
-				<img src="/assets/client_1.jpg" class="client_pic">
-				<p><%= bid.user.company_name %></p>
+			<div class="startup_brief col-lg-12">
+				<div class="company_name"><%= bid.user.company_name %></div>
 			</div>
-			<div id="brief_<%= bid.user.id %>">
-			<div class="startup_details" >
-				<hr style="margin-top: 0px;">
+			
+			<div class="startup_details col-lg-12" >
+				<div class="col-lg-8 text" style="padding: 0px;">
 				<p>Rating</p>
-				<hr>
+				
 				<p>Experience : <%= bid.user.experience %></p>
 
-				<hr>
+				
 				<%@technologies=bid.user.technologies.ids %>
+				<p>Technologies : </p>
 				<%@technologies.each do|tech|%>
 				<span><%= Technology.find(tech).technology_name%></span>
 				<%end%>
-				<hr>
+			</div>
+			<div class="col-lg-4 buttons">
+
+				<button class="pref" id="<%= bid.user.id %>">Preferences</button>
+		<button class="pref1" id="show_insta_<%= bid.user.id %>" data-toggle="modal" data-target="#myModal_<%= bid.user.id %>" >Installments</button>
+			</div>
+				
 				
 			</div>
-		</div>
 		
-		<div id="insta_<%= bid.user.id %>" style="display: none;">
-			<%bid.installments.each do |insta|%>
+		
+		
+		
+	</div>
+
+
+
+	<div class="modal fade" id="myModal_<%= bid.user.id %>" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><%= bid.user.company_name %></h4>
+         
+        </div>
+        <div class="modal-body">
+
+        	<p class="total_insta">Total installments: <%= bid.installments.count %> | Total budget: Rs. <%= bid.installments.sum(:budget) %> | Total time: <%= bid.installments.sum(:time) %> Weeks</p> 
+        	<hr>
+        	
+        	<%bid.installments.each do |insta|%>
 				<div>
 					<img src="/assets/money_icon.png" height="40px" width="40px" style="padding: 5px;">
 		  			Rs.<%= insta.budget %>
@@ -52,42 +77,28 @@ Under bidding
 		  			<img src="/assets/clock.png" height="40px" width="40px" style="padding: 5px;">
 		  			<%= insta.time %> Weeks
 		  			<br>
-		  			
+		  			<p><b>Description : </b></p>
 		  				<p style="word-break: break-word"><%= raw insta.details %></p>
 		  			<hr>
 		  				
 		  			
 				</div>
-			<%end%>
-		</div>
-		<button class="pref" id="<%= bid.user.id %>">Preferences</button>
-		<button class="" id="show_insta_<%= bid.user.id %>">Installments</button>
-	</div>
-</div>
-
-<!-- <script type="text/javascript">
-	$(document).ready(function(){
-		var count_temp=0;
-		$("#show_insta_<%= bid.user.id %>").click(function(){
-			if(count_temp==0)
-			{
-				$("#brief_<%= bid.user.id %>").css("display","none");
-				$("#insta_<%= bid.user.id %>").css("display","inline");
-				count_temp++;	
-			}
-			else
-			{
-				$("#insta_<%= bid.user.id %>").css("display","none");
-				$("#brief_<%= bid.user.id %>").css("display","inline");
-
-				count_temp--;
-			}
 			
-		});
-	})
-</script> -->
+			<%end%>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+</script> 
 
 <%end%>
+</div>
+
  
 <% elsif @project.project_status_id == 3%>
 
@@ -164,12 +175,9 @@ Completed
           .attr('name', "startup_status_id")
           .attr('value', 3)
           .appendTo('#form');
-
-          debugger
        
 
   	});
-
 
 
 

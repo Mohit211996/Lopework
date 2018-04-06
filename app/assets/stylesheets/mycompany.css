@@ -6,24 +6,80 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+.text {
+  padding: 0px;
+}
+.text p {
+  color: #F1C688;
+}
 
+.buttons button {
+  background-color: #F1C688;
+  border: 0px;
+}
+
+.company_name {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 40px;
+  display: block;
+  word-break: break-word;
+  position: absolute;
+  background-color: rgba(40, 82, 72,0.6);
+  bottom: 30px;
+  color: rgb(245, 199, 149);
+  /*245, 199, 149*/
+  
+}
+
+.pref {
+  width: 100px;
+ height: 40px;
+}
+
+.pref1 {
+    width: 100px;
+  margin-top: 10px;
+ height: 40px;
+}
 
 .border {
-  border:3px solid #CBCBCB;
   padding: 10px;
-  border-radius: 0px;
+  display: inline-block;
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.modal-content {
+  height: 600px;
+   overflow:scroll;
+    overflow-x:hidden;
+}
+
+.total_insta {
+  text-align: center;
+  font-size: 15px;
+}
+
+.modal-title {
+  font-size: 35px;
+  text-align: center;
+}
+
+.startup_details {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #284949;
 }
 
 .startup_details span {
   display: inline;
   padding: 4px;
-  background-color: #CED0D3;
+  color: #F1C688;
+  background-color: rgba(245, 199, 149,0.5);
 }
 
-.startup_details hr {
-  size: 10px;
-  color: black;
-}
+
 
 .requirements {
   border-radius: 15px;
@@ -35,9 +91,12 @@
 }
 
 .startup_brief {
-  /*border:1px solid black;*/
-  text-align: center;
-  padding: 5px;
+  background-image: url('/assets/client_1.jpg');
+  background-position: center-center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  padding: 0px;
 }
 
 .startup_brief p {
@@ -83,13 +142,19 @@
   padding-bottom: 8px;
 }
 .inner_bg h3 {
-  margin: 0px;
+  text-align: center;
   padding-bottom: 7px;
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
 
 }
 .inner_bg p {
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.inner_bg p a {
+  color: black;
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
 }
@@ -127,7 +192,6 @@
   margin-top: 10px;
 }
 .client_pic {
-  border-radius: 50%;
   height: 150px;
   display: inline-block;
   border: 6px solid #E7E9EC;
