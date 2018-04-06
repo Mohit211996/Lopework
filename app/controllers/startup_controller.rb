@@ -25,8 +25,19 @@ def job_offer
 	@bids = Bid.where(user_id:current_user.id)
 	@projects1 = Project.where("project_status_id=? OR project_status_id=?",1,2)
 	
+	 # @bids.each do |project|
 
 
+	 # end
+# 	 if @bids.exists?()
+
+
+# 	 	else
+
+	
+
+
+# end
 	# @client_preference = ClientPreference.where("user_id=? AND project_id",current_user.id,current_user.project)
 	
  end
