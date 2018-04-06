@@ -42,6 +42,7 @@
 .buttons button {
   background-color: #F1C688;
   border: 0px;
+  border-radius: 3px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -116,7 +117,7 @@
   padding-top:10px;
   margin-top: 20px;
   padding: 20px;
-  background-color: #CACCCC;
+  background-color: #F3F5F4;
 
 }
 
@@ -164,7 +165,6 @@
 }
 
 .inner_bg {
-  
   width: 100%;
   padding: 5px;
   display: inline-block;
@@ -174,12 +174,14 @@
 .inner_bg h3 {
   text-align: center;
   padding-bottom: 7px;
-  margin-top: 0px;
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
 
 }
 .inner_bg p {
+  padding-left: 10px;
+  padding-right: 10px;
+  word-spacing: 5px;
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
 }
@@ -192,9 +194,11 @@
 
 .view_button {
   width: 100%;
+  margin-top: 7px;
   background-color: #415D52;
   border:0px;
   border-radius: 5px;
+  padding: 5px;
   color: white;
 }
 .view_button:hover {
