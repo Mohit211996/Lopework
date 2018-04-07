@@ -24,14 +24,12 @@ Rails.application.routes.draw do
  get '/startup', to: 'startup#index' 
  get '/startup/project_page', to: 'startup#project_page', :as => :project_page
  get '/startup/job_offer', to: 'startup#job_offer', :as => :job_offer
- #  get '/bids', to: 'bids#index'
- # post '/bids', to: 'bids#create'
  get '/client/all_bids', to: 'client#all_bidding_page'
  get '/client/project', to: 'client#project_display_page'
  get '/client/project2', to: 'client#project_display_page_2'
  post '/startup/job_offer1', to: 'startup#request_method'
- # get '/bids/new', to: 'bids#new', :as => :new
-  root to:"homes#index"
+ get '/startup/under_bidding_page', to: 'startup#under_bidding_page'
+ root to:"homes#index"
  
 
 
