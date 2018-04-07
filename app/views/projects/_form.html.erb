@@ -1,7 +1,7 @@
-<div class="container-fluid">
-  <div class="row img2">
-    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-    </div>
+<div class="container">
+  <div class="row">
+    
+
    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pro_form">
     <h2 style="text-align: center;">New Project</h2>
     
@@ -26,7 +26,7 @@
  
      <%= form.label :technology_ids %>
    
-<%= form.collection_select :technology_id, @technology,:id, :technology_name,{}, :id =>'technology_id',:required => true %>
+<%= form.collection_select :technology_id, @technology,:id, :technology_name,{}, :id =>'technology_id' %>
    
  <br>
 <br>
@@ -54,10 +54,12 @@
 <% end %>
 
 </div>
-</div>
-</div>
-<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+ <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pro_form1">
+  <h2 style="text-align: center;">Useful Tips</h2>
+      
     </div>
+</div>
+</div>
     <script type="text/javascript">
   
   $(document).ready(function(){

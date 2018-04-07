@@ -285,6 +285,7 @@ body {
 
 
 .footer {
+  padding-top: 20px;
 }
 
 
@@ -796,6 +797,13 @@ input[type=submit]:hover {
   background: rgba(255,255,255,0.3);
   margin-top: 30px;
      margin-bottom: 30px;
+
+}
+.pro_form1{
+  background: #f8f9fc;
+  margin-top: 30px;
+     margin-bottom: 30px;
+     
 }
 .job_offer>a{
   color: black;
@@ -830,4 +838,30 @@ input[type=submit]:hover {
 }
 #details_field{
   width: 100%;
+}
+.lifted-corners.with-handles {
+    margin-top: 1.25rem;
+}
+.lifted-corners {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: .3125rem 1.25rem;
+    margin: .9375rem 0;
+    background: #fff;
+    border-radius: 2px;
+    background-clip: padding-box;
+    min-height: 75px;
+    border: 1px solid #dfe0e3;
+    text-align: center;
+}
+.lifted-corners .handles {
+    width: 100%;
+    background: transparent;
+    margin-top: -0.9375rem;
+    height: 0 !important;
+}
+.lifted-corners>div {
+    text-align: left;
+   
 }
