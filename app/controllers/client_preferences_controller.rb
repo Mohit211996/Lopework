@@ -39,7 +39,9 @@ class ClientPreferencesController < ApplicationController
     @client_preference.user_id=temp;
     @client_preference.save
   end
-      
+  
+  @project_status_updated=Project.find(params[:project_id])  
+  @project_status_updated.update(:project_status_id => 2)  
 
     respond_to do |format|
         format.html { redirect_to :controller => 'client', :action => 'index', notice: 'Client preference was successfully created.' }

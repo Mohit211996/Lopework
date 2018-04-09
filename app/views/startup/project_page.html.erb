@@ -2,78 +2,31 @@
 	
 
 
-<div class="row" style="margin-right: 0px; margin-left: 0px;">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-right: 0px; padding-left: 0px;">
+<div class="row pro_page1" style="height: 400px;">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="/assets/p6.jpg"  style="width:100%;">
-      </div>
-
-      <div class="item">
-        <img src="/assets/p11.jpg" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img src="/assets/p13.jpg" style="width:100%;">
-      </div>
-    </div>
-   </div>
-  </div>
 
 </div>
 
 
-	<!--  <div class="row">
- <div class="container1" id="container1" onclick="onContainer1Click(this)">
-               <div class="switch" id="switch">
-               </div>
-               <div class="label left">Test</div>
-               <div class="label right"">Build</div>
-              </div>
-              <script>
-              	function onContainer1Click (event) {
-                if(event.classList.contains('off')) {
-                event.classList.remove('off');
-                event.classList.add('my');
-                } else {
-                event.classList.add('off');
-                 }
-                   }
-              </script>
-          </div>
-          <div class="row"> -->
+ 
+  <div class="row pro_page" >
 
-<%#= render(partial: '/projects/project_details',locals: {project: @project}) %> 
-         
-       <!--       
-</div> 
- -->
-  <div class="row" >
-
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tog_row" style="margin-right: 0px; margin-left: 0px;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-right: 0px; margin-left: 0px;">
+      
+    
 	<div class="tab">
 <button class="tablinks" onclick="openProject(event, 'Toggle1')">Project</button>
   <button class="tablinks" onclick="openProject(event, 'Toggle2')">Bidding</button>
 </div>
 </div>
-</div>
-<div class="row pro_page">
+ </div> 
+<div class="row pro_page"> 
   
 <div id="Toggle1" class="tabcontent">
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
   </div>
   <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style=" background: rgba(255,255,255,0.8); margin-top: 20px; margin-bottom: 20px;">
-	 <h1 style="text-align: center;">Project</h1> 
+	 
 	<%= render(partial: '/projects/project_details',locals: {project: @project}) %> 
 	</div>
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
@@ -83,7 +36,7 @@
     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
   </div>
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
- 	<h1 style="text-align: center;">Bid for project</h1>
+ 	
   <%= render(partial: '/bids/form',locals: {bid: @bid, project: @project}) %> 
 </div>
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
