@@ -8,21 +8,31 @@
 	<div class="row" >
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="margin-right: 0px; margin-left: 0px;">
-    	<div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 heading">
-    		
+    	<div class=" heading" style="display: inline-block;">
+    		<h1>Projects</h1>
     	</div>
-	<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 tab" style="width: 176px; padding: 0px">
-<button class="tablinks" onclick="openProject(event, 'Toggle1')">Project</button>
-  <button class="tablinks" onclick="openProject(event, 'Toggle2')">Bidding</button>
+	<div class=" tab" style="padding: 0px">
+<button class="tablinks" id="toggle1" onclick="openProject(event, 'Toggle1')">Available</button>
+  <button class="tablinks" onclick="openProject(event, 'Toggle2')">Alloted</button>
 </div>
 </div>
 </div>
+
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="all">
+		<% @projects.each do |project|%>
+		<%= render(partial: '/client/currently_underbidding',:locals => {:project => project}) %>
+		<%end%>
+	</div>
+</div>
+
+
 	
 		<div class="row">
 			<div id="Toggle1" class="tabcontent">
  
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style=" background: rgba(255,255,255,0.8); margin-bottom: 20px;">
-	 <h1 style="text-align: center;">Your Project</h1> 
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+	  
 	 <% @project.each do|project|%>
 	<%= render(partial: '/client/currently_underbidding', :locals => {:project => project}) %>
 	<%end%>
@@ -32,31 +42,14 @@
 <div id="Toggle2" class="tabcontent">
     
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
- 	<h1 style="text-align: center;">Currently Working</h1>
+
  	<% @projects_alloted.each do|project|%>
  <%= render(partial: '/client/currently_working', :locals => {:project => project}) %>
  <%end%>
 </div>
  
 </div>
-	<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 heading">
-		<h2>YOUR PROJECTS</h2>
-	</div>
-	</div>
-		<%# @project.each do|project|%>
-
-			<%#= render(partial: '/client/currently_underbidding', :locals => {:project => project}) %>
-		<%#end%>
-	 -->
-	<!-- <div>
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 heading">
-			<h2>Currently Working</h2>
-		</div>
-		<%# @projects_alloted.each do|project|%>
-
-			<%#= render(partial: '/client/currently_working', :locals => {:project => project}) %>
-		<%#end%>
-	</div> -->
+	
 </div>
 </div>
 
@@ -70,6 +63,7 @@
 	});
     
 function openProject(evt, cityName) {
+	$("#all").css("display","none");
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -93,11 +87,6 @@ function showInput() {
         $(".add_nested_fields").click()
       }
   }
- $(window).load(function() {
-  $("#Toggle1").show();
-
-
  
-});
 </script>
 

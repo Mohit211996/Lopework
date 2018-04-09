@@ -1,5 +1,8 @@
 
-<%= nested_form_for @bid do |form| %>
+
+
+
+<%= nested_form_for @bid,html: {:id => 'bids'} do |form| %>
   <% if bid.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(bid.errors.count, "error") %> prohibited this bid from being saved:</h2>
@@ -15,23 +18,28 @@
   <%= form.hidden_field :project_id, :value => params[:project] %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
 
+
   <%= form.link_to_add "Add a installment", :installments %>
+
 
 
   <% form.fields_for :installments,html: {:id => 'installments'} do |fi|  %>
 
   <div class="my_insta">
     <%= fi.label :time,"Time" %><br>
-    <%= fi.text_field :time, :id => 'time_field',:required => true %>
+    <%= fi.text_field :time, :id => "time_field",:required => true %>
   </div>
   <div class="my_insta">
     <%= fi.label :details,"Details" %><br>
-    <%= fi.text_area :details , :id => 'details_field',:required => true %>
+    <%= fi.text_area :details , :id => "details_field",:required => true %>
   </div>
   <div class="my_insta">
     <%= fi.label :budget,"Budget" %><br>
-    <%= fi.text_field :budget, :id => 'budget_field',:required => true %>
+    <%= fi.text_field :budget, :id => "budget_field",:required => true %>
   </div>
+
+<input type="hidden" id="count"  name="start_count" value="" />
+
 
  <%#= link_to 'Destroy', @installment, method: :delete, data: { confirm: 'Are you sure?' } %>
 
@@ -46,16 +54,31 @@
 <% end %>
 <script type="text/javascript">
    $(document).ready(function(){
-    $('#installments').validate({
-
+    $('#bids').validate({
       
-    });
-    $( "#time_field" ).rules( "add", {
+      });
+
+
+    $.validator.addMethod('positiveNumber',
+          function (value) {
+              return Number(value) > 0;
+          }, 'Enter a positive number');
+
+    $.validator.addMethod('limitNumber',
+          function (value) {
+              return Number(value) < 999;
+          }, 'Enter a valid value');
+    $("#time_field").rules( "add", {
     required: true,
-  messages: {
-    required: "Time is mandatory"
-  }
-  });
+    number: true,
+    positiveNumber: true,
+    limitNumber: true,
+    messages: {
+    required: "Time is mandatory",
+    number: "Time can only be integer"
+    }
+    });
+
     $( "#details_field" ).rules( "add", {
   required: true,
   minlength: 400,
@@ -66,10 +89,26 @@
   });
  $( "#budget_field" ).rules( "add", {
     required: true,
+    number: true,
+    positiveNumber: true,
+    limitNumber: true,
   messages: {
-    required: "Budget is mandatory"
+    required: "Budget is mandatory",
+    number: "Budget can only be integer"
   }
   });
+
+if($('#count').val())
+{
+  var i= $('#count').val();
+}
+else 
+{
+  var i=0;
+}
+
+    
+
 });
 </script>
 
