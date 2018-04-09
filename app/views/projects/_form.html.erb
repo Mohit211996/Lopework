@@ -29,7 +29,6 @@
 <%= form.collection_select :technology_id, @technology,:id, :technology_name,{}, :id =>'technology_id',:required => true %>
    
  <br>
-<br>
 
 
  
@@ -40,7 +39,7 @@
   <%= form.hidden_field :project_status_id, :value => '1' %>
   
     <%= form.label :requirement %>
-  <%= form.cktext_area :requirement,:class => 'ckeditor', :required => true %> 
+  <%= form.cktext_area :requirement,:class => 'ckeditor',:id => 'ckeditor1', :required => true %> 
   
     <%= form.label :budget %>
   <%= form.text_field :budget, :id =>'budget',:required => true %>
@@ -65,6 +64,18 @@
 
       
     });
+
+    $.validator.addMethod('positiveNumber',
+          function (value) {
+              return Number(value) > 0;
+          }, 'Enter a positive number');
+
+    $.validator.addMethod('limitNumber',
+          function (value) {
+              return Number(value) < 99999999999999;
+          }, 'Enter a valid value');
+
+
   
     $("#name").rules("add",{
       required: true,
@@ -77,6 +88,8 @@
     $("#budget").rules("add",{
       required: true,
       minlength: 2,
+      number: true,
+      positiveNumber: true,
       messages: {
         required: "budget is mandatory",
         minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
@@ -85,14 +98,17 @@
     $("#time").rules("add",{
       required: true,
       minlength: 2,
+      number: true,
+      positiveNumber: true,
+      limitNumber: true,
       messages: {
         required: "time is mandatory",
         minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
       }
     });
-$(".ckeditor").rules("add",{
+$("#ckeditor1").rules("add",{
       required: true,
-      minlength: 200,
+      minlength: 400,
       messages: {
         required: "requirement is mandatory",
         minlength: jQuery.validator.format("Please, at least {0} characters are necessary")

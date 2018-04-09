@@ -10,7 +10,22 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
-.error {
+
+
+#details_field {
+  height: 100px;
+}
+#details_field-error {
+  margin-top: 10px;
+}
+#user_technology_ids-error {
+  margin-top: 0px;
+}
+#technology_id-error {
+  margin-top: 10px;
+}
+
+.error1 {
   background-color: #69B9A9;
   display: block;
   border-radius: 10px;
@@ -58,6 +73,7 @@
   word-break: break-word;
   background-color: #284949;
   color: rgb(245, 199, 149);
+  text-transform: uppercase;  
   /*245, 199, 149*/
   
 }
@@ -143,54 +159,64 @@
 }
 
 .card {
+  
   display: table;
   padding: 10px;
+  height: 350px
+  
 }
-.project_preview {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  border: 15px #C8CAC9 solid;
+
+.alignment {
+  position: absolute;
+  bottom: 20px;
   width: 100%;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+.card_background {
   display: table-cell;
-  vertical-align: middle;
-  /*background-color: #021227;*/
-  background-image: url('/assets/bg.jpg');
-  background-position: center-left;
+
+  background-image: 
+  linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+  url('/assets/card_bg_2.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
-}
-.project_preview:hover {
-  box-shadow: 0px 10px 10px 0px #A9BCCD;
-
-}
-
-.inner_bg {
-  width: 100%;
-  padding: 5px;
-  display: inline-block;
-  background-color: rgba(255, 255, 255,0.8);
-  padding-bottom: 8px;
-}
-.inner_bg h3 {
+ background-position: center;
+ background-size: cover;
+ color: white;
   text-align: center;
-  padding-bottom: 7px;
-  font-weight: 600;
-  font-family: 'Roboto', sans-serif;
-
-}
-.inner_bg p {
-  padding-left: 10px;
-  padding-right: 10px;
-  word-spacing: 5px;
-  font-size: 14px;
-  font-family: 'Raleway', sans-serif;
 }
 
-.inner_bg p a {
+.card_background h2 {
+  word-break: break-all;
+  color: white;
+  font-size: 30px;
+   text-transform: uppercase;
+}
+
+.card_background p {
+  font-size: 15px;
+  font-weight: 400px;
+  color: white;
+  display: inline-block;
+}
+
+.card_background button {
+  background-color: #FAD7A0;
+ padding: 5px 10px 5px 10px;
+ letter-spacing: 2px;
   color: black;
-  font-size: 14px;
-  font-family: 'Raleway', sans-serif;
+  border: 0px;
 }
+
+.card_background button:hover {
+  box-shadow: 0px 5px 5px 0px #F5E3C4;
+}
+
 
 .view_button {
   width: 100%;
@@ -396,59 +422,7 @@ body {
 .glysize{
   font-size: 30px;
 }
-/*.button1 {
-   
-    background-color: #F08080; 
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    
-    display: inline-block;
-    -webkit-transition-duration: 0.4s; 
-    transition-duration: 0.4s;
-    cursor: pointer;
-     color: black;
-     float: left;
-     margin-top: 200px;
-    
-    
-    
-}
-.button1>a{
-  color: black;
-  font-size: 30px;
-}
-.button1>a:hover {
-   
-    text-decoration: none;
-    color: black;
-}
-.button2 {
-   
-    background-color: #F08080; 
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    
-    display: inline-block;
-    -webkit-transition-duration: 0.4s; 
-    transition-duration: 0.4s;
-    cursor: pointer;
-     color: black;
-     float: right;
-     margin-top: 200px;
-    
-    
-}
-.button2>a{
-  color: black;
-   font-size: 30px;
-}
-.button2>a:hover {
-   
-    text-decoration: none;
-    color: black;
-}*/
+
 .button2>a{
   color: black;
    font-size: 30px;
@@ -551,17 +525,8 @@ span.icon-bar{
      padding-right: 30px;
      margin-top: 30px;
      margin-bottom: 30px;
-
-
-
 }
-/*@media(max-width: 390px){
-  .log2{
-   
-    width: auto !important;
 
-
-}*/
 .log1{
     width: 360px;
      padding: 1% 0 0;
@@ -651,57 +616,7 @@ input[type=submit]:hover {
 }
 
 }
-/*.col-centered{
-    float: none;
-    margin: 0 auto;
-}
-*/
-/*.container1 {
-  float: right;
-  position: relative;
-  width: 150px;
-  height: 45px;
-  border: thin solid grey;
-  border-radius: 7px;
-  cursor: pointer;
-}
 
-.switch {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  background-color: black;
-  transition: all 0.15s ease;
-  left: 0;
-  z-index: -1;
-}
-
-.container1.off {
-
-  border: thin solid #FFE4C4;
-}
-
-.container1.off .switch {
-  left: 50%;
-  background-color: #FFE4C4;
-}
-
-
-.label {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  text-align: center;
-  color:grey;
-  padding-top: 10px;
-  font-size: 20px;
-}
-
-.label.right {
-  left: 50%;
-}
-
-*/
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -723,7 +638,7 @@ input[type=submit]:hover {
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
-    color: hotpink;
+    color: black;
 
 }
 
@@ -731,17 +646,18 @@ input[type=submit]:hover {
 .tab button:hover {
    
     background-color: black;
+    color: white;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #ccc;
+    background-color: black;
+    color: white;
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
-   
     border-top: none;
 }
  .pro_detail{

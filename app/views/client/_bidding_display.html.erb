@@ -1,0 +1,111 @@
+<% if @project.project_status_id == 1%>
+
+Under bidding
+
+<% elsif @project.project_status_id == 2%>
+
+<div class="row" style="padding: 10px;">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+			<%= render '/client_preferences/form',client_preference: @client_preference ,project_id: @project_id%>
+		</div>
+	</div>
+<div class="error1">
+	<h3  id="error" style="text-align: center;"></h3>
+</div>
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+<% @project.bids.each do|bid| %>
+
+<%#= render(partial: '/client/startups', :locals => {:bid => bid}) %>
+
+
+
+	<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12 border">
+
+		
+			<div class="startup_brief col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							</div>
+			
+			<div class="startup_details col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="company_name"><%= bid.user.company_name %></p></div>
+				<div class="col-lg-8 col-xs-8 col-md-8 col-sm-8 text" style="padding: 0px;">
+				<p>Rating</p>
+				
+				<p>Experience : <%= bid.user.experience %></p>
+
+				
+				<%@technologies=bid.user.technologies.ids %>
+				<p>Technologies : </p>
+				<%@technologies.each do|tech|%>
+				<span><%= Technology.find(tech).technology_name%></span>
+				<%end%>
+			</div>
+			<div class="col-lg-4 col-sm-4 col-md-4 col-xs-4 buttons">
+
+				<button class="pref" id="<%= bid.user.id %>">Preferences</button>
+		<button class="pref1" id="show_insta_<%= bid.user.id %>" data-toggle="modal" data-target="#myModal_<%= bid.user.id %>" >Installments</button>
+			</div>
+				
+				
+			</div>
+		
+		
+		
+		
+	</div>
+
+
+
+	<div class="modal fade" id="myModal_<%= bid.user.id %>" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><%= bid.user.company_name %></h4>
+         
+        </div>
+        <div class="modal-body">
+
+        	<p class="total_insta">Total installments: <%= bid.installments.count %> | Total budget: Rs. <%= bid.installments.sum(:budget) %> | Total time: <%= bid.installments.sum(:time) %> Weeks</p> 
+        	<hr>
+        	
+        	<%bid.installments.each do |insta|%>
+				<div>
+					<img src="/assets/money_icon.png" height="40px" width="40px" style="padding: 5px;">
+		  			Rs.<%= insta.budget %>
+		
+		  			<img src="/assets/clock.png" height="40px" width="40px" style="padding: 5px;">
+		  			<%= insta.time %> Weeks
+		  			<br>
+		  			<p><b>Description : </b></p>
+		  				<p style="word-break: break-word"><%= raw insta.details %></p>
+		  			<hr>
+		  				
+		  			
+				</div>
+			
+			<%end%>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+<%end%>
+</div>
+
+ 
+<% elsif @project.project_status_id == 3%>
+
+
+
+<% elsif @project.project_status_id == 4%>
+Completed
+<%end%>

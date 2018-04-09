@@ -30,8 +30,7 @@ def under_bidding_page
 	@project_under_bidding_ids = @project_under_bidding.select(:project_id)
 	@project_in_client_preferences = ClientPreference.where(:project_id => @project_under_bidding_ids,:user_id => current_user.id).select(:project_id)
 	@project_to_show = @project_under_bidding.where(:project_id => @project_in_client_preferences)
-	byebug
-	
+
 end
 
 def request_method

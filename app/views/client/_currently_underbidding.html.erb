@@ -1,28 +1,18 @@
-
-
- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card">
-  	<div class="project_preview">
-  		<div class="inner_bg">
-		  	<h3><%= project.name %></h3>
-		  	<p>
-		  		<%= raw project.requirement.first(300) %><%=link_to client_project_path(:project_id => project) do%>........ <%end%>
-		  	</p>
-		  	
-		  	<img src="/assets/money_icon.png" height="40px" width="40px" style="padding: 5px;">
-		  	Rs. <%= project.budget %>
-		
-		  	<img src="/assets/clock.png" height="40px" width="40px" style="padding: 5px;">
-		  	<%= project.time %> Weeks
-
-		  	
-		  	<img src="/assets/bids.png" height="40px" width="40px" style="padding: 5px;">
-		  	<%= project.bids.count %>
-		  	<br>
-		  	
-		  	<%=link_to client_project_path(:project_id => project) do%>
-		  	<button class="view_button">view project</button>
-		  	<%end%>
-
-		</div>
-    </div>
+ <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card" >
+	 	<div class="card_background">
+	 		<div class="alignment">
+	 		<h2><%= project.name %></h2>
+	 		
+	 		<p>Budget : Rs. <%= project.budget %></p> |
+	 		<p>Time : <%= project.time %> Weeks</p> |
+	 		<p>Bids : <%= project.bids.count %></p>
+	 		<br>
+	 		<%= link_to client_project_path(:project_id => project) do%>
+	 		<button> View Details </button>
+	 		<%end%>
+	 		</div>
+	 	</div>
+	 	
+	 		
+	 	
   </div>
