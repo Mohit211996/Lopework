@@ -21,7 +21,9 @@
 
   <%= form.link_to_add "Add a installment", :installments, :id =>"add_installment" %>
 
-
+<%#= form.link_to_add  :controller=> "installments" :action=> "new",:installments, :id =>"add_installment"  do%>
+      <!-- <button> Add a installment </button> -->
+      <%#end%>
   <% form.fields_for :installments,html: {:id => 'installments'} do |fi|  %>
 
   <div class="my_insta">
@@ -111,23 +113,20 @@ else
 });
 </script>
 <style type="text/css">
-  .new_bid>input[type=submit]{
-    width: auto;
-     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+ /*.new_bid>input[type=submit]{
+   width: auto;
+   float: right;
   }
-  #add_installment{
-    
+#add_installment{
+     width: 100%;
     color: black;
     text-decoration: none;
-     position: absolute;
+     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
 
-  }
+
+  }*/
 </style>

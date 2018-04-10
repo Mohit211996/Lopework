@@ -734,6 +734,22 @@ background-color: black;
  background-size: cover;
 
 }
+.new_bid>input[type=submit]{
+   width: auto;
+   float: right;
+  }
+#add_installment{
+     width: 100%;
+    color: black;
+    text-decoration: none;
+     position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+
+  }
 .row{
   margin-left: 0px;
   margin-right: 0px;
@@ -742,6 +758,15 @@ background-color: black;
  
  
   background-image: url('/assets/project.jpg');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
+}
+.pro_index{
+ 
+ 
+  background: linear-gradient(0deg,rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url('/assets/project_index.jpeg');
   background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
