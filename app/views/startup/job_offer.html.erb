@@ -1,92 +1,89 @@
-<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
-	
+<div class="top_image1">
 
-
-<div class="row pro_page1" style="height: 300px;">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-right: 0px; margin-left: 0px; text-align: center; position: relative;">
-      
-    
-  <div class="centered">
-    <h1 style=" color: white;">Welcome to Lopework,Where Startups Grow</h1>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 outer_div">
+    <div class="div_with_text" style="">
+<h1 style=" color: white;">Welcome to Lopework,Where Startups Grow</h1>
     <h4 style="color: white;">India’s largest community of scalable tech startups.
 
 </h4>
-<div class="tab">
-<button class="tablinks" onclick="openProject(event, 'Toggle1')">Selected Projects</button>
-  <button class="tablinks" onclick="openProject(event, 'Toggle2')">Bidded Projects</button>
-</div>
-</div>
-</div>
-
-</div>
-<!-- <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-	<div class="tab">
-
-  <button class="tablinks" onclick="openProject(event, 'Toggle1')">Selected Projects</button>
-  <button class="tablinks" onclick="openProject(event, 'Toggle2')">Bidded Projects</button>
-</div>
-</div>
-</div> -->
-<div class="row pro_page">
-  
-<div id="Toggle1" class="tabcontent">
-  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+      <button class="click_me1" id="underbidding">Selected Projects</button>
+      &nbsp;&nbsp;
+      <button class="click_me1" id="working">Bidded Projects</button>
+    </div>
+    
   </div>
-  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-	<h1 style="text-align: center;">Selected Projects</h1>
-	<% @startups.each do|startup| %>
-
-	<div class="thumbnail">
-   <!--  <h1 style="text-align: center;">Biddeded Projects</h1> -->
+  
+</div>
+<div class="container">
+  <div class="row"> 
+  <div id="tab1">
+ <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+ </div>
+  <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" > 
+    <h1 style="text-align: center;">Selected Projects</h1>
+  <% @startups.each do|startup| %>
+<div class="thumbnail">
 <%@temp=@projects.find(startup.project_id)%>
 <%= render(partial: '/startup/form_job_offer',locals: {project: @temp}) %> 
+</div>
 <% end %>
+ 
+  
 </div>
-
-
-	<%#= render(partial: '/projects/project_details',locals: {project: @project}) %> 
-	</div>
-  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-  </div>
-</div>
-
-
-
-	<div id="Toggle2" class="tabcontent">
-    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-  </div>
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
-	<h1 style="text-align: center;">Bidded projects</h1>
-
-<%#  @startups_bidded.each do|startup| %>
-  <%= render(partial: '/startup/form_job_offer2',locals: {project: @temp}) %> 
-<%# end %>
+<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
  </div>
-  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-  </div>
 </div>
+<br>
+<div class="row"> 
+<div id="tab2">
+    <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+ </div>
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
+      <h1 style="text-align: center;">Bidded Projects</h1> 
+      <% @project_available.each do|startup| %>
+      <div class="thumbnail">
+<%= render(partial: '/startup/form_job_offer2',locals: {project: startup}) %> 
+</div>
+<% end %>
+ <% @project_to_show.each do|startup| %>
+      <div class="thumbnail">
+<%= render(partial: '/startup/form_job_offer2',locals: {project: startup}) %> 
+</div>
+<% end %>
 
 </div>
-
+<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+ </div>
+ 
+</div>
+</div>
+	
 
 </div>
 
 
 <script>
-function openProject(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
+$(document).ready(function() {
+    setTimeout(function(){
+      $('.notice_wrapper').fadeOut("slow",function(){
+        $(this).remove();
+      })
+    },2000);
+
+    $("#underbidding").click(function(){
+      $("#all").css("display","none");
+      $("#tab1").css("display","block");
+
+      $("#tab2").css("display","none");
+    });
+
+    $("#working").click(function(){
+      $("#all").css("display","none");
+
+      $("#tab1").css("display","none");
+      $("#tab2").css("display","block");
+    });
+});
 function showInput() {
       var count = $("#user_input").val()
      
@@ -99,7 +96,7 @@ function showInput() {
       }
   }
   $(window).load(function() {
-  $("#Toggle1").show();
+  $("#tab1").show();
  
 });
 </script>
