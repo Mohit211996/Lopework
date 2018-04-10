@@ -19,7 +19,7 @@
   <%= form.hidden_field :user_id, :value => current_user.id %>
 
 
-  <%= form.link_to_add "Add a installment", :installments, :id =>"add_installment" %>
+  
 
 
   <% form.fields_for :installments,html: {:id => 'installments'} do |fi|  %>
@@ -46,9 +46,10 @@
 
 <br>
 <br>
-  <div class="actions new_bid">
-    <%= form.submit %>
-  </div>
+  <div style="width: 100%">
+    <%= form.link_to_add "Add a installment", :installments, :id =>"add_installment"%>
+    <%= form.submit "Create Bid",:class =>"newbid" %>
+ </div>
 
 <% end %>
 <script type="text/javascript">

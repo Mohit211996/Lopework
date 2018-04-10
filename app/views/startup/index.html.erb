@@ -1,16 +1,38 @@
-
-	<div class="container-fluid startupindex">
-		
-		<div class="row">
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-					</div>
-		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-	
 <% if notice %>
 <div class="notice_wrapper">
   <p id="notice"><%= notice %></p>
 </div>
+<%end %>
+	
+		<div class="row pro_index"  style="height: 400px;">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-right: 0px; margin-left: 0px;">
+			<h1 style="text-align: center; color: white;">	<%= current_user.company_name %></h1>
+			</div>
+			
+		</div>
+		<div class="container">
+		<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="all">
+		<% @projects.each do|project| %>
+	
+<%= render(partial: '/startup/project_preview',locals: {project: project}) %> 
+
+
+
 <% end %>
+</div>
+</div>
+		
+		<!-- <div class="row">
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+					</div>
+		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+	
+<%# if notice %>
+<div class="notice_wrapper">
+  <p id="notice"><%= notice %></p>
+</div>
+<%# end %>
 
 <div>
 	<h2 style="text-align: center;">
@@ -19,18 +41,19 @@
 </div>
 
 
-<% @projects.each do|project| %>
+<%# @projects.each do|project| %>
 	<div class="thumbnail">
 
-<%= render(partial: '/startup/project_preview',locals: {project: project}) %> 
+<%#= render(partial: '/startup/project_preview',locals: {project: project}) %> 
 </div>
 
 
-<% end %>
+<%# end %>
 </div>
 		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
 			</div>
-</div>
+</div> -->
+
 
 </div>
 <script type="text/javascript">

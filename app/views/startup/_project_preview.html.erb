@@ -1,8 +1,27 @@
 
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card" >
+	 	<div class="card_background">
+	 		<div class="alignment">
+	 		<h2><%= project.name %></h2>
+	 		
+	 		<p><img src="/assets/email1.png" height="30" width="30" style="padding: 5px;"><%= project.user.email %> </p> |
+	 		<p><img src="/assets/tech4.png" height="30" width="30" style="padding: 5px;"><%= project.technology.technology_name %> |
+	 		<p><img src="/assets/clock.png" height="30" width="30" style="padding: 5px;"><%= project.time %> weeks</p>
+	 		<br>
+	 		<%= link_to  :controller=> "startup",:action=> "project_page", :project => project  do%>
+	 		<button> View Details </button>
+	 		<%end%>
+	 		</div>
+	 	</div>
+	 	
+	 		
+	 	
+  </div>
 
+<!-- 
 		<div class=" row pro">
 		<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="font-size: 25px;">	
-		<%= link_to :controller=> "startup",:action=> "project_page", :project => project do%><%= project.name %><% end %>
+		<%#= link_to :controller=> "startup",:action=> "project_page", :project => project do%><%#= project.name %><%# end %>
 		
 	</div>
 	<div lass="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding-right: 15px; padding-left: 15px;">
@@ -26,12 +45,12 @@
 	</div>
 	
 	<div><b>Requirement:</b>
-		<%= raw project.requirement.first(300) %>...........
+		<%#= raw project.requirement.first(300) %>...........
 	</div>
 	
 <hr style="margin-top: 0px;">
 	
-
+ -->
 		<%#= link_to :controller=> "startup",:action=> "project_page", :project => project do %>
 	<!-- <button class="view_button1">View Details</button> -->
 		  	<%#end%>
