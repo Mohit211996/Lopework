@@ -394,7 +394,12 @@ body {
 
   }
    .img2 {
- background-image: url('/assets/7.jpg');
+ background-image: 
+ linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+ url('/assets/sign_up.jpg');
  background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
@@ -507,7 +512,7 @@ span.icon-bar{
      padding: 1% 0 0;
      margin: auto;
       position: relative;
-     background: rgba(255,255,255,0.3);
+     background: rgba(255,255,255,0.7);
      padding-left: 30px;
      padding-right: 30px;
      margin-top: 30px;

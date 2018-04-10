@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
 
 
-
+get 'main', to: 'homes#front_page'
  get '/client', to: 'client#index'
  get '/startup', to: 'startup#index' 
  get '/startup/project_page', to: 'startup#project_page', :as => :project_page

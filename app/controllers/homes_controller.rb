@@ -4,4 +4,7 @@ class HomesController < ApplicationController
 		@client_count=User.where(role_id: '2').count
 		@all = User.all.count
 	end
+	def font_page
+		
+	end
 end
