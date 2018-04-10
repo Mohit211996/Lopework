@@ -389,6 +389,7 @@ body {
  
 
   }
+
   .img1 {
  background-image: url('/assets/2.jpg');
  background-repeat: no-repeat;
@@ -521,6 +522,19 @@ span.icon-bar{
 
 
 }
+.inst_form{
+    
+     padding: 1% 0 0;
+     margin: auto;
+      position: relative;
+     background: rgba(255,255,255,0.3);
+     padding-left: 30px;
+     padding-right: 30px;
+     margin-top: 30px;
+     margin-bottom: 30px;
+
+
+}
 .log2{
     width: auto;
      padding: 1% 0 0;
@@ -624,10 +638,24 @@ input[type=submit]:hover {
 
 .tab {
     overflow: hidden;
-    background-color: #f1f1f1;
-    float: right;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
+   float: left;
+   margin:0 5px;
+display: inline-block;
+    color: #616576;
+    background: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
    
+   
+    text-align: center;
+    border: none;
+    margin-top: 170px;
 }
 
 /* Style the buttons inside the tab */
@@ -653,7 +681,8 @@ input[type=submit]:hover {
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: black;
+
+background-color: black;
     color: white;
 }
 
@@ -693,12 +722,28 @@ input[type=submit]:hover {
  background-size: cover;
 
 }
+.add_inst{
+  background-image: url('/assets/coin2.jpeg');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
+}
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
 .pro_page{
  
- background-color: #f1f1f1;
+ 
+  background-image: url('/assets/project.jpg');
+  background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
 }
 .pro_page1{
-  background-image: url('/assets/project_page.jpg');
+  background: linear-gradient(0deg,rgba(20,20,20,0.5),rgba(20,20,20,0.5)),url('/assets/project_page.jpg');
   background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
@@ -770,4 +815,20 @@ input[type=submit]:hover {
 .pro>a:hover{
   color: black;
   text-decoration: none;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+.project_desc{
+  background-image: url('/assets/project_desc.jpg');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ 
 }

@@ -19,8 +19,7 @@
   <%= form.hidden_field :user_id, :value => current_user.id %>
 
 
-  <%= form.link_to_add "Add a installment", :installments %>
-
+  <%= form.link_to_add "Add a installment", :installments, :id =>"add_installment" %>
 
 
   <% form.fields_for :installments,html: {:id => 'installments'} do |fi|  %>
@@ -111,4 +110,24 @@ else
 
 });
 </script>
+<style type="text/css">
+  .new_bid>input[type=submit]{
+    width: auto;
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
+  }
+  #add_installment{
+    
+    color: black;
+    text-decoration: none;
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+  }
+</style>
