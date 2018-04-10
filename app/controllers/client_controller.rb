@@ -4,6 +4,7 @@ class ClientController < ApplicationController
 		@projects = Project.where(:user_id => current_user.id)
 		@project= Project.where(:user_id => current_user.id,:project_status => 1)
 		@projects_alloted = Project.where(:user_id => current_user.id,:project_status => 3)
+		
 
 	end
 

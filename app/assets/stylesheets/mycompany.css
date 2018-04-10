@@ -2,6 +2,72 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
 
+#tab1 {
+  display: none;
+}
+
+#tab2 {
+  display: none;
+}
+
+.top_image {
+  height: 400px; 
+  background: 
+  linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+  url('/assets/top_image.jpg');
+  background-position: left-center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.outer_div {
+  display: table;
+  height: 100%;
+}
+
+.div_with_text {
+  text-align: center; 
+  display: table-cell; 
+  color: white;
+  vertical-align: middle;
+}
+
+.click_me {
+  display: inline-block;
+  padding: 5px 20px 5px 20px;
+  background-color: #DCDBD9;
+  border: 0px;
+  color: black;
+  letter-spacing: 1.5px;
+  word-spacing: 2px;
+}
+
+.click_me:hover {
+  box-shadow: 0px 3px 3px 0px #F1F0EE;
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
+.benifits li {
+  font-size: 17px; 
+  color: white; 
+  padding-bottom: 30px;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+
+.signup {
+  text-align: center; 
+  color: white;
+  margin: 0px;
+  padding: 20px;
+}
+
 
 #details_field {
   height: 100px;
