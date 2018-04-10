@@ -14,11 +14,15 @@ class ClientController < ApplicationController
 		@project=Project.find(params[:project_id])
 		@client_preference = ClientPreference.new
 		@startup
-		if @project.project_status == 3
-			@startup_id=StartupProject.where(:project_id => params[:project_id]).first.startup_id
-			@startup = User.find(@startup_id)
+		if @project.project_status.id == 3
+			
+			@startupid=StartupProject.where(:project_id => params[:project_id]).first.user_id
+			@startup = User.find(@startupid)
+			@install = @startup.bids.where(:project_id => params[:project_id]).first.installments
+			@techno = Project.find(params[:project_id]).technology
+			
 		end
-
+		
 	end
 	def project_display_page_2
 		@client_preference = ClientPreference.new

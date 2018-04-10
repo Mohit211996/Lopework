@@ -53,6 +53,17 @@
 <% end %>
 <script type="text/javascript">
    $(document).ready(function(){
+
+    $("#add_installment").click(function(){
+      $('#add_company_div').before($("#add_company_div").clone().attr("id","add_company_div" + i));
+       $("#add_company_div" + i + " :input").each(function(){
+          $(this).attr("name",$(this).attr("name") + i);
+          $(this).attr("id",$(this).attr("id") + i);
+          $(this).attr("count",i); 
+                 
+          });
+    });
+
     $('#bids').validate({
       
       });
@@ -110,24 +121,3 @@ else
 
 });
 </script>
-<style type="text/css">
-  .new_bid>input[type=submit]{
-    width: auto;
-     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-  }
-  #add_installment{
-    
-    color: black;
-    text-decoration: none;
-     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-
-  }
-</style>

@@ -1,6 +1,12 @@
+<div class="client_text">
+<p> Alloted Time : <%= @project.time%> Weeks | 
+Alloted Budget : Rs.<%= @project.budget%></p>
+</div>
 <% if @project.project_status_id == 1%>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+	<img src="/assets/timer.png" height="100">
+</div>
 
-Under bidding
 
 <% elsif @project.project_status_id == 2%>
 
@@ -14,7 +20,7 @@ Under bidding
 </div>
 
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_top">
 
 <% @project.bids.each do|bid| %>
 
@@ -103,8 +109,69 @@ Under bidding
 
  
 <% elsif @project.project_status_id == 3%>
+	<div class=" col-lg-2 col-sm-12 col-md-12 col-xs-12" >
+	</div>
+	<div class="col-lg-8 col-md-12 col-xs-12 col-sm-12" style="margin-top: 10px;">
+		
+	<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12 border startup_brief" style="margin-bottom: 0px;">	
+	</div>
+	<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12 startup_info">
+		<p class="alloted">ALLOTED </p>
+		 <p>Company Name: <%= @startup.company_name %></p>
+		 <p>Rating (<%= @techno.technology_name%>) : </p>
+		 <p>Number of installments: <%=@install.count%></p>
+		 <p>Total Budget: Rs.<%= @install.sum(:budget) %></p>
+		 <p>Total Time: <%= @install.sum(:time) %> Weeks</p>
+		 <p>Rating: </p>
+		 <button class="button_click" data-toggle="modal" data-target="#myModal">View Installments</button>
+	</div>
+</div>
+	<div class=" col-lg-2 col-sm-12 col-md-12 col-xs-12">
+	</div>
 
 
+
+	<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><%= @startup.company_name %></h4>
+         
+        </div>
+        <div class="modal-body">
+
+        	<p class="total_insta">Total installments: <%= @install.count %> | Total budget: Rs. <%= @install.sum(:budget) %> | Total time: <%= @install.sum(:time) %> Weeks</p> 
+        	<hr>
+        	
+        	<% @install.each do |insta|%>
+				<div>
+					<img src="/assets/money_icon.png" height="40px" width="40px" style="padding: 5px;">
+		  			Rs.<%= insta.budget %>
+		
+		  			<img src="/assets/clock.png" height="40px" width="40px" style="padding: 5px;">
+		  			<%= insta.time %> Weeks
+		  			<br>
+		  			<p><b>Description : </b></p>
+		  				<p style="word-break: break-word"><%= raw insta.details %></p>
+		  			<hr>
+		  				
+		  			
+				</div>
+			
+			<%end%>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+	
 
 <% elsif @project.project_status_id == 4%>
 Completed

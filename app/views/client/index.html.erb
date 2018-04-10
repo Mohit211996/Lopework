@@ -41,22 +41,35 @@
  
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
 	 
-  <% if @projects_alloted.count == 0 %>
-  <h1>You don't have any project in working</h1>
-  <%else%>  
-	 <% @projects_alloted.each do|project|%>
-	<%= render(partial: '/client/currently_working', :locals => {:project => project}) %>
+  <% if @project.count == 0 %>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+  <h1>YOU DON'T HAVE ANY UNDERBIDDING PROJECTS</h1>
+</div>
+  <% else %>  
+	 <% @project.each do|project|%>
+	<%= render(partial: '/client/currently_underbidding', :locals => {:project => project}) %>
 	<%end%>
+
   <%end%>
 	</div>
   
 </div>
+
+
 <div id="tab2">
     
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+
+    <% if @projects_alloted.count == 0 %>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+    <h1>YOU DON'T HAVE ANY WORKING PROJECTS</h1>
+</div>
+  <% else %>
 
  	<% @projects_alloted.each do|project|%>
  <%= render(partial: '/client/currently_working', :locals => {:project => project}) %>
+ <%end%>
+
  <%end%>
 </div>
  
@@ -77,7 +90,7 @@
       $("#all").css("display","none");
       $("#tab1").css("display","block");
 
-      $("#tab2").css("display","none6");
+      $("#tab2").css("display","none");
     });
 
     $("#working").click(function(){

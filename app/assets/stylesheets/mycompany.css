@@ -1,6 +1,25 @@
 
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
+.card_top {
+  margin-top: -10px;
+}
+
+.client_text {
+  padding-top: 20px;
+}
+
+.client_text p {
+  padding: 10px 20px 10px 20px;
+  border-radius: 0px;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  font-size: 18px;
+  color: white;
+  background-color: #284949;
+  border: 1px solid #284949;
+
+}
 
 #tab1 {
   display: none;
@@ -43,6 +62,7 @@
   color: black;
   letter-spacing: 1.5px;
   word-spacing: 2px;
+  border-radius: 2px;
 }
 
 .click_me:hover {
@@ -94,6 +114,7 @@
   background-color: #284949;
   display: inline-block;
   float: right;
+  margin-top: -67px;
   font-family: 'Montserrat', sans-serif;
 
 }
@@ -178,6 +199,25 @@
   background-color: #284949;
 }
 
+.startup_info {
+  background-color: #284949;
+  height: 300px;
+}
+
+.alloted {
+  background-color: #284949;
+  text-align: center;
+  color: white;
+  font-size: 25px !important;
+}
+
+.startup_info p {
+  color: white;
+  font-size: 18px;
+  word-spacing: 3px;
+  letter-spacing: 1.5px;
+}
+
 .startup_details span {
   display: inline;
   padding: 4px;
@@ -186,7 +226,19 @@
   background-color: rgba(245, 199, 149,0);
 }
 
+.button_click {
+  display: block;
+  background-color: #F1C688;
+  border: 0px;
+  padding: 7px 20px;
+  letter-spacing: 1.5px;
+  color: black;
+  border-radius: 3px;
+}
 
+.button_click:hover {
+  box-shadow: 0px 5px 5px 0px #F4DFBA;
+}
 
 .requirements {
   border-radius: 15px;
