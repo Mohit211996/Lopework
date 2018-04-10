@@ -69,7 +69,7 @@
           <%= link_to 'Notification', root_path %>
         </li>
          <li>
-         <%= link_to 'Add Project',  sign_index_path %> 
+         <%= link_to 'Add Project',  new_project_path %> 
         </li>      
           <li>
           <%= link_to "Connection", new_user_session_path %>
@@ -151,21 +151,6 @@
           </div>
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
-            <ul style="list-style-type: none;">
-                          <li><span class="glyphicon glyphicon-user"></span>Team Member:</li>
-            <li>Mohit Singh Sangwan
-
-        </li>
-        <li>Akanksha
-        </li>
-
-            <li>Mohit Singh Sangwan
-
-        </li>
-         <li>Akanksha
-        </li>
-               
-             </ul>
            </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
               <ul style="list-style-type: none; ">
@@ -210,38 +195,7 @@ function resize() {
 }
 
           </script>
-<!-- <<<<<<< HEAD
-         <script type="text/javascript">
-  $(document).ready(function() {
- $(window).bind("load", function() {
 
-  var $footer = $("#footer");
-
-   positionFooter();
-
-   function positionFooter() {
-
-          if ( $(document.body).height() < $(window).height() ) {
-               //must stick to bottom
-               $footer.css({
-                    position: "fixed",
-                    bottom: 0,
-                    left:0,
-                    right:0
-               })
-           } else {
-               $footer.attr("style", "");
-           }
-
-   }
-
-   $(window).resize(positionFooter);
-});
-});
-</script> 
-=======
-   
->>>>>>> 51c7f2f44df317f17c00b69b92bd7f51de3f2587 -->
           
   </body>
 </html>
