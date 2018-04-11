@@ -33,6 +33,9 @@ end
   # POST /bids.json
   def create
 
+byebug
+
+
  @bid = Bid.new(bid_params)
     respond_to do |format|
       if @bid.save
