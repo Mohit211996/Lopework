@@ -135,6 +135,18 @@
       <footer class="footer" id="footer1">
         <div class="container">
         <div class="row">
+           
+             <% if user_signed_in? %>
+             <h2 style="text-align: center;  padding-bottom: 20px;">Welcome to Lopework,Where Startups Grow.</h2>
+             <% else %>
+             <h2 style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
+      Ready to become a member? 
+      <%= link_to new_user_session_path do %>Apply Now.
+      <% end %>
+      </h2>
+      <% end %>
+    
+   
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <ul style="list-style-type: none;">
               <li>

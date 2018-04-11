@@ -26,14 +26,6 @@
     <%= f.label :password %><br >
     <%= f.password_field :password, autocomplete: "off",:require=> true,:id => "password_field" %>
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me,:name=>"user[remember_me]", :value=>"1" %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-<br>
   <div class="actions">
     
     <%= f.submit "Log in", :class =>"button button5" %>
