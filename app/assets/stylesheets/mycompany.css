@@ -69,7 +69,7 @@
 .click_me {
   display: inline-block;
   padding: 5px 20px 5px 20px;
-  background-color: #DCDBD9;
+  background-color: white;
   border: 0px;
   color: black;
   letter-spacing: 1.5px;
@@ -947,7 +947,7 @@ background-color: black;
 .pro_index{
  
  
-  background-image: url('/assets/project_index.jpeg');
+  background: linear-gradient(0deg,rgba(20,20,20,0.5),rgba(20,20,20,0.5)),url('/assets/startup_index.jpeg');
   background-repeat: no-repeat;
  background-position: center;
  background-size: cover;

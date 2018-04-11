@@ -2,10 +2,7 @@
 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 outer_div">
     <div class="div_with_text" style="">
-<h1 style=" color: white;">Welcome to Lopework,Where Startups Grow</h1>
-    <h4 style="color: white;">India’s largest community of scalable tech startups.
-
-</h4>
+<h1 style="text-align: center; color: white;">  <%= current_user.company_name %></h1>
       <button class="click_me1" id="underbidding">Selected Projects</button>
       &nbsp;&nbsp;
       <button class="click_me1" id="working">Bidded Projects</button>
@@ -39,7 +36,7 @@
     <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
  </div>
     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
-      <h1 style="text-align: center;">Bidded Projects</h1> 
+      <h1 style="text-align: center; margin-top: 0px;">Bidded Projects</h1> 
       <% @project_available.each do|startup| %>
       <div class="thumbnail">
 <%= render(partial: '/startup/form_job_offer2',locals: {project: startup}) %> 
