@@ -20,7 +20,7 @@
  
     <%= form.label :name %>
    
-  <%= form.text_field :name,:required => true, :id => 'name' %>
+  <%= form.text_field :name,:required => true, :id => 'name', placeholder: "Project's name.." %>
 <% @start = StartupTechnology.new %>
 <% @technology = Technology.all %>
  
@@ -39,13 +39,13 @@
   <%= form.hidden_field :project_status_id, :value => '1' %>
   
     <%= form.label :requirement %>
-  <%= form.cktext_area :requirement,:class => 'ckeditor',:id => 'ckeditor1', :required => true %> 
+  <%= form.cktext_area :requirement,:class => 'ckeditor',:id => 'ckeditor1', :required => true, placeholder: "Your requirement.... " %> 
   
     <%= form.label :budget %>
-  <%= form.text_field :budget, :id =>'budget',:required => true %>
+  <%= form.text_field :budget, :id =>'budget',:required => true, placeholder: "Enter your budget" %>
   
     <%= form.label :time %>
-   <%= form.text_field :time, :id =>'time',:required => true%>
+   <%= form.text_field :time, :id =>'time',:required => true, placeholder: "Time in weeks"%>
   
   <div class="actions">
     <%= form.submit %>
@@ -53,6 +53,7 @@
 <% end %>
 
 </div>
+
  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pro_form1">
   <h2 style="text-align: center; color: black;">Useful Tips</h2>
   <ol style="list-style-type: 1; border-top: 1px dotted black;">
@@ -72,6 +73,7 @@
     </div>
 </div>
 </div>
+
     <script type="text/javascript">
   
   $(document).ready(function(){
