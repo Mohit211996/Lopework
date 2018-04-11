@@ -1,6 +1,35 @@
 
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
+  .error {
+    color: red;
+}
+.details_field {
+  margin-bottom: 0px !important;
+  color: black !important;
+  width: 100% !important;
+  height: 150px !important;
+   background-color: #EBEDEF   !important;
+}
+
+.budget_field {
+  margin-bottom: 0px !important;
+  color: black !important;
+
+   background-color: #EBEDEF   !important;
+}
+
+.time_field {
+  margin-bottom: 0px !important;
+  color: black !important;
+   background-color: #EBEDEF   !important;
+}
+
+.spacing {
+  margin-top: 10px;
+}
+
+
 #all h1 {
   text-align: center;
 }

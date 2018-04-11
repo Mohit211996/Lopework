@@ -1,26 +1,4 @@
-<style type="text/css">
-  .error {
-    color: red;
-}
-.details_field {
-  margin-bottom: 0px !important;
-  color: black !important;
-   background-color: #EBEDEF   !important;
-}
 
-.budget_field {
-  margin-bottom: 0px !important;
-  color: black !important;
-   background-color: #EBEDEF   !important;
-}
-
-.time_field {
-  margin-bottom: 0px !important;
-  color: black !important;
-   background-color: #EBEDEF   !important;
-}
-
-</style>
 
 
 
@@ -47,15 +25,15 @@
   <% form.fields_for :installments,html: {:id => 'installments'} do |fi|  %>
 
   <div class="my_insta">
-    <%= fi.label :time,"Time" %><br>
+    <%= fi.label :time,"Time",:class => "spacing" %><br>
     <%= fi.text_field :time, :class => "time_field",:required => true %>
   </div>
   <div class="my_insta">
-    <%= fi.label :details,"Details" %><br>
+    <%= fi.label :details,"Details" ,:class => "spacing" %><br>
     <%= fi.text_area :details , :class => "details_field",:required => true %>
   </div>
   <div class="my_insta">
-    <%= fi.label :budget,"Budget" %><br>
+    <%= fi.label :budget,"Budget",:class => "spacing" %><br>
     <%= fi.text_field :budget, :class=> "budget_field",:required => true %>
   </div>
 
@@ -68,9 +46,9 @@
 
 <br>
 <br>
-  <div style="width: 100%">
-    <%= form.link_to_add "Add a installment", :installments, :id =>"add_installment"%>
-    <%= form.submit "Create Bid",:class =>"newbid",:id => "disable_me",:disabled => true %>
+  <div>
+    <%= form.link_to_add "Add a installment", :installments, :id =>"add_installment",:class => "spacing" %>
+    <%= form.submit "Create Bid",:class =>"newbid spacing",:id => "disable_me",:disabled => true %>
  </div>
 
 <% end %>
