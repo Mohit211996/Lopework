@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
+#all h1 {
+  text-align: center;
+}
+
 .card_top {
   margin-top: -10px;
 }
@@ -137,13 +141,18 @@
   border-radius: 10px;
 }
 
+
+
 #client_preference_submit {
   width: 200px;
   height: 50px;
   background-color: #284949;
+  margin-top: 10px;
+  color: white;
+  border: 0px;
   display: inline-block;
-  float: right;
-  margin-top: -67px;
+  float: left;
+  /*margin-top: -67px;*/
   font-family: 'Montserrat', sans-serif;
 
 }
@@ -164,11 +173,14 @@
 
 }
 
+.buttons {
+  padding: 0px;
+}
+
 .buttons button {
   background-color: #F1C688;
   border: 0px;
   border-radius: 3px;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .buttons button:hover {
@@ -287,16 +299,6 @@
   padding: 0px;
 }
 
-.index_comma {
-  background: linear-gradient(0deg,rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('/assets/index_2.jpeg');
-  background-position: center-center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 400px;
-  padding: 0px;
-  margin-top: 20px;
-}
-
 .startup_brief p {
   font-size: 35px;
   font-weight: 600;
@@ -343,8 +345,9 @@
 }
 
 .card_background h2 {
+  word-break: break-all;
   color: white;
-  font-size: 25px;
+  font-size: 30px;
    text-transform: uppercase;
 }
 
@@ -384,31 +387,15 @@
 .view_button2 {
   width: 100%;
   margin-top: 7px;
-  background-color: #CACFD2;
-  border:1px solid black;
-  border-radius: 4px;
+  background-color: black;
+  border:0px;
+  border-radius: 5px;
   padding: 5px;
-  color: black;
+  color: white;
 }
 .view_button2:hover {
-  background-color: black;
+  background-color: #70B79C;
   box-shadow: 0px 2px 2px 0px #8C99A4;
-  color: white;
-}
-.view_button3 {
-  width: 17%;
-  margin-top: 7px;
-  background-color: #CACFD2;
-  border:1px solid black;
-  border-radius: 4px;
-  padding: 5px;
-  color: black;
-  float: right;
-}
-.view_button3:hover {
-  background-color: black;
-  box-shadow: 0px 2px 2px 0px #8C99A4;
-  color: white;
 }
 .view_button1 {
   float: right;
@@ -429,14 +416,20 @@
  
 }
 
+.heading_highlight {
+  background-color: #CBE2D0;
+  border-radius: 3px;
+}
+
 .p_head {
-  font-size: 30px;
+  text-align: center;
+  font-size: 40px;
   font-weight: 300;
-  font-family: 'Orbitron', sans-serif;
 }
 .p_tech {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
+  text-align: center;
 }
 .h_bidding {
   font-size: 35px;
@@ -513,7 +506,8 @@ body {
   position: absolute;
   width: 100%;
   z-index: 100;
-  background-color: skyblue;
+  color: black;
+  background-color: #E8E6E1;
   }
 
 .notice_wrapper p{
@@ -758,6 +752,12 @@ span.icon-bar{
 
 }
 
+@media(max-width: 360px){
+  .buttons{
+   padding-top:10px;
+}
+
+
 }
 @media(max-width: 390px){
   .log1{
@@ -921,6 +921,7 @@ background-color: black;
 
 }
 .newbid{
+  disabled: ;
    width: auto !important;
    display: inline-block;
    border-radius: 0px !important;
@@ -959,7 +960,7 @@ background-color: black;
 .pro_index{
  
  
-  background: linear-gradient(0deg,rgba(20,20,20,0.5),rgba(20,20,20,0.5)),url('/assets/startup_index.jpeg');
+  background-image: url('/assets/project_index.jpeg');
   background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
@@ -1055,15 +1056,3 @@ background-color: black;
  background-size: cover;
  
 }
-/*#budget_field{
-  background-color: #ddd !important;
- 
-}
-#time_field{
-  background-color: #ddd !important;
- 
-}
-#details_field{
-  background-color: #ddd !important;
- 
-}*/

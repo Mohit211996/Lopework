@@ -22,7 +22,6 @@ class ClientController < ApplicationController
 			@techno = Project.find(params[:project_id]).technology
 			
 		end
-		
 	end
 	def project_display_page_2
 		@client_preference = ClientPreference.new
