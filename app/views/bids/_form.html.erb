@@ -1,4 +1,23 @@
+<style type="text/css">
+  .error {
+    color: red;
+}
+.details_field {
+  margin-bottom: 0px !important;
+  color: black !important;
+}
 
+.budget_field {
+  margin-bottom: 0px !important;
+  color: black !important;
+}
+
+.time_field {
+  margin-bottom: 0px !important;
+  color: black !important;
+}
+
+</style>
 
 
 
@@ -26,15 +45,15 @@
 
   <div class="my_insta">
     <%= fi.label :time,"Time" %><br>
-    <%= fi.text_field :time, :id => "time_field",:required => true %>
+    <%= fi.text_field :time, :class => "time_field",:required => true %>
   </div>
   <div class="my_insta">
-    <%= fi.label :details,"Details"%><br>
-    <%= fi.text_area :details , :id => "details_field",:required => true %>
+    <%= fi.label :details,"Details" %><br>
+    <%= fi.text_area :details , :class => "details_field",:required => true %>
   </div>
   <div class="my_insta">
     <%= fi.label :budget,"Budget" %><br>
-    <%= fi.text_field :budget, :id=> "budget_field",:required => true %>
+    <%= fi.text_field :budget, :class=> "budget_field",:required => true %>
   </div>
 
 <input type="hidden" id="count"  name="start_count" value="" />
@@ -48,7 +67,7 @@
 <br>
   <div style="width: 100%">
     <%= form.link_to_add "Add a installment", :installments, :id =>"add_installment"%>
-    <%= form.submit "Create Bid",:class =>"newbid" %>
+    <%= form.submit "Create Bid",:class =>"newbid",:id => "disable_me",:disabled => true %>
  </div>
 
 <% end %>
@@ -66,66 +85,84 @@
           }, 'Enter a valid value');
 
     $('#bids').validate({
-      rules: {
-        time_field: {
-          required: true,
-          number: true,
-          positiveNumber: true,
-          limitNumber: true
-        },
-        details_field: {
-          required: true
-        },
-        budget_field: {
-          required: true
-        }
-      },
-      messages: {
-        time_field: {
-          number: "Only integer values are allowed"
-        }
+
+      errorElement: 'div'
+
+      // rules: {
+      //   time_field: {
+      //     required: true,
+      //     number: true,
+      //     positiveNumber: true,
+      //     limitNumber: true
+      //   },
+      //   details_field: {
+      //     required: true
+      //   },
+      //   budget_field: {
+      //     required: true
+      //   }
+      // },
+      // messages: {
+      //   time_field: {
+      //     digits: "Only integer values are allowed"
+      //   }
         
-      }
+      // }
 
     });
 
-
-
-
-   
- //    $("#time_field").rules( "add", {
- //    required: true,
- //    number: true,
- //    positiveNumber: true,
- //    limitNumber: true,
- //    messages: {
- //    required: "Time is mandatory",
- //    number: "Time can only be integer"
- //    }
- //    });
-
- //    $( "#details_field" ).rules( "add", {
- //  required: true,
- //  minlength: 400,
- //  messages: {
- //    required: "Details are required",
- //    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
- //  }
- //  });
- // $( "#budget_field" ).rules( "add", {
- //    required: true,
- //    number: true,
- //    positiveNumber: true,
- //    limitNumber: true,
- //  messages: {
- //    required: "Budget is mandatory",
- //    number: "Budget can only be integer"
- //  }
- //  });
+    $("#add_installment").click(function(){
+      alert("hgii");
+      $("#disable_me").removeAttr("disabled");
+    });
 
 
 
     
 
 });
+$(document).on('nested:fieldAdded', function(event){
+
+
+   
+    $('.time_field').each(function(){
+      $(this).rules( "add", {
+    required: true,
+    number: true,
+    positiveNumber: true,
+    limitNumber: true,
+    messages: {
+    required: "Time is mandatory",
+    number: "Time can only be integer"
+    }
+    });
+    });
+
+    $('.details_field').each(function(){
+      $(this).rules( "add", {
+  required: true,
+  minlength: 400,
+  messages: {
+    required: "Details are required",
+    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+  }
+  });
+    });
+
+
+
+ $('.budget_field').each(function(){
+  $(this).rules( "add", {
+    required: true,
+    number: true,
+    positiveNumber: true,
+    limitNumber: true,
+  messages: {
+    required: "Budget is mandatory",
+    number: "Budget can only be integer"
+  }
+  });
+});
+
+})
 </script>
