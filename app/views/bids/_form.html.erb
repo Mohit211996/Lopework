@@ -5,16 +5,19 @@
 .details_field {
   margin-bottom: 0px !important;
   color: black !important;
+   background-color: #EBEDEF   !important;
 }
 
 .budget_field {
   margin-bottom: 0px !important;
   color: black !important;
+   background-color: #EBEDEF   !important;
 }
 
 .time_field {
   margin-bottom: 0px !important;
   color: black !important;
+   background-color: #EBEDEF   !important;
 }
 
 </style>
@@ -112,7 +115,6 @@
     });
 
     $("#add_installment").click(function(){
-      alert("hgii");
       $("#disable_me").removeAttr("disabled");
     });
 
@@ -162,6 +164,7 @@ $(document).on('nested:fieldAdded', function(event){
     number: "Budget can only be integer"
   }
   });
+
 });
 
 })

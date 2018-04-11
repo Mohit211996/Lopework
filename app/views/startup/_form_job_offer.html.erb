@@ -2,37 +2,39 @@
 
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<h3 style="color: blue"><b><%= project.name %>
+		<h3 style="color: #2C3E50;"><b><%= project.name %>
 		
 		</b></h3>
 		
 	</div>
-		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 			<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-	Company Logo:<%= %>
+	<img src="/assets/logo6.png" height="40px" width="40px" style="padding: 5px;">
+	<b></b><%= %>
 	</div>
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-	Company Name:<%= project.user.company_name %>
+	<img src="/assets/company_name.png" height="40px" width="40px" style="padding: 5px;"><b>Company Name: </b><%= project.user.company_name %>
 	
 	</div>
 	
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-		Technology:
+		<img src="/assets/tech2.png" height="40px" width="40px" style="padding: 5px;"><b>Technology:</b>
 		<%= project.technology.technology_name %>
 	</div>
 </div>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	Few Lines: <%=  raw project.requirement.first(300) %>........... 	
+	<b>Details:</b> <%=  raw project.requirement.first(300) %>........... 	
 </div>
 		</div>
 	</div>
 		
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<%= link_to :controller=> 'startup',:action=> 'project_page', :project => project do %>
-		<button class="view_button2"> View </button>
+		<button class="view_button2"><span class="glyphicon glyphicon-eye-open"></span> </button>
 		<% end %>
 	</div>
 	<br>
@@ -40,56 +42,17 @@
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 		<%= link_to startup_job_offer1_path(:decide => 'accept',:project_id => project.id),method: :post do %>
-<button class="view_button2"> Accept </button>
+<button class="view_button2"><span class="glyphicon glyphicon-ok"> </span>  </button>
 <% end %>
 	</div>
 	<br>
 	<br>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	<%= link_to startup_job_offer1_path(:decide => 'reject',:project_id => project.id ),method: :post do %>
-	<button class="view_button2"> Reject </button>
+	<button class="view_button2"><span class="glyphicon glyphicon-remove"></span> </button>
 	<% end %>
 </div>
-		</div>
 		
+		</div>
 	</div>
-	<!-- <div class="row">
-	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-	Company Logo:<%= %>
-	</div>
-	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-	Company Name:<%= project.user.company_name %>
-	
-	</div>
-	
-	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-		Technology:
-		<%= project.technology.technology_name %>
-	</div>
-	</div>
-	<div class="">
-		Few Lines: <%#=  raw project.requirement.first(300) %>........... 
-	</div>
-	 <div>
-	</div> 
-<div class="row">
-	<div class="accept_btn">
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-		<%#= link_to :controller=> 'startup',:action=> 'project_page', :project => project do %>
-		<button> View </button>
-		<%# end %>
-	</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-		<%#= link_to startup_job_offer1_path(:decide => 'accept',:project_id => project.id),method: :post do %>
-<button> Accept </button>
-<%# end %>
-	</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-	<%#= link_to startup_job_offer1_path(:decide => 'reject',:project_id => project.id ),method: :post do %>
-	<button> Reject </button>
-	<%# end %>
-</div>
-	</div>
-</div>
-	<br>
- -->
+	<hr>

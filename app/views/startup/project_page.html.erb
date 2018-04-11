@@ -3,10 +3,8 @@
 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 outer_div">
     <div class="div_with_text" style="">
-<h1 style=" color: white;">Welcome to Lopework,Where Startups Grow</h1>
-    <h4 style="color: white;">India’s largest community of scalable tech startups.
 
-</h4>
+      <h1 style="text-align: center; color: white;">  <%= current_user.company_name %></h1>
       <button class="click_me1" id="underbidding">Project</button>
       &nbsp;&nbsp;
       <button class="click_me1" id="working">Bidding</button>
@@ -15,11 +13,11 @@
   </div>
   
 </div>
-<div class="container-fluid" >
+<div class="container" >
 <div class="row"> 
   <div id="tab1">
  
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" > 
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 20px;"> 
   <%= render(partial: '/projects/project_details',locals: {project: @project}) %> 
   </div>
   
@@ -27,8 +25,8 @@
 </div>
 <div class="row"> 
 <div id="tab2">
- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 add_pic">
-  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 add_pic" style="height: 500px;">
       <!-- <img src="/assets/coin.jpg" class="img-responsive" height="400" width="400"> -->
 
      </div> 

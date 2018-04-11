@@ -1,27 +1,42 @@
-<div class="job_offer">
-		
-		<%= link_to 'View',:controller=> "startup",:action=> "project_page", :project => project %>
-	</div>	
-<div>
-		<h3 style="color: blue"><b><%= project.name %>
+
+	
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h3 style="color: #2C3E50;"><b><%= project.name %>
 		
 		</b></h3>
 		
 	</div>
-	<div>
-	Company Name:<%= project.user.company_name %>
+		<hr>
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	<img src="/assets/logo6.png" height="40px" width="40px" style="padding: 5px;">
+	<b></b><%= %>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	<img src="/assets/company_name.png" height="40px" width="40px" style="padding: 5px;"><b>Company Name: </b><%= project.user.company_name %>
 	
 	</div>
-	<div>
-	Company Logo:<%= %>
-	</div>
-	<div>
-		Technology:
+	
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		<img src="/assets/tech2.png" height="40px" width="40px" style="padding: 5px;"><b>Technology:</b>
 		<%= project.technology.technology_name %>
 	</div>
-	<div>
-		Few Lines: <%=  raw project.requirement.first(300) %>........... 
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<b>Details:</b> <%=  raw project.requirement.first(300) %>........... 	
+</div>
+		</div>
 	</div>
-	 <div>
-	</div> 
+	<hr>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		
+		<%= link_to :controller=> 'startup',:action=> 'project_page', :project => project do %>
+		<button class="view_button3">View
+		</button>
+		<% end %>
+		</div> 
+		</div>
+
 	<br>
