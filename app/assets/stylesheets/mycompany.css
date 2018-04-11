@@ -320,15 +320,31 @@
 .view_button2 {
   width: 100%;
   margin-top: 7px;
-  background-color: black;
-  border:0px;
-  border-radius: 5px;
+  background-color: #CACFD2;
+  border:1px solid black;
+  border-radius: 4px;
   padding: 5px;
-  color: white;
+  color: black;
 }
 .view_button2:hover {
-  background-color: #70B79C;
+  background-color: black;
   box-shadow: 0px 2px 2px 0px #8C99A4;
+  color: white;
+}
+.view_button3 {
+  width: 17%;
+  margin-top: 7px;
+  background-color: #CACFD2;
+  border:1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  color: black;
+  float: right;
+}
+.view_button3:hover {
+  background-color: black;
+  box-shadow: 0px 2px 2px 0px #8C99A4;
+  color: white;
 }
 .view_button1 {
   float: right;
@@ -975,3 +991,15 @@ background-color: black;
  background-size: cover;
  
 }
+/*#budget_field{
+  background-color: #ddd !important;
+ 
+}
+#time_field{
+  background-color: #ddd !important;
+ 
+}
+#details_field{
+  background-color: #ddd !important;
+ 
+}*/
