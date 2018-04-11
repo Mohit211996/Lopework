@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
+
+
+.padding_20 {
+  padding-bottom: 20px;
+}
+
   .error {
     color: red;
 }
@@ -31,11 +37,12 @@
 
 
 #all h1 {
+  margin-top: 10px;
   text-align: center;
 }
 
 .card_top {
-  margin-top: -10px;
+  margin-top: 0px;
 }
 
 .client_text {
@@ -99,7 +106,12 @@
   vertical-align: middle;
 }
 
+.div_with_text h1 {
+  margin: 0px;
+}
+
 .click_me {
+  margin-top: 10px;
   display: inline-block;
   padding: 5px 20px 5px 20px;
   background-color: white;
@@ -114,6 +126,7 @@
   box-shadow: 0px 3px 3px 0px #F1F0EE;
 }
 .click_me1 {
+  margin-top: 10px;
   display: inline-block;
   padding: 5px 20px 5px 20px;
   background-color: white;
@@ -353,7 +366,6 @@
 }
 
 .card {
-  
   display: table;
   padding: 10px;
   height: 350px
@@ -386,9 +398,9 @@
 }
 
 .card_background h2 {
-  word-break: break-all;
+  text-overflow: ellipsis;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
    text-transform: uppercase;
 }
 
@@ -979,17 +991,20 @@ background-color: black;
 
 }
 .newbid{
-  disabled: ;
+  margin-top: 10px !important;
+  letter-spacing: 1.5px;
+    padding: 5px 25px 5px 25px !important;
    width: auto !important;
    display: inline-block;
    border-radius: 0px !important;
-   padding: 5px 5px !important;
   }
 #add_installment{
      width: auto;
     color: white;
+    margin-top: 10px !important;
+    letter-spacing: 1.5px;
     background-color: black;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 25px 5px 25px;
     text-decoration: none;
     display: inline-block;
      position: relative;

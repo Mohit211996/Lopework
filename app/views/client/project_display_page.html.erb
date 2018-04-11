@@ -19,14 +19,14 @@
 
 <div class="row">
 
-	<div class="col-lg-12 col-md-12 col-sm-12 col-sm-12" id="tab1">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-sm-12 padding_20" id="tab1">
 
 
 <%= render(partial: '/client/project_details', :locals => {:project => @project}) %>
 
 </div>
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="tab2">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding_20" id="tab2">
 <%= render(partial: '/client/bidding_display',:locals => {:project => @project,:startup => @startup}) %>
 </div>
 </div>
