@@ -26,7 +26,7 @@
 
   <div class="my_insta">
     <%= fi.label :time,"Time" %><br>
-    <%= fi.text_field :time, :id => "time_field",:required => true %>
+    <%= fi.text_field :time, :class => "time_field",:required => true %>
   </div>
   <div class="my_insta">
     <%= fi.label :details,"Details"%><br>
@@ -34,7 +34,7 @@
   </div>
   <div class="my_insta">
     <%= fi.label :budget,"Budget" %><br>
-    <%= fi.text_field :budget, :id=> "budget_field",:required => true %>
+    <%= fi.text_field :budget, :class=> "budget_field",:required => true %>
   </div>
 
 <input type="hidden" id="count"  name="start_count" value="" />
@@ -96,11 +96,11 @@
 });
 </script>
  <style type="text/css">
-  #budget_field{
+  .budget_field{
   background-color:#EBEDEF   !important;
  
 }
-#time_field{
+.time_field{
   background-color: #EBEDEF   !important;
  
 }
