@@ -29,12 +29,12 @@
     <%= fi.text_field :time, :id => "time_field",:required => true %>
   </div>
   <div class="my_insta">
-    <%= fi.label :details,"Details" %><br>
+    <%= fi.label :details,"Details"%><br>
     <%= fi.text_area :details , :id => "details_field",:required => true %>
   </div>
   <div class="my_insta">
     <%= fi.label :budget,"Budget" %><br>
-    <%= fi.text_field :budget, :id => "budget_field",:required => true %>
+    <%= fi.text_field :budget, :id=> "budget_field",:required => true %>
   </div>
 
 <input type="hidden" id="count"  name="start_count" value="" />
@@ -55,22 +55,7 @@
 <script type="text/javascript">
    $(document).ready(function(){
 
-    $("#add_installment").click(function(){
-      $('#add_company_div').before($("#add_company_div").clone().attr("id","add_company_div" + i));
-       $("#add_company_div" + i + " :input").each(function(){
-          $(this).attr("name",$(this).attr("name") + i);
-          $(this).attr("id",$(this).attr("id") + i);
-          $(this).attr("count",i); 
-                 
-          });
-    });
-
-    $('#bids').validate({
-      
-      });
-
-
-    $.validator.addMethod('positiveNumber',
+     $.validator.addMethod('positiveNumber',
           function (value) {
               return Number(value) > 0;
           }, 'Enter a positive number');
@@ -79,44 +64,66 @@
           function (value) {
               return Number(value) < 999;
           }, 'Enter a valid value');
-    $("#time_field").rules( "add", {
-    required: true,
-    number: true,
-    positiveNumber: true,
-    limitNumber: true,
-    messages: {
-    required: "Time is mandatory",
-    number: "Time can only be integer"
-    }
+
+    $('#bids').validate({
+      rules: {
+        time_field: {
+          required: true,
+          number: true,
+          positiveNumber: true,
+          limitNumber: true
+        },
+        details_field: {
+          required: true
+        },
+        budget_field: {
+          required: true
+        }
+      },
+      messages: {
+        time_field: {
+          number: "Only integer values are allowed"
+        }
+        
+      }
+
     });
 
-    $( "#details_field" ).rules( "add", {
-  required: true,
-  minlength: 400,
-  messages: {
-    required: "Details are required",
-    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
-  }
-  });
- $( "#budget_field" ).rules( "add", {
-    required: true,
-    number: true,
-    positiveNumber: true,
-    limitNumber: true,
-  messages: {
-    required: "Budget is mandatory",
-    number: "Budget can only be integer"
-  }
-  });
 
-if($('#count').val())
-{
-  var i= $('#count').val();
-}
-else 
-{
-  var i=0;
-}
+
+
+   
+ //    $("#time_field").rules( "add", {
+ //    required: true,
+ //    number: true,
+ //    positiveNumber: true,
+ //    limitNumber: true,
+ //    messages: {
+ //    required: "Time is mandatory",
+ //    number: "Time can only be integer"
+ //    }
+ //    });
+
+ //    $( "#details_field" ).rules( "add", {
+ //  required: true,
+ //  minlength: 400,
+ //  messages: {
+ //    required: "Details are required",
+ //    minlength: jQuery.validator.format("Please, at least {0} characters are necessary")
+ //  }
+ //  });
+ // $( "#budget_field" ).rules( "add", {
+ //    required: true,
+ //    number: true,
+ //    positiveNumber: true,
+ //    limitNumber: true,
+ //  messages: {
+ //    required: "Budget is mandatory",
+ //    number: "Budget can only be integer"
+ //  }
+ //  });
+
+
 
     
 
