@@ -399,14 +399,30 @@
 .view_button2 {
   width: 100%;
   margin-top: 7px;
-  background-color: black;
-  border:0px;
+  background-color: #EBEDEF  ;
+  border:1px solid black;
   border-radius: 5px;
   padding: 5px;
-  color: white;
+  color: black;
 }
 .view_button2:hover {
-  background-color: #70B79C;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 2px 2px 0px #8C99A4;
+}
+.view_button3 {
+  width: 17%;
+  margin-top: 7px;
+  background-color: #EBEDEF  ;
+  border:1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+  float: right;
+}
+.view_button3:hover {
+  background-color: black;
+  color: white;
   box-shadow: 0px 2px 2px 0px #8C99A4;
 }
 .view_button1 {
@@ -973,7 +989,7 @@ background-color: black;
 .pro_index{
  
  
-  background-image: url('/assets/project_index.jpeg');
+  background: linear-gradient(0deg,rgba(20,20,20,0.7),rgba(20,20,20,0.7)),url('/assets/startup_index.jpeg');
   background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
