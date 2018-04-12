@@ -42,7 +42,7 @@ end
         format.html { redirect_to bids_url , notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bids }
       else
-        format.html { redirect_to :controller => 'startup',:action => 'project_page',:project => params[:bid][:project_id],notice: "hguijkvc5sdvbfgnil" }
+        format.html { render :new }
         format.json { render json: @bids.errors, status: :unprocessable_entity }
 
     end
