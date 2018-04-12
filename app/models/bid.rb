@@ -3,9 +3,33 @@ class Bid < ApplicationRecord
 	 belongs_to :project, optional: true
    belongs_to :user
    # belongs_to :client_preference, through: :project
-
-	
-validates_uniqueness_of :user_id, :scope => [:project_id]
 accepts_nested_attributes_for :installments, allow_destroy: true
+validate :check_bidding_time
+validate :check_bidding_budget
+validates_uniqueness_of :user_id, :scope => [:project_id]
+
+
+private 
+	
+	def check_bidding_time
+		project = Project.find(self.project_id)
+		unless installments.map(&:time).sum <= project.time
+			errors.add(:time,"Time can not exceed the alloted time")
+			
+		end
+		
+	end
+	def check_bidding_budget
+		project = Project.find(self.project_id)
+		unless installments.map(&:budget).sum <= project.budget
+			errors.add(:budget,"Budget can not exceed the alloted budget")
+			
+		end
+		
+	end
+
+
+
+
 	
 end
