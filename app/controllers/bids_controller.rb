@@ -33,7 +33,7 @@ end
   # POST /bids.json
   def create
 
-byebug
+
 
 
  @bid = Bid.new(bid_params)
