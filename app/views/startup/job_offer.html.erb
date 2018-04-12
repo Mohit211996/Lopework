@@ -17,7 +17,7 @@
  <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
  </div>
   <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" > 
-    <h1 style="text-align: center;">Selected Projects</h1>
+    <h1 style="text-align: center; margin-top: 10px;">SELECTED PROJECTS</h1>
   <% @startups.each do|startup| %>
 <div class="thumbnail">
 <%@temp=@projects.find(startup.project_id)%>
@@ -36,7 +36,7 @@
     <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
  </div>
     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
-      <h1 style="text-align: center; margin-top: 0px;">Bidded Projects</h1> 
+      <h1 style="text-align: center; margin-top: -10px;">BIDDED PROJECTS</h1> 
       <% @project_available.each do|startup| %>
       <div class="thumbnail">
 <%= render(partial: '/startup/form_job_offer2',locals: {project: startup}) %> 

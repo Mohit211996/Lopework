@@ -36,7 +36,7 @@ end
  @bid = Bid.new(bid_params)
     respond_to do |format|
       if @bid.save
-        format.html { redirect_to bids_url , notice: 'Bid was successfully created.' }
+        format.html { redirect_to startup_url , notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bids }
       else
         format.html { render :new }
