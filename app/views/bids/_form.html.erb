@@ -1,7 +1,6 @@
 
 
 
-
 <%= nested_form_for @bid,html: {:id => 'bids'} do |form| %>
   <% if bid.errors.any? %>
     <div id="error_explanation">
@@ -36,13 +35,7 @@
     <%= fi.label :budget,"Budget",:class => "spacing" %><br>
     <%= fi.text_field :budget, :class=> "budget_field",:required => true, placeholder:"In Rs ..." %>
   </div>
-
-<input type="hidden" id="count"  name="start_count" value="" />
-
-
- 
-
-  <%end%>
+ <%end%>
 
 <br>
 <br>
@@ -51,7 +44,8 @@
     &nbsp;
     <%= form.submit "Create Bid",:class =>"newbid spacing",:id => "disable_me",:disabled => true %>
  </div>
-
+<!-- <div class="row mar" style="padding-left: 16px!important"> Do you want to Delete? <%#= form.check_box '_destroy' %>
+    </div> -->
 <% end %>
 <script type="text/javascript">
    $(document).ready(function(){
@@ -127,4 +121,5 @@ $(document).on('nested:fieldAdded', function(event){
 });
 
 })
+
 </script>

@@ -33,18 +33,19 @@ end
   # POST /bids.json
   def create
 @bid = Bid.new(bid_params)
+@project =Project.find(params[:bid][:project_id])
     respond_to do |format|
       if @bid.save
         format.html { redirect_to startup_url , notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bids }
       else
-        format.html { redirect_to startup_url , notice: 'you have already bidded.'}
-        format.json { render json: @bids.errors, status: :unprocessable_entity }
+
+format.html { render :template => 'startup/project_page'}
+        format.json { render json: @bid.errors, status: :unprocessable_entity }
 
     end
   end
 end
-
   # PATCH/PUT /bids/1
   # PATCH/PUT /bids/1.json
   def update

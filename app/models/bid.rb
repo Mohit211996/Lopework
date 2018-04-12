@@ -14,7 +14,7 @@ private
 	def check_bidding_time
 		project = Project.find(self.project_id)
 		unless installments.map(&:time).sum <= project.time
-			errors.add(:time,"Time can not exceed the alloted time")
+			errors.add(:time,"can not exceed the alloted time")
 			
 		end
 		
@@ -22,7 +22,7 @@ private
 	def check_bidding_budget
 		project = Project.find(self.project_id)
 		unless installments.map(&:budget).sum <= project.budget
-			errors.add(:budget,"Budget can not exceed the alloted budget")
+			errors.add(:budget,"can not exceed the alloted budget")
 			
 		end
 		
