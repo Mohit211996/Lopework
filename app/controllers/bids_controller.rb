@@ -32,14 +32,13 @@ end
   # POST /bids
   # POST /bids.json
   def create
-
- @bid = Bid.new(bid_params)
+@bid = Bid.new(bid_params)
     respond_to do |format|
       if @bid.save
         format.html { redirect_to startup_url , notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bids }
       else
-        format.html { render :new }
+        format.html { redirect_to startup_url , notice: 'you have already bidded.'}
         format.json { render json: @bids.errors, status: :unprocessable_entity }
 
     end

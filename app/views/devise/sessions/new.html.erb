@@ -19,12 +19,12 @@
 
   <div class="field">
     <%= f.label :email %><br >
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",:require=> true, :id => "email_field" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:require=> true, :id => "email_field",:class=>"reg"%>
   </div>
 
   <div class="field">
     <%= f.label :password %><br >
-    <%= f.password_field :password, autocomplete: "off",:require=> true,:id => "password_field" %>
+    <%= f.password_field :password, autocomplete: "off",:require=> true,:id => "password_field",:class=>"reg" %>
   </div>
 
   <div class="actions">
@@ -40,9 +40,6 @@
 <%= link_to "Forgot your password?", new_password_path(resource_name), :class =>"button button5" %>
 <br>
 <br>
-   
-
-<%#= render "devise/shared/links" %>
 
 </div>
 </div>

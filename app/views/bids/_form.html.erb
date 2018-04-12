@@ -26,15 +26,15 @@
 
   <div class="my_insta">
     <%= fi.label :time,"Time",:class => "spacing" %><br>
-    <%= fi.text_field :time, :class => "time_field",:required => true, placeholder: "Time in weeks" %>
+    <%= fi.text_field :time, :class => "time_field",:required => true, placeholder: "In weeks" %>
   </div>
   <div class="my_insta">
     <%= fi.label :details,"Details" ,:class => "spacing" %><br>
-    <%= fi.text_area :details , :class => "details_field",:required => true, placeholder:"Enter installment's detail.." %>
+    <%= fi.text_area :details , :class => "details_field",:required => true, placeholder:"Enter installment details.." %>
   </div>
   <div class="my_insta">
     <%= fi.label :budget,"Budget",:class => "spacing" %><br>
-    <%= fi.text_field :budget, :class=> "budget_field",:required => true, placeholder:"Your budget..." %>
+    <%= fi.text_field :budget, :class=> "budget_field",:required => true, placeholder:"In Rs ..." %>
   </div>
 
 <input type="hidden" id="count"  name="start_count" value="" />

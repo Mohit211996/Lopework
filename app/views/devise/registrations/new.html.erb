@@ -61,7 +61,7 @@
   <div class="field">
 
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",:id => 'email_field',placeholder: "Enter email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:id => 'email_field',placeholder: "Enter email", :class=>"reg" %>
 
 
   </div>
@@ -72,22 +72,22 @@
     <em>(<%= @minimum_password_length %> characters minimum)</em>
 
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" ,:id => 'password_field',placeholder: "Enter password"%>
+    <%= f.password_field :password, autocomplete: "off" ,:id => 'password_field',placeholder: "Enter password", :class=>"reg"%>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" ,:required => true, :id => 'c_password_field', placeholder: "Confirm password"%>
+    <%= f.password_field :password_confirmation, autocomplete: "off" ,:required => true, :id => 'c_password_field', placeholder: "Confirm password", :class=>"reg"%>
   </div>
 
   <div class="field">
     <%= f.label :company_name %><br />
-    <%= f.text_field :company_name, autocomplete: "off", :id => 'company_name_field',placeholder: "Company name" %>
+    <%= f.text_field :company_name, autocomplete: "off", :id => 'company_name_field',placeholder: "Company name", :class=>"reg" %>
   </div>
 
   <div class="field">
     <%= f.label :experience %><br />
-    <%= f.text_field :experience, autocomplete: "off",:required => true, :id => 'experience_field',placeholder: "In years" %>
+    <%= f.text_field :experience, autocomplete: "off",:required => true, :id => 'experience_field',placeholder: "In years", :class=>"reg" %>
 
   </div>
 
@@ -96,7 +96,7 @@
 <% @start = StartupTechnology.new %>
 <% @technology = Technology.all %>
 
-  <%#= f.fields_for :startup_technologies, @start do |ft| %>
+  
 
     <div class="field">
 
@@ -105,14 +105,6 @@
 <%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true}%>
 
       </div>
-
-<%#@users = User.last%>
-<%#@index=@users.id + 1%>
-
-
-<%#= f.hidden_field :user_id, :value => @index %>
-  
-  <%#end%>
 
 <%end%>
   <%= f.hidden_field :role_id, :value => params[:role_id] %>

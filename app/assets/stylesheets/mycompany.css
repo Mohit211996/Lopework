@@ -1,7 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
-
+.reg{
+   color: black !important;
+}
 .body{
   font-family: Open sans-serif;
 }
