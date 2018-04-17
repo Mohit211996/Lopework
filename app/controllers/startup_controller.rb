@@ -1,5 +1,11 @@
 class StartupController < ApplicationController
 
+	def frnds
+		@request_connections = RequestConnection.where(:startup_id => current_user.id)
+		@connection_new = Connection.new
+	end
+
+
 	def index
 		technologies = []
 		current_user.technologies.each do |technology|
@@ -61,7 +67,7 @@ def request_method
 
  def startup_params
       params.permit(:decide, :project_id)
-    end
+  end
 
 
 

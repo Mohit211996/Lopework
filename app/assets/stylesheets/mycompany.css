@@ -1,8 +1,207 @@
-
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Niconne');
 
 
 
+.connection_request_button {
+  margin-top: 10px !important;
+  width: auto !important;
+  padding: 10px;
+}
+
+.frnds_background {
+  background: 
+  linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+  url('/assets/card_bg_2.jpg');
+  background-position: left-center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: table;
+  padding-top: 100px;
+}
+
+.frnds_content {
+  padding: 0px;
+  display: table-cell;
+ background-color: white;
+}
+
+.request {
+  background-color: blue;
+}
+
+.color_li li {
+  padding: 10px 25px 10px 10px;
+  color: white;
+}
+
+.list_nav {
+  float: right;
+}
+
+.list_nav li a {
+  color: white !important;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  top:0px;
+  width: 100%;
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+
+.footer_first {
+  text-align: center;
+  color: white;
+  font-family: 'Poiret One', cursive;
+}
+
+.footer_first h1 {
+  font-size: 35px;
+}
+
+.footer_first p {
+  font-size: 20px;
+}
+
+.map {
+  height: 300px;
+  width: 100%;
+  background:
+  url('/assets/map.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.foot_my {
+  display: table;
+  height: 400px;
+  width: 100%;
+  background-color:#CA6B5A;
+}
+
+.span_color1 {
+  color: #ACDA7D;
+}
+
+.span_color2 {
+  color: #8AD2DA;
+}
+
+.span_color3 {
+  color: #DA8A8A;
+}
+
+.span_color4 {
+  color: #DFDF71;
+}
+
+.vertical_center {
+  height: auto;
+  display: table-cell;
+  vertical-align: middle;
+}
+ 
+.first {
+  display: table;
+  height: 700px;
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 0px;
+  background: 
+  linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+  url('/assets/card_bg_2.jpg');
+  background-position: left-center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.text_first h1 {
+  text-align: center;
+  font-weight: 0;
+  font-size: 130px;
+  font-family: 'Niconne', cursive;
+  color: white;
+}
+
+.about_us {
+  display: table;
+  height: 700px;
+  width: 100%;
+  background: 
+  linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+  url('/assets/card_bg_2.jpg');
+  background-position: left-center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.text_about_us p {
+  padding: 0px 100px;
+  text-align: center;
+  font-weight: 0;
+  font-size: 40px;
+  color: white;
+  font-family: 'Poiret One', cursive;
+  text-transform: uppercase;
+}
+
+.my_team_bg {
+  display: table;
+  height: 700px;
+  width: 100%;
+  background: 
+  linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+  url('/assets/card_bg_2.jpg');
+  background-position: left-center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.my_team h1{
+  text-align: center;
+  color: white;
+  font-size: 70px;
+  font-family: 'Poiret One', cursive;
+}
+
+.img_sizing {
+  height: 250px;
+  width: 250px;
+}
+
+
+
+
+
+
+
+.reg{
+   color: black !important;
+}
+.body{
+  font-family: Open sans-serif;
+}
 .padding_20 {
   padding-bottom: 20px;
 }
@@ -440,30 +639,24 @@
 .view_button2 {
   width: 100%;
   margin-top: 7px;
-  background-color: #EBEDEF  ;
-  border:1px solid black;
+  background-color: #2C3E50;
   border-radius: 5px;
   padding: 5px;
-  color: black;
+  color: white;
 }
 .view_button2:hover {
-  background-color: black;
-  color: white;
   box-shadow: 0px 2px 2px 0px #8C99A4;
 }
 .view_button3 {
   width: 17%;
   margin-top: 7px;
-  background-color: #EBEDEF  ;
-  border:1px solid black;
+  background-color: #2C3E50;
   border-radius: 5px;
   padding: 5px;
-  color: black;
+  color: white;
   float: right;
 }
 .view_button3:hover {
-  background-color: black;
-  color: white;
   box-shadow: 0px 2px 2px 0px #8C99A4;
 }
 .view_button1 {
@@ -586,9 +779,7 @@ body {
     padding: 20px 0px;
 }
 
-.navbar-header {
-    background-color: white;
-}
+
  
 .flash_message {
   background-color: #F3CF49;
@@ -605,10 +796,15 @@ body {
     margin-left: 15px;
 }
 
+.detail_indi p {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
 
-
-
-
+.img_hover:hover {
+  border: 10px solid #97977F;
+}
 
 .site-footer {
     color: #666666;
@@ -621,15 +817,7 @@ body {
     text-align: center;
     width: 100%;
 }
-.person {   
-     height: 200px;
-     border-radius: 200px;     
-  }
 
-  .person:hover {
-      border-color: #f1f1f1;
-      opacity: 0.7;
-  }
 .imgg {
  background-image: url('/assets/4.png');
  background-repeat: no-repeat;
@@ -715,16 +903,7 @@ body {
   margin-top: 50px;
 
 }
-.navbar-nav>li>a:hover {
-  background-color: white;
-  color: #F08080;
 
-}
-.navbar-nav>li>a {
-   font-family: open sans-serif;
-
-  color: black;
-}
 
 .line{
    position: absolute;

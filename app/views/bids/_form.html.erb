@@ -1,7 +1,5 @@
 
 
-
-
 <%= nested_form_for @bid,html: {:id => 'bids'} do |form| %>
   <% if bid.errors.any? %>
     <div id="error_explanation">
@@ -15,14 +13,16 @@
     </div>
   <% end %>
 
-  <%= form.hidden_field :project_id, :value => params[:project] %>
+
+
+
+
+  <%= form.hidden_field :project_id, :value => @project.id %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
 
 
   
-
-
-  <% form.fields_for :installments,html: {:id => 'installments'} do |fi|  %>
+  <%= form.fields_for :installments,form.object.installments,html: {:id => 'installments'} do |fi|  %>
 
   <div class="my_insta">
     <%= fi.label :time,"Time",:class => "spacing" %><br>
@@ -36,13 +36,7 @@
     <%= fi.label :budget,"Budget",:class => "spacing" %><br>
     <%= fi.text_field :budget, :class=> "budget_field",:required => true, placeholder:"In Rs ..." %>
   </div>
-
-<input type="hidden" id="count"  name="start_count" value="" />
-
-
- 
-
-  <%end%>
+ <%end%>
 
 <br>
 <br>
@@ -51,7 +45,8 @@
     &nbsp;
     <%= form.submit "Create Bid",:class =>"newbid spacing",:id => "disable_me",:disabled => true %>
  </div>
-
+<!-- <div class="row mar" style="padding-left: 16px!important"> Do you want to Delete? <%#= form.check_box '_destroy' %>
+    </div> -->
 <% end %>
 <script type="text/javascript">
    $(document).ready(function(){
@@ -127,4 +122,5 @@ $(document).on('nested:fieldAdded', function(event){
 });
 
 })
+
 </script>

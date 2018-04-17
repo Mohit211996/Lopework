@@ -1,6 +1,5 @@
 
 
-
  <div class="top_image1">
 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 outer_div">
@@ -34,13 +33,14 @@
 
      </div> 
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-<%= render(partial: '/bids/form',locals: {bid: @bid, project: @project}) %> 
+<%= render(partial: '/bids/form',locals: {bid: @bid, project_id: @project.id}) %> 
 </div>
   </div>  
 </div>
 </div>
 </div>
   <script>
+
 $(document).ready(function() {
     setTimeout(function(){
       $('.notice_wrapper').fadeOut("slow",function(){
@@ -48,14 +48,14 @@ $(document).ready(function() {
       })
     },2000);
 
-    $("#underbidding").click(function(){
+    $(document).on('click','#underbidding',function(){
       $("#all").css("display","none");
       $("#tab1").css("display","block");
 
       $("#tab2").css("display","none");
     });
 
-    $("#working").click(function(){
+    $(document).on('click','#working',function(){
       $("#all").css("display","none");
 
       $("#tab1").css("display","none");

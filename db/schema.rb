@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404054103) do
+ActiveRecord::Schema.define(version: 20180416083405) do
 
   create_table "approvals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "approval_name"
@@ -51,6 +51,31 @@ ActiveRecord::Schema.define(version: 20180404054103) do
     t.index ["user_id"], name: "index_client_preferences_on_user_id"
   end
 
+  create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_clients_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
+  end
+
+  create_table "connections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.integer "startup_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_connections_on_user_id"
+  end
+
   create_table "installments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "bid_id"
     t.integer "time"
@@ -71,14 +96,23 @@ ActiveRecord::Schema.define(version: 20180404054103) do
     t.string "name"
     t.bigint "technology_id"
     t.bigint "user_id"
-    t.integer "project_status_id"
+    t.bigint "project_status_id"
     t.text "requirement"
     t.bigint "budget"
     t.integer "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_status_id"], name: "index_projects_on_project_status_id"
     t.index ["technology_id"], name: "index_projects_on_technology_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "request_connections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.integer "startup_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_request_connections_on_user_id"
   end
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -109,6 +143,23 @@ ActiveRecord::Schema.define(version: 20180404054103) do
     t.datetime "updated_at", null: false
     t.index ["technology_id"], name: "index_startup_technologies_on_technology_id"
     t.index ["user_id"], name: "index_startup_technologies_on_user_id"
+  end
+
+  create_table "startups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_startups_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_startups_on_reset_password_token", unique: true
   end
 
   create_table "technologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -142,6 +193,8 @@ ActiveRecord::Schema.define(version: 20180404054103) do
   add_foreign_key "client_preferences", "projects"
   add_foreign_key "client_preferences", "startup_statuses"
   add_foreign_key "client_preferences", "users"
+  add_foreign_key "connections", "users"
+  add_foreign_key "request_connections", "users"
   add_foreign_key "startup_projects", "projects"
   add_foreign_key "startup_projects", "users"
   add_foreign_key "startup_technologies", "technologies"

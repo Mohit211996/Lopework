@@ -1,0 +1,37 @@
+<div class="container-fluid">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 frnds_background">
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 frnds_content">
+			<% @request_connections.each do|rc| %>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 request">
+					Company Name  :
+					<%= rc.user.company_name %>
+					Email Id :
+					<%= rc.user.email %>
+					Experience :
+					<%= rc.user.experience %>
+					Projects :
+					Total : <%= rc.user.projects.count %> 
+					Available : <%= rc.user.projects.where(:project_status_id => 1).count %>
+					Alloted : <%= rc.user.projects.where(:project_status_id => 3).count %>
+					Completed : <%= rc.user.projects.where(:project_status_id => 3).count %>
+					<%text = "ACCEPT"%>
+					<%= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id ,:text => text,:selection => "accept"%>
+					<% text = "REJECT" %>
+
+					<%= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id ,:text => text,:selection => "reject"%>
+				</div>
+			<%end%>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".frnds_background").css("height", $(window).height());
+});
+$(window).resize(function(){
+	$('.frnds_background').css('height',$(window).height());
+});
+</script>

@@ -14,6 +14,8 @@ has_many :projects
 has_many :bids
 has_many :startup_projects
 has_one :client_preference
+has_many :connections
+has_many :request_connections
 # validates_uniqueness_of :user_id, :scope => [:project_id, :bid_id]
 
 # accepts_nested_attributes_for :technologies

@@ -28,12 +28,17 @@
 
 <div class="row padding_20" id="parent">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="all">
-
+<% if @project.count == 0 %>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+  <h1>YOU DON'T HAVE ANY PROJECTS</h1>
+</div>
+  <% else %> 
     <h1>ALL PROJECTS</h1>
 
 		<% @projects.each do |project|%>
 		<%= render(partial: '/client/currently_underbidding',:locals => {:project => project}) %>
 		<%end%>
+    <%end%>
 	</div>
 </div>
 
