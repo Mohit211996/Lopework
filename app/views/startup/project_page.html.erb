@@ -1,12 +1,10 @@
-
-
- <div class="top_image1">
+<div class="top_image1">
 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 outer_div">
     <div class="div_with_text" style="">
 
       <h1 style="text-align: center; color: white;">  <%= current_user.company_name %></h1>
-      <button class="click_me1" id="underbidding">Project</button>
+      <button class="click_me1" id="underbidding" >Project</button>
       &nbsp;&nbsp;
       <button class="click_me1" id="working">Bidding</button>
     </div>
@@ -29,11 +27,11 @@
 <div id="tab2">
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 add_pic" style="height: 500px;">
-      <!-- <img src="/assets/coin.jpg" class="img-responsive" height="400" width="400"> -->
 
      </div> 
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-<%= render(partial: '/bids/form',locals: {bid: @bid, project: @project}) %> 
+        
+<%= render(partial: '/bids/form',locals: {bid: @bid, project: @project, url: bids_path}) %> 
 </div>
   </div>  
 </div>
@@ -48,15 +46,11 @@ $(document).ready(function() {
     },2000);
 
     $("#underbidding").click(function(){
-      $("#all").css("display","none");
-      $("#tab1").css("display","block");
-
-      $("#tab2").css("display","none");
+     $("#tab1").css("display","block");
+       $("#tab2").css("display","none");
     });
 
     $("#working").click(function(){
-      $("#all").css("display","none");
-
       $("#tab1").css("display","none");
       $("#tab2").css("display","block");
     });
@@ -72,14 +66,34 @@ function showInput() {
         $(".add_nested_fields").click()
       }
   }
- $(window).load(function() {
-  $("#tab1").show();
+//  $(window).load(function() {
+//   $("#tab1").show();
  
-});
+// });
+//  $('#myTab a').click(function(e) {
+//   e.preventDefault();
+//   $(this).tab('show');
+// });
+
+// // store the currently selected tab in the hash value
+// $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+//   var id = $(e.target).attr("href").substr(1);
+//   window.location.hash = id;
+// });
+
+// // on load of the page: switch to the currently selected tab
+// var hash = window.location.hash;
+// $('#myTab a[href="' + hash + '"]').tab('show');
+// $("#tab1").click(function(e){
+//   e.preventDefault();
+//   $(this).show();
+
+// });
+$(document).ready(function(){
+    $('.click_me1 input[type="button"]').each(function(){
+        $(this).attr("selected",$(this).selected());
+    });
+  });
 </script>
-
-     
-	
-
 </div>
  	

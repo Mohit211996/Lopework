@@ -83,6 +83,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bid_params
-      params.require(:bid).permit(:id,:project_id,:user_id,installments_attributes: [:bid_id,:time,:budget,:details])
+      params.require(:bid).permit(:id,:project_id,:user_id,installments_attributes: [:bid_id,:time,:budget,:details,:_destroy])
     end
 end

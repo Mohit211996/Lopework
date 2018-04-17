@@ -16,7 +16,12 @@
   <div id="tab1">
  <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
  </div>
-  <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" > 
+  <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" >
+   <% if @startups.count == 0 %>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center; height: 300px;">
+  <h1>YOU DON'T HAVE ANY SELECTED PROJECTS</h1>
+</div>
+  <% else %>  
     <h1 style="text-align: center; margin-top: 10px;">SELECTED PROJECTS</h1>
   <% @startups.each do|startup| %>
 <div class="thumbnail">
@@ -24,7 +29,8 @@
 <%= render(partial: '/startup/form_job_offer',locals: {project: @temp}) %> 
 </div>
 <% end %>
- 
+ <% end %>
+
   
 </div>
 <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
@@ -36,18 +42,29 @@
     <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
  </div>
     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
+      <% if @project_available.count == 0 %>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center; height: 300px;">
+  <h1>YOU DON'T HAVE ANY BIDDED PROJECTS</h1>
+</div>
+  <% else %>  
       <h1 style="text-align: center; margin-top: -10px;">BIDDED PROJECTS</h1> 
       <% @project_available.each do|startup| %>
       <div class="thumbnail">
 <%= render(partial: '/startup/form_job_offer2',locals: {project: startup}) %> 
 </div>
 <% end %>
+<% end %>
+<% if @project_to_show.count == 0 %>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+  
+</div>
+  <% else %> 
  <% @project_to_show.each do|startup| %>
       <div class="thumbnail">
 <%= render(partial: '/startup/form_job_offer2',locals: {project: startup}) %> 
 </div>
 <% end %>
-
+<% end %>
 </div>
 <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
  </div>

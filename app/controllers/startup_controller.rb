@@ -13,10 +13,10 @@ class StartupController < ApplicationController
 
 	def project_page
 		@project = Project.where(id: params[:project]).first
-		
 		@installment = Installment.new
 		@bid = Bid.new
-	end
+		
+end
 
 def job_offer
 	@startups = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,4)

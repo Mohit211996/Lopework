@@ -452,6 +452,17 @@
 .view_button2:hover {
   box-shadow: 0px 2px 2px 0px #8C99A4;
 }
+.view_button4 {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+ width: 49%;
+ border-color: white;
+}
+.view_button4:hover {
+  box-shadow: 0px 2px 2px 0px #8C99A4;
+
+}
 .view_button3 {
   width: 17%;
   margin-top: 7px;
@@ -1046,21 +1057,27 @@ background-color: black;
 }
 
 .pro_form{
-  background: #e6e6ff;
+  background: #797B7E;
   margin-top: 30px;
      margin-bottom: 30px;
 
+}
+#projects label{
+  color: white;
 }
 .pro_form1{
   
   margin-top: 30px;
      margin-bottom: 30px;
-     background: linear-gradient(0deg,rgba(255,255,255,0.7),rgba(255,255,255,0.7)),url('/assets/usefultips1.jpg');
+     background: linear-gradient(0deg,rgba(20,20,20,0.5),rgba(20,20,20,0.5)),url('/assets/usefultips1.jpg');
   background-repeat: no-repeat;
  background-position: center;
  background-size: cover; 
  height: 700px;
      
+}
+.pro_form1 li{
+  color: white;
 }
 @media(max-width: 1000px){
   .pro_form1{
@@ -1127,3 +1144,23 @@ background-color: black;
  background-size: cover;
  
 }
+.selectRow {
+    display : block;
+   padding-top: 10px;
+   padding-bottom: 10px;
+  
+}
+.select2-container {
+  min-height: 42px !important;  
+}
+.select2-container--default .select2-selection--multiple{
+ 
+  border-radius: 5px;
+}
+/*@media(max-width: 320px){
+  .select2-container{
+   
+    width: 260px;
+
+
+}*/
