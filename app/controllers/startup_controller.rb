@@ -6,7 +6,7 @@ class StartupController < ApplicationController
 	end
 
 def project_details
-	# @project = Project.find(params[:id])
+	
 	@project = Project.where(id: params[:project]).first
 
 end
@@ -26,7 +26,8 @@ end
 		@project = Project.where(id: params[:project]).first
 		@installment = Installment.new
 		@bid = Bid.new
-		
+		@startup = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,4)
+	
 end
 
 def job_offer

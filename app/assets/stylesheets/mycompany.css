@@ -96,9 +96,9 @@
   float: right;
 }
 
-.list_nav li a {
+/*.list_nav li a {
   color: white !important;
-}
+}*/
 
 .navbar {
   position: fixed;
@@ -1340,13 +1340,19 @@ background-color: black;
   margin-bottom: 20px;
 
 }
+.dropdown-menu li a{
+  color: black !important;
+
+}
 .accept_btn>a{
   font-size: 15px;
   text-decoration: none;
   color: black;
 }
 
-
+ .dropdown-menu{
+  background-color: black !important;
+}
 .pro>a{
   padding-left: 15px;
   padding-right: 15px;
