@@ -64,12 +64,10 @@ function showInput() {
   var hash = window.location.href;
   var hash1 = window.location.hash;
   if (hash1 == "#underbidding"){
-      $("#tab1").show();
-      
-}else if(hash1 == "#working"){
+      $("#tab1").show();    
+  }
+  else if(hash1 == "#working"){
   $("#tab2").show();
- 
- 
   }
   else if(hash == "http://localhost:3000/bids"){
 
@@ -78,11 +76,15 @@ $("#tab2").show();
     
   }
   else{
+
     $("#tab1").show();
  
+
   }
-window.hash.reload();
+
   });
+
+
 
 $('#underbidding').click(function(e) {
  $("#tab1").show();

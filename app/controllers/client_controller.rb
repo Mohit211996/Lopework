@@ -4,8 +4,6 @@ class ClientController < ApplicationController
 		@projects = Project.where(:user_id => current_user.id)
 		@project= Project.where(:user_id => current_user.id,:project_status => 1)
 		@projects_alloted = Project.where(:user_id => current_user.id,:project_status => 3)
-		
-
 	end
 
 	def all_bidding_page
@@ -35,4 +33,13 @@ class ClientController < ApplicationController
 		@client_preference = ClientPreference.new
 		@project_id =2
 	end
+
+	def connections_client
+		@connections = Connection.where(:user_id => current_user.id)
+		@users = User.where(:id => @connections.select(:startup_id))
+		@all_ids = Project.where(:user_id => current_user.id).select(:id)
+		
+		byebug
+	end
+
 end

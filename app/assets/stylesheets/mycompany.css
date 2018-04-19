@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Niconne');
 
+.display_pic  {
+  float: right;
+    width: 400px !important;
+    padding-left: 20px !important;
+}
 
 .project_status {
   padding-top: 15px;
@@ -33,6 +38,7 @@
 
 .no_request_message_outer {
   display: table;
+  background-color: white;
 }
 
 .no_request_message p {

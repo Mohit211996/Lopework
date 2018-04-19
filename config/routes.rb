@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
 
 
+# get '/bids', to: 'start'
 get 'main', to: 'homes#front_page'
  get '/client', to: 'client#index'
  get '/startup', to: 'startup#index' 
@@ -33,6 +34,7 @@ get 'main', to: 'homes#front_page'
  post '/startup/job_offer1', to: 'startup#request_method'
  get '/startup/under_bidding_page', to: 'startup#under_bidding_page'
  get '/startup/project_details', to: 'startup#project_details' 
+ get '/client/connections', to: 'client#connections_client'
  root to:"homes#front_page"
  
 
