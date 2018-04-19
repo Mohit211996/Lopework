@@ -1,3 +1,8 @@
+<%if @check == 1%>
 $('#request_button_connection_accept_<%= @client_id %>').removeAttr('disabled').attr('value',"Accepted");
 $('#request_button_connection_reject_<%= @client_id %>').removeAttr('disabled').attr('value',"Unfriend");
 $('#request_button_connection_accept_<%= @client_id %>').css("display","none")
+<%else%>
+location = 'http://localhost:3000/startup/friends'
+window.location.reload();
+<%end%>

@@ -26,31 +26,26 @@ class ConnectionsController < ApplicationController
   def create
     @connection = Connection.new(:user_id => params[:connection][:user_id], :startup_id => current_user.id)
     @client_id = params[:connection][:user_id]
+    @check = 0;
     @count = Connection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],current_user.id).count
     if @count == 0
      if params[:connection][:selection] == "accept"
       @connection.save
       @request_connection = RequestConnection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],current_user.id).first
       @request_connection.destroy
-      respond_to do |format|
-        format.js
-      end
+      @check=1
      else
       @request_connection = RequestConnection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],current_user.id).first
       @request_connection.destroy
-      respond_to do |format|
-        format.html {redirect_to startup_friends_path, notice: 'Rejected successfully' }
-      end
      end
     else
       if params[:connection][:selection] == "reject"
         @connection = Connection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],current_user.id).first
-        byebug
         @connection.destroy
-        respond_to do |format|
-          format.html {redirect_to startup_friends_path }
-        end
       end
+    end
+    respond_to do |format|
+        format.js
     end
   end
 
