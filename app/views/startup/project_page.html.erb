@@ -24,9 +24,8 @@
   </div>
   
 </div>
-</div>
-<div class="row padding_20"> 
-<div class="collapse" id="tab2">
+
+<div id="tab2">
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 add_pic" style="height: 500px;">
 
@@ -61,7 +60,6 @@ function showInput() {
       }
   }
  $(window).load(function() {
-  alert("hgfhg")
   var hash = window.location.href;
   var hash1 = window.location.hash;
   if (hash1 == "#underbidding"){
@@ -70,9 +68,16 @@ function showInput() {
   else if(hash1 == "#working"){
   $("#tab2").show();
   }
+  else if(hash == "http://localhost:3000/bids"){
+
+$("#tab2").show();
+ 
+    
+  }
   else{
 
-     $("#tab1").show();
+    $("#tab1").show();
+ 
   }
 
   });
