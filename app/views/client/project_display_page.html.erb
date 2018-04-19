@@ -2,10 +2,13 @@
 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 outer_div" style="">
     <div class="div_with_text" >
-      <h1>MOHIT</h1>
-      <button class="click_me" id="details">Project Details</button>
+       <h1><%= current_user.company_name %></h1>
+       <ul id="myTab">
+      <li class="click_me1" id="details"> <a href="#details" style="text-decoration: none; color: black;">Project Details</a></li>
       &nbsp;&nbsp;
-      <button class="click_me" id="bids">Project Bids</button>
+      <li  class="click_me1" id="bids"><a href="#bids" style="text-decoration: none; color: black;">Project Bids</a></li>
+    </ul>
+      
     </div>
     
   </div>
@@ -42,19 +45,48 @@
 
  $(document).ready(function(){
 
- 		 $("#details").click(function(){
+ 		 $("#details").click(function(e){
       $("#tab1").css("display","block");
       $("#tab2").css("display","none");
+       var id = $(e.target).attr("href").substr(1);
+       window.location.hash = id;
     });
 
-    $("#bids").click(function(){
+    $("#bids").click(function(e){
       $("#tab1").css("display","none");
       $("#tab2").css("display","block");
+       var id = $(e.target).attr("href").substr(1);
+       window.location.hash = id;
     });
+    $(window).load(function() {
+  
+  var hash = window.location.href;
+  var hash1 = window.location.hash;
+  if (hash1 == "#details"){
+  $("#parent").removeClass("padding_20");
+      $("#tab1").show();
+      $("#tab2").hide();
+     
+      
+}else if (hash1 == "#bids") {
+      $("#parent").removeClass("padding_20");
+  $("#tab2").show();
+   $("#tab1").hide();
+ 
+ 
+  }
+  else{
+    
+  $("#tab1").show();
+ 
 
-    $( window ).load(function() {
-  		$("#tab1").css("display","block");
-	});
+  }
+window.hash.reload();
+  });
+
+ //    $( window ).load(function() {
+ //  		$("#tab1").css("display","block");
+	// });
 
 		var id_array=[];
 		var temp=0;

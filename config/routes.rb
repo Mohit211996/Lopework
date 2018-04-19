@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 	
   
   
+  resources :request_connections
+  resources :connections
   resources :startup_statuses
 
   resources :client_preferences
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
 get 'main', to: 'homes#front_page'
  get '/client', to: 'client#index'
  get '/startup', to: 'startup#index' 
+ get '/startup/friends', to: 'startup#frnds'
  get '/startup/project_page', to: 'startup#project_page', :as => :project_page
  get '/startup/job_offer', to: 'startup#job_offer', :as => :job_offer
  get '/client/all_bids', to: 'client#all_bidding_page'
@@ -29,7 +32,8 @@ get 'main', to: 'homes#front_page'
  get '/client/project2', to: 'client#project_display_page_2'
  post '/startup/job_offer1', to: 'startup#request_method'
  get '/startup/under_bidding_page', to: 'startup#under_bidding_page'
- root to:"homes#index"
+ get '/startup/project_details', to: 'startup#project_details' 
+ root to:"homes#front_page"
  
 
 

@@ -1,0 +1,20 @@
+<%= form_with(model: request_connection, :id => "form_id_#{startup_id}") do |form| %>
+  <% if request_connection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(request_connection.errors.count, "error") %> prohibited this request_connection from being saved:</h2>
+
+      <ul>
+      <% request_connection.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+  <%= form.hidden_field :startup_id, :value => startup_id %>
+
+  <div class="actions" style="margin-top: 15px;">
+    <%= form.submit "#{text}",:id => "request_button_#{startup_id}" %>
+  </div>
+<% end %>

@@ -22,6 +22,14 @@ class ClientController < ApplicationController
 			@techno = Project.find(params[:project_id]).technology
 			
 		end
+
+		@connections = Connection.where(:user_id => current_user.id)
+		@requested_connections = RequestConnection.where(:user_id => current_user.id )
+		@request_connection_new = RequestConnection.new
+		@connection_new = Connection.new
+
+
+
 	end
 	def project_display_page_2
 		@client_preference = ClientPreference.new

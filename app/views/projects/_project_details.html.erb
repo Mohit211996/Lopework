@@ -20,7 +20,6 @@
 		<img src="/assets/tech2.png" height="40px" width="40px" style="padding: 5px;">
 <b>Technology: </b> <%= project.technology.technology_name %></div>
 </div>
-<%# if @project.startup_status_id == 4 %>
 <div class="row">
 	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 		<img src="/assets/project_desc.jpg"  class="img-responsive" style="margin-top: 30px;">
@@ -29,25 +28,5 @@
 	 <h2 style="color: #2C3E50;">
 	Description</h2>  
 	<%= raw project.requirement %>
-
-	<%= link_to startup_job_offer1_path(:decide => 'accept',:project_id => project.id),method: :post do %>
- <button class="view_button4"><span class="glyphicon glyphicon-ok"> </span>  </button>
-<% end %>
-	<%= link_to startup_job_offer1_path(:decide => 'reject',:project_id => project.id ),method: :post do %>
-	<button class="view_button4"><span class="glyphicon glyphicon-remove"></span> </button>
-	<% end %> 
-</div>
-</div>
-<%# else %>
-
-<div class="row">
-	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-		<img src="/assets/project_desc.jpg"  class="img-responsive" style="margin-top: 30px;">
-	</div>
-	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	 <h2 style="color: #2C3E50;">
-	Description</h2>  
-	<%= raw project.requirement %>
-	<%# end %>
 </div>
 </div>

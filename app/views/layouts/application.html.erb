@@ -10,118 +10,64 @@
   </head>
 
   <body>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-bottom: 0px;">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-    <div class="navbar-header navbar-left navbar navbar-fixed-top" style="border-bottom-width: 0px; margin-bottom: 0px;">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <div class="navbar-header" style="padding-left: 10px">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <div class="outer">
-        <div id="logo">
-    <%= link_to root_path do %>
-          <%= image_tag '3.png', alt: 'a face that is unnervingly happy'%>
+      <%= link_to root_path do %>
+   <%= image_tag "3.png", class: "logo" %>
 <% end %>
-
- <h5 class="tag-line hidden-xs">Lopework</h5>
     </div>
-      </div>
+    <ul class="nav navbar-nav list_nav">
+      <% if user_signed_in? && current_user.role_id == 1 %>
     
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right" style="padding-right: 10px;">
-
-        <%if user_signed_in? && current_user.role_id == 1 %>
-        <%# if params[:role_id] == '1'%>
-
-                <li>
-          <%= link_to 'Account', edit_user_registration_path(current_user)%>
-        </li>
-                <li>
-          <%= link_to 'My Project', edit_user_registration_path(current_user)%>
-        </li>
-  <li>
-          <%= link_to 'Notification', edit_user_registration_path(current_user)%>
-        </li>
-
-                <li>
-          <%= link_to 'Request', edit_user_registration_path(current_user)%>
-        </li>
-
-                <li>
-          <%= link_to 'Jobs Offer', job_offer_path(current_user)%>
-        </li>
-        <li>
-          <%= link_to 'Index', startup_path(current_user)%>
-        </li>
-              
-        <li><%= link_to 'Log Out', destroy_user_session_path,method: :delete%></li>
-         
-      
-        <% elsif user_signed_in? && current_user.role_id == 2 %>
-         <%# if params[:role_id] == '2'%>
-        <li>
-
-          <%= link_to 'Account', root_path %>
-        </li>
-        <li>
-          <%= link_to 'Notification', root_path %>
-        </li>
-         <li>
-         <%= link_to 'Add Project',  new_project_path %> 
-        </li>      
-          <li>
-          <%= link_to "Connection", new_user_session_path %>
-        </li>
-         <li>
-       <%= link_to "All Bidding", client_path %>   
+      <li><%= link_to 'My Projects', startup_path  %></li>
+      <li><%= link_to 'Notification', destroy_user_session_path %></li>
+      <li><%= link_to 'Job Offers',job_offer_path %></li>
+       <li><%= link_to 'Requests', startup_friends_path %></li>
+        <li class="dropdown">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Account', startup_path %></li>
+            <li><%= link_to 'Edit', edit_user_registration_path %></li>
+            <li><%= link_to 'Log Out', destroy_user_session_path,method: :delete%></li>
+          </ul>
 </li>
- <li>
-       <%= link_to "History", new_user_session_path %>   
+<% elsif user_signed_in? && current_user.role_id == 2 %>
+      <li><%= link_to 'Add Project', new_project_path %></li>
+          <li><%= link_to 'Notification', destroy_user_session_path %></li>
+           <li><%= link_to 'Connections', destroy_user_session_path %></li>
+           <li><%= link_to 'History', destroy_user_session_path %></li>
+           <li class="dropdown">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Account', client_path %></li>
+            <li><%= link_to 'Edit', edit_user_registration_path %></li>
+            <li><%= link_to 'Log Out', destroy_user_session_path,method: :delete%></li>
+          </ul>
 </li>
-         <li> 
-        <%= link_to 'Log Out', destroy_user_session_path,method: :delete%> </li>   
-         
-         <% else %>
-         <li>
-
-          <%= link_to 'Our Team', root_path %>
-        </li>
-        <li>
-         <a href="#footer1">Contact Us </a>
-        </li>
-         <li>
-         <%= link_to 'Sign Up',  sign_index_path %> 
-        </li>   
-          <li>
-          <%= link_to "Login", new_user_session_path %>
-        </li>
-        <%#end%>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+            
+      <% else %>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Our Team</a></li>
+    <li><%= link_to 'Sign In', sign_index_path%></li>
+      <li><%= link_to 'Log In', new_user_session_path%></li>
+      <% end %>
+    </ul>
   </div>
 </nav>
+
 
 
  
 <div class="content">
 
-   <script>
-            $(document).ready(function(){
-            $(window).on("scroll",function(){
-            var wn = $(window).scrollTop();
-            if(wn > 120){
-            $(".navbar").css("background","rgba(255,255,255,1)");
-            }
-            else{
-            $(".navbar").css("background","rgba(255,255,255,1)");
-            }
-             });
-            });
-          </script>
+  
 
 
     <div class="wrapper">
@@ -131,60 +77,16 @@
 
  
 </div>
-
-      <footer class="footer" id="footer1">
-        <div class="container">
-        <div class="row">
-           
-             <% if user_signed_in? %>
-             <h2 style="text-align: center;  padding-bottom: 10px;">Welcome to Lopework,Where Startups Grow.</h2>
-             <% else %>
-             <h2 style="text-align: center;   padding-bottom: 10px;">
-      Ready to become a member? 
-      <%= link_to new_user_session_path do %>Apply Now.
-      <% end %>
-      </h2>
-      <% end %>
-    
-   
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <ul style="list-style-type: none;">
-              <li>
-            <img src="/assets/3.png" height="40">
-            <span class="line">Lopework</span></li>
-
-
-            <li>
-              A community of curated startup talent available to work for you remotely at the click of a button.
-
-            </li>
-
-            </ul>
-          </div>
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-
-           </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <ul style="list-style-type: none; ">
-             <li>Contact us and we'll get back to you within 24 hours:</li>
-      <li><span class="glyphicon glyphicon-map-marker"></span> Chandigarh, india</li>
-      <li><span class="glyphicon glyphicon-phone"></span> +00 1515151515</li>
-      <li><span class="glyphicon glyphicon-envelope"></span> lopework@gmail.com</li> 
-              
-            </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+</div>
        <script>
             $(document).ready(function(){
             $(window).on("scroll",function(){
             var wn = $(window).scrollTop();
             if(wn > 120){
-            $(".navbar").css("background","rgba(255,255,255,1)");
+            $(".navbar").css("background","rgba(255,255,255,0)");
             }
             else{
-            $(".navbar").css("background","rgba(255,255,255,1)");
+            $(".navbar").css("background","rgba(255,255,255,0)");
             }
              });
             });

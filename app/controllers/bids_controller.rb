@@ -15,7 +15,7 @@ class BidsController < ApplicationController
   # GET /bids/new
   def new
     @bid = Bid.new
-@bid.installments.new
+@bid.installments.build
 #     if bid.project_id.empty?
 #   @bid = Bid.new
 # @bid.installments.new
@@ -34,15 +34,14 @@ end
   def create
 @bid = Bid.new(bid_params)
 @project =Project.find(params[:bid][:project_id])
-    respond_to do |format|
+respond_to do |format|
       if @bid.save
         format.html { redirect_to startup_url , notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bids }
       else
-
-format.html { render :template => 'startup/project_page'}
+       
+        format.html { render :template => 'startup/project_page'}
         format.json { render json: @bid.errors, status: :unprocessable_entity }
-
     end
   end
 end
