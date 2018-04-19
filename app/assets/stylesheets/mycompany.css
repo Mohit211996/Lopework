@@ -2,6 +2,18 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Niconne');
 
+.project_status {
+  padding-top: 15px;
+}
+
+.project_status p {
+  display: block;
+  background-color: black;
+  padding: 5px 20px;
+  float: right;
+  letter-spacing: 1.5px;
+}
+
 .middle {
   display: table;
   height: 230px;

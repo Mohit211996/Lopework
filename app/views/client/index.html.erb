@@ -36,7 +36,7 @@
     <h1>ALL PROJECTS</h1>
 
 		<% @projects.each do |project|%>
-		<%= render(partial: '/client/currently_underbidding',:locals => {:project => project}) %>
+		<%= render(partial: '/client/all_projects',:locals => {:project => project}) %>
 		<%end%>
     <%end%>
 	</div>
