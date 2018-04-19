@@ -18,12 +18,18 @@
 		<div class="container" style="margin-top: 10px;">
 		<div class="row padding_20">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="all">
+		 <% if @projects.count == 0 %>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center; height: 300px;">
+  <h1>YOU DON'T HAVE ANY AVAILABLE PROJECTS</h1>
+</div>
+  <% else %>  
+		 <h1 style="text-align: center; margin-top: 10px;">AVAILABLE PROJECTS</h1>
 		<% @projects.each do|project| %>
 	
 <%= render(partial: '/startup/project_preview',locals: {project: project}) %> 
 
 
-
+<% end %>
 <% end %>
 </div>
 </div>

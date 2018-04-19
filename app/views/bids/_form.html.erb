@@ -1,6 +1,8 @@
 
 
-<%= nested_form_for @bid,html: {:id => 'bids'} do |form| %>
+
+<%= nested_form_for @bid,html: {:id => 'bids', url: url} do |form| %>
+
   <% if bid.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(bid.errors.count, "error") %> prohibited this bid from being saved:</h2>
@@ -36,17 +38,19 @@
     <%= fi.label :budget,"Budget",:class => "spacing" %><br>
     <%= fi.text_field :budget, :class=> "budget_field",:required => true, placeholder:"In Rs ..." %>
   </div>
+ <!-- <div class="row mar" style="padding-left: 16px!important"> Do you want to Delete? 
+  <%#= form.check_box '_destroy' %>
+    </div> --> 
  <%end%>
 
 <br>
 <br>
   <div>
-    <%= form.link_to_add "Add a installment", :installments, :id =>"add_installment",:class => "spacing" %>
+    <%= form.link_to_add "Add an installment", :installments, :id =>"add_installment",:class => "spacing" %>
     &nbsp;
-    <%= form.submit "Create Bid",:class =>"newbid spacing",:id => "disable_me",:disabled => true %>
+    <%= form.submit "Create Bid",:class =>"newbid spacing disable_class",:id => "disable_me",:disabled => true %>
  </div>
-<!-- <div class="row mar" style="padding-left: 16px!important"> Do you want to Delete? <%#= form.check_box '_destroy' %>
-    </div> -->
+  
 <% end %>
 <script type="text/javascript">
    $(document).ready(function(){
@@ -69,14 +73,24 @@
     });
 
     $("#add_installment").click(function(){
-      $("#disable_me").removeAttr("disabled");
+       $("#disable_me").removeAttr("disabled");
+// $("#disable_me").removeClass("disable_class");
+
+
     });
-
-
 
     
 
 });
+   $(document).ready(function() {
+    setTimeout(function(){
+      $('#error_explanation').fadeOut("slow",function(){
+        $(this).remove();
+      })
+    },6500);
+
+
+  });
 $(document).on('nested:fieldAdded', function(event){
 
 
@@ -123,4 +137,11 @@ $(document).on('nested:fieldAdded', function(event){
 
 })
 
+
 </script>
+ <!-- <style type="text/css">
+  .disable_class{
+   opacity: 0.6;
+    cursor: not-allowed;
+}
+</style>  -->

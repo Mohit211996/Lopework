@@ -32,7 +32,8 @@ get 'main', to: 'homes#front_page'
  get '/client/project2', to: 'client#project_display_page_2'
  post '/startup/job_offer1', to: 'startup#request_method'
  get '/startup/under_bidding_page', to: 'startup#under_bidding_page'
- root to:"homes#index"
+ get '/startup/project_details', to: 'startup#project_details' 
+ root to:"homes#front_page"
  
 
 

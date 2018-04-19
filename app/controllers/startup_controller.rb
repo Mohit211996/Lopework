@@ -5,6 +5,12 @@ class StartupController < ApplicationController
 		@connection_new = Connection.new
 	end
 
+def project_details
+	# @project = Project.find(params[:id])
+	@project = Project.where(id: params[:project]).first
+
+end
+	
 
 	def index
 		technologies = []
@@ -14,15 +20,14 @@ class StartupController < ApplicationController
 		end
 
     @projects = Project.where(project_status_id:1,technology_id:technologies)
-	
 	end
 
 	def project_page
 		@project = Project.where(id: params[:project]).first
-		
 		@installment = Installment.new
 		@bid = Bid.new
-	end
+		
+end
 
 def job_offer
 	@startups = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,4)

@@ -34,10 +34,7 @@ end
   def create
 @bid = Bid.new(bid_params)
 @project =Project.find(params[:bid][:project_id])
-
-
-
-    respond_to do |format|
+respond_to do |format|
       if @bid.save
         format.html { redirect_to startup_url , notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bids }
@@ -85,6 +82,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bid_params
-      params.require(:bid).permit(:id,:project_id,:user_id,installments_attributes: [:bid_id,:time,:budget,:details])
+      params.require(:bid).permit(:id,:project_id,:user_id,installments_attributes: [:bid_id,:time,:budget,:details,:_destroy])
     end
 end

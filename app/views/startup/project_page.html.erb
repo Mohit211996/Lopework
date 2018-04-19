@@ -1,14 +1,14 @@
-
-
- <div class="top_image1">
+<div class="top_image1">
 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 outer_div">
     <div class="div_with_text" style="">
 
       <h1 style="text-align: center; color: white;">  <%= current_user.company_name %></h1>
-      <button class="click_me1" id="underbidding">Project</button>
+    <ul id="myTab">
+      <li class="click_me1" id="underbidding"> <a href="#underbidding" style="text-decoration: none; color: black;">Project</a></li>
       &nbsp;&nbsp;
-      <button class="click_me1" id="working">Bidding</button>
+      <li  class="click_me1" id="working"><a href="#working" style="text-decoration: none; color: black;">Bidding</a></li>
+    </ul>
     </div>
     
   </div>
@@ -16,7 +16,7 @@
 </div>
 <div class="container" >
 <div class="row"> 
-  <div id="tab1">
+  <div class="collapse" id="tab1" >
  
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 20px;"> 
 
@@ -26,14 +26,14 @@
 </div>
 </div>
 <div class="row padding_20"> 
-<div id="tab2">
+<div class="collapse" id="tab2">
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 add_pic" style="height: 500px;">
-      <!-- <img src="/assets/coin.jpg" class="img-responsive" height="400" width="400"> -->
 
      </div> 
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-<%= render(partial: '/bids/form',locals: {bid: @bid, project_id: @project.id}) %> 
+
+<%= render(partial: '/bids/form',locals: {bid: @bid, project_id: @project.id, url: bids_path}) %> 
 </div>
   </div>  
 </div>
@@ -48,19 +48,6 @@ $(document).ready(function() {
       })
     },2000);
 
-    $(document).on('click','#underbidding',function(){
-      $("#all").css("display","none");
-      $("#tab1").css("display","block");
-
-      $("#tab2").css("display","none");
-    });
-
-    $(document).on('click','#working',function(){
-      $("#all").css("display","none");
-
-      $("#tab1").css("display","none");
-      $("#tab2").css("display","block");
-    });
 });
 function showInput() {
       var count = $("#user_input").val()
@@ -74,13 +61,39 @@ function showInput() {
       }
   }
  $(window).load(function() {
-  $("#tab1").show();
+  var hash = window.location.href;
+  var hash1 = window.location.hash;
+  if (hash1 == "#underbidding"){
+      $("#tab1").show();
+      
+}else if(hash1 == "#working"){
+  $("#tab2").show();
  
-});
+ 
+  }
+  else{
+     $("#tab1").show();
+  }
+window.hash.reload();
+  });
+
+$('#underbidding').click(function(e) {
+ $("#tab1").show();
+ $("#tab2").hide();
+ var id = $(e.target).attr("href").substr(1);
+  window.location.hash = id;
+
+
+ });
+$('#working').click(function(e) {
+ $("#tab2").show();
+ $("#tab1").hide();
+ var id = $(e.target).attr("href").substr(1);
+  window.location.hash = id;
+
+ });
+
+        
 </script>
-
-     
-	
-
 </div>
  	
