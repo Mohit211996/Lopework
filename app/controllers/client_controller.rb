@@ -39,7 +39,6 @@ class ClientController < ApplicationController
 		@users = User.where(:id => @connections.select(:startup_id))
 		@all_ids = Project.where(:user_id => current_user.id).select(:id)
 		
-		byebug
 	end
 
 end
