@@ -40,7 +40,7 @@ respond_to do |format|
         format.json { render :show, status: :created, location: @bids }
       else
        
-        format.html { render :template => 'startup/project_page'}
+        format.html { render '/startup/project_page'}
         format.json { render json: @bid.errors, status: :unprocessable_entity }
     end
   end
