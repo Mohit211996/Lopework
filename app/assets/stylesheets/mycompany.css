@@ -39,6 +39,7 @@
 .no_request_message_outer {
   display: table;
   background-color: white;
+  margin-top: 50px;
 }
 
 .no_request_message p {
@@ -581,7 +582,6 @@
   padding-top:10px;
   margin-top: 20px;
   padding: 20px;
-  background-color: #F3F5F4;
   padding-top: 0px;
 
 }
@@ -1294,13 +1294,13 @@ background-color: black;
 }
 
 .pro_form{
-  background: #797B7E;
+  background:#797b7e5c;
   margin-top: 30px;
      margin-bottom: 30px;
 
 }
 #projects label{
-  color: white;
+  color: black;
 }
 .pro_form1{
   

@@ -79,3 +79,34 @@ $(document).ready(function(){
 </script>
 
 
+ <script>
+            $(document).ready(function(){
+            $(window).on("scroll",function(){
+            var wn = $(window).scrollTop();
+            if(wn > 120){
+            $(".navbar").css("background","rgba(255,255,255,0)");
+            }
+            else{
+            $(".navbar").css("background","rgba(255,255,255,0)");
+            }
+             });
+            });
+
+            $(window).bind("load", function(){
+              var wn = $(window).height();
+              var ft = $('.footer').height();
+              var h = $('.navbar').height();
+              var calculate = wn - ft - h ;
+              $(".wrapper").css("min-height",calculate);
+            });
+
+            window.onresize = resize;
+function resize() {
+   var wn = $(window).height();
+              var ft = $('.footer').height();
+              var h = $('.navbar').height();
+              var calculate = wn - ft - h ;
+              $(".wrapper").css("min-height",calculate);
+}
+
+          </script>

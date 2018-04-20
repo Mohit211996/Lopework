@@ -1,9 +1,11 @@
-<div class="container" >
-  <div class="row">
-    
+<div class="container-fluid" >
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 frnds_background">
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 pro_form">
+    </div>
 
    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pro_form">
-    <h2 style="text-align: center; color: white;">New Project</h2>
+     <h2 style="text-align: center; color: black;">New Project</h2> 
+  
     
 <%= form_with(model: project, local: true,html: {:id => 'projects'} ) do |form| %>
   <% if project.errors.any? %>
@@ -54,23 +56,7 @@
 <% end %>
 
 </div>
-
- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pro_form1">
-  <h2 style="text-align: center; color: white;">Useful Tips</h2>
-  <ol style="list-style-type: 1; border-top: 1px dotted black;">
-    <li style="font-size: 16px;">
-      Describe your Job in as much detail as you can comfortably reveal - it will increase the quality of proposals you receive and shorten the selection process.
-    </li>
-    <li style="font-size: 16px;">
-      Upload as much relevant information (pictures, documents, specifications, links, etc) as possible to get a realistic quote.
-    </li>
-    <li style="font-size: 16px;">
-      Match the experience level to your requirements – remember, you’re looking for the best you can afford, not the cheapest you can get.
-    </li>
-    <br>
-   <p style="color: white;"> For more helpful tips, see our guide <a href="http://blog.peopleperhour.com/hiring-a-freelancer/?utm_source=own-properties&utm_medium=JobPostPage&utm_campaign=JobPostPage">“Hiring a startup”.</a> </p>
-  </ol>
-      
+<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 pro_form">
     </div>
 </div>
 </div>
