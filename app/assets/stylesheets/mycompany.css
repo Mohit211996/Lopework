@@ -2,6 +2,49 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Niconne');
 
+.doughnut {
+  height: 300px !important;
+}
+
+.product {
+  margin: 50px auto;
+  width: 280px;
+  height: 370px;
+  background: white;
+  border: 1px solid #333;
+  position: relative;
+  z-index: 90;
+}
+
+.ribbon-wrapper {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+  .ribbon {
+    font: bold 15px sans-serif;
+    color: #333;
+    text-align: center;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform:    rotate(-45deg);
+    -ms-transform:     rotate(-45deg);
+    -o-transform:      rotate(-45deg);
+    position: relative;
+    padding: 7px 0;
+    top: 55px;
+    left: -50px;
+    width: 250px;
+    background-color: #FAD7A0;
+    color: black;
+  }
+
+.font_size_20 {
+  font-size: 20px !important;
+}
+
 .display_pic  {
   float: right;
     width: 400px !important;
@@ -17,6 +60,7 @@
   background-color: black;
   padding: 5px 20px;
   float: right;
+  color: white !important;
   letter-spacing: 1.5px;
 }
 

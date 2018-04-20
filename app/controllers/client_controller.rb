@@ -42,4 +42,9 @@ class ClientController < ApplicationController
 		
 	end
 
+	def history_page
+		@completed_projects = Project.where(:user_id => current_user.id,:project_status_id => 4)
+		
+	end
+
 end

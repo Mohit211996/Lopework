@@ -39,7 +39,7 @@
 							<%= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id ,:startup_id => current_user.id,:text => text,:selection => "accept"%>
 							<% text = "REJECT" %>
 
-							<%= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id ,:text => text,:selection => "reject"%>
+							<%= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id,:startup_id => current_user.id ,:text => text,:selection => "reject"%>
 						</div>
 					</div>
 				</div>
