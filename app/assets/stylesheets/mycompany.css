@@ -1139,7 +1139,6 @@ input[type=submit]:hover {
   width: auto !important; 
  
 }
-
 }
 
 .tab {
@@ -1191,7 +1190,12 @@ display: inline-block;
 background-color: black;
     color: white;
 }
+.frnd{
+  padding-left: 0px;
+  padding-right: 0px;
 
+
+}
 /* Style the tab content */
 .tabcontent {
     display: none;
@@ -1285,6 +1289,11 @@ background-color: black;
  background-size: cover;
 
 }
+.unfrnd_button{
+  width: 40%;
+  margin-left: 30% !important;
+
+}
 .pro_page1{
   background: linear-gradient(0deg,rgba(20,20,20,0.5),rgba(20,20,20,0.5)),url('/assets/project_page.jpg');
   background-repeat: no-repeat;
@@ -1301,6 +1310,9 @@ background-color: black;
 }
 #projects label{
   color: black;
+
+
+
 }
 .pro_form1{
   

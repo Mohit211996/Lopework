@@ -1,60 +1,53 @@
 <div class="container-fluid">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 frnds_background">
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 frnds_content">
+		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
+		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 frnds_content">
 			<%if @connections.count == 0%>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no_request_message_outer">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no_request_message">
-					<p>YOU DON'T HAVE ANY FRIENDS</p>
+					<p>YOU DON'T HAVE ANY FRIEND<img src="/assets/sad.gif" height="50" width="50" style="margin-bottom: 10px;"></p>
 				</div>
 			</div>
 			<%else%>
 			<% @users.each do|rc| %>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 request_text">
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 middle">
-						<div class="middle_table">
-
-							<p>
-								Company Name  :
-								<%= rc.company_name %>
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 frnd">
+				<div class="thumbnail">
+					<img src="/assets/black.png" class="img-circle img-responsive">
+				<br>
+							<b>	<p style="text-align: center;"><%= rc.company_name %></p></b>
+							
+							<p style="text-align: center;">	<%= rc.email %>
 							</p>
-							<p>
-								Email Id :
-								<%= rc.email %>
-							</p>
-							<p>
-								Experience :
-								<%= rc.experience %>
-							</p>
-							<p>
+							
+							<p style="text-align: center;">
+							
 								Total Project :
 								<%= rc.startup_projects.count %>
 							</p>
-							<p>
-								Mutual Projects : 
+
+							
+							<p style="text-align: center;">
+								Experience:
+								<%= rc.experience %>
+							</p>
+							<p style="text-align: center;">
+							 	Mutual Projects : 
 								<%= rc.startup_projects.where(:project_id => @all_ids).count %>
 							</p>
-
+							
+							<div class="unfrnd_button ">
+							<p style="text-align: center;">
 							<% text = "Unfriend" %>
 							<%= render '/connections/form',:connection => @connection_new,:client_id => current_user.id,:startup_id => rc.id,:text => text,:selection => "unfriend"%>
-							
+						</p>
 						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 request_text middle">
-						<div class="middle_table">
-							<%#text = "ACCEPT"%>
-							<%#= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id ,:text => text,:selection => "accept"%>
-							<%# text = "REJECT" %>
-
-							<%#= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id ,:text => text,:selection => "reject"%>
 						</div>
-					</div>
 				</div>
 			<%end%>
-			
+			<br>
 			<%end%>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
 	</div>
 </div>
 
