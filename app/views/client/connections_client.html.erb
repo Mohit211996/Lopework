@@ -35,6 +35,8 @@
 								<%= rc.startup_projects.where(:project_id => @all_ids).count %>
 							</p>
 
+							<% text = "Unfriend" %>
+							<%= render '/connections/form',:connection => @connection_new,:client_id => current_user.id,:startup_id => rc.id,:text => text,:selection => "unfriend"%>
 							
 						</div>
 					</div>

@@ -38,6 +38,7 @@ class ClientController < ApplicationController
 		@connections = Connection.where(:user_id => current_user.id)
 		@users = User.where(:id => @connections.select(:startup_id))
 		@all_ids = Project.where(:user_id => current_user.id).select(:id)
+		@connection_new = Connection.new
 		
 	end
 
