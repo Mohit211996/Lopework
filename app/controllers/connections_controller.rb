@@ -24,23 +24,25 @@ class ConnectionsController < ApplicationController
   # POST /connections
   # POST /connections.json
   def create
-    @connection = Connection.new(:user_id => params[:connection][:user_id], :startup_id => current_user.id)
+    
+    @connection = Connection.new(:user_id => params[:connection][:user_id], :startup_id => params[:connection][:startup_id])
     @client_id = params[:connection][:user_id]
     @check = 0;
-    @count = Connection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],current_user.id).count
+    @count = Connection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],params[:connection][:startup_id]).count
+    byebug
     if @count == 0
      if params[:connection][:selection] == "accept"
       @connection.save
-      @request_connection = RequestConnection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],current_user.id).first
+      @request_connection = RequestConnection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],params[:connection][:startup_id]).first
       @request_connection.destroy
       @check=1
      else
-      @request_connection = RequestConnection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],current_user.id).first
+      @request_connection = RequestConnection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],params[:connection][:startup_id]).first
       @request_connection.destroy
      end
     else
-      if params[:connection][:selection] == "reject"
-        @connection = Connection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],current_user.id).first
+      if params[:connection][:selection] == "reject" || params[:connection][:selection] == "unfriend"
+        @connection = Connection.where("user_id = ? AND startup_id = ?",params[:connection][:user_id],params[:connection][:startup_id]).first
         @connection.destroy
       end
     end
