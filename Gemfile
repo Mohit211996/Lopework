@@ -26,6 +26,10 @@ gem 'devise'
 gem 'jquery-validation-rails'
 
 
+
+gem 'chart-js-rails'
+
+
 gem "nested_form"
 
 

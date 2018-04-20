@@ -1,5 +1,7 @@
 {
   "name": "my_company",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "chart.js": "^2.7.2"
+  }
 }
