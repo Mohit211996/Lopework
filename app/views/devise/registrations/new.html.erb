@@ -17,10 +17,11 @@
 
   <div class="container-fluid">
   <div class="row img2">
-    <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
-      <h1 class="signup"><b>Sign up</b></h1>
+    <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12" style="margin-top: 60px;">
+     <!--  <h1 class="signup"><b>Sign up</b></h1> -->
       <ul class="benifits">
         <% if params[:role_id] == '1'%>
+        <h1 class="signup"><b>Startup</b></h1>
         <li>
           Getting support through a program tailored to your needs can be the difference between winning or losing a contract. “I was in the process of collecting estimates from a few different sources — beyond the couple that rejected me outright because they don’t cover writers,” said Colleen Diamond, a content developer, writer, and editor.
         </li>
@@ -34,6 +35,7 @@
           Getting support through a program tailored to your needs can be the difference between winning or losing a contract. “I was in the process of collecting estimates from a few different sources — beyond the couple that rejected me outright because they don’t cover writers,” said Colleen Diamond, a content developer, writer, and editor.
         </li>
         <%else%>
+         <h1 class="signup"><b>Client</b></h1>
         <li>
           Getting support through a program tailored to your needs can be the difference between winning or losing a contract. “I was in the process of collecting estimates from a few different sources — beyond the couple that rejected me outright because they don’t cover writers,” said Colleen Diamond, a content developer, writer, and editor.
         </li>
@@ -111,7 +113,9 @@
   </div>
 
 <% end %>
-
+<%= render "devise/shared/links" %>
+<br>
+</div></div></div></div>
 <script type="text/javascript">
   
   $(document).ready(function(){
@@ -204,8 +208,3 @@ $(document).ready(
 
 </script>
 
-
-
-<%= render "devise/shared/links" %>
-<br>
-</div></div></div></div>

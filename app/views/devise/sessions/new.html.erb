@@ -2,11 +2,12 @@
 
 
 <div class="container-fluid">
-  <div class="row" style="height: 600px;">
+  <div class="row session">
+
    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 img2">
     <div class="log">
  
-<h2  style="text-align: center;">Log in</h2>
+<h2  style="text-align: center;">Log In</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: {:id => 'new_session'}) do |f| %>
 
@@ -40,6 +41,7 @@
 <br>
 <br>
 
+</div>
 </div>
 </div>
 </div>
@@ -91,22 +93,11 @@ $(document).ready(function(){
             }
              });
             });
-
-            $(window).bind("load", function(){
-              var wn = $(window).height();
-              var ft = $('.footer').height();
-              var h = $('.navbar').height();
-              var calculate = wn - ft - h ;
-              $(".wrapper").css("min-height",calculate);
-            });
-
-            window.onresize = resize;
-function resize() {
-   var wn = $(window).height();
-              var ft = $('.footer').height();
-              var h = $('.navbar').height();
-              var calculate = wn - ft - h ;
-              $(".wrapper").css("min-height",calculate);
-}
+$(document).ready(function(){
+  $(".session").css("height", $(window).height());
+});
+$(window).resize(function(){
+  $('.session').css('height',$(window).height());
+});
 
           </script>

@@ -10,7 +10,16 @@ def project_details
 	@project = Project.where(id: params[:project]).first
 
 end
-	
+	def my_project
+		 @projects = Project.all
+		# technologies = []
+		# current_user.technologies.each do |technology|
+		# 	technologies << technology.technology_name
+
+		# end
+
+  #   @projects = Project.where(project_status_id:4,technology_name:technologies)
+	end
 
 	def index
 		technologies = []
@@ -72,7 +81,7 @@ def request_method
 	end
 
  def startup_params
-      params.permit(:decide, :project_id)
+      params.permit(:decide, :project_id,:project_status_id)
   end
 
 

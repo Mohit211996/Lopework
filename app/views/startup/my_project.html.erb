@@ -1,0 +1,21 @@
+ <h1>My Projects</h1>
+ <% @projects.each do |project| %>
+ <% if project.project_status_id == 4 %>
+ 	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card" >
+	 	<div class="card_background">
+	 		
+
+ <h2><%= project.name %></h2>
+ 
+  <p><%= project.user.company_name %></p>
+  <p> <%= project.technology.technology_name %></p>
+  <p> <%=  raw project.requirement.first(300) %>...........</p>
+    <%= link_to :controller=> 'startup',:action=> 'project_page', :project => project do %>
+		<button class="view_button2"><span class="glyphicon glyphicon-eye-open"></span> </button>
+</div>
+		<% end %>
+	
+</div>
+ <% end %>
+ <% end %> 
+ 
