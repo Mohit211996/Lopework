@@ -44,7 +44,6 @@ if @project_accept_button.count
 @project_accept = @project_accept_button.where(:startup_status_id => 4)
 
 end
-byebug
 end
 
 def job_offer
