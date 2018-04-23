@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Niconne');
 
+.padding_varies {
+  padding: 100px;
+}
+
 .padding_top_100 {
   padding-top: 100px; 
 }
@@ -47,8 +51,7 @@
   height: 200px;
   overflow: hidden;
   position: absolute;
-  top: 4px;
-  left: 4px;
+  
 }
 
   .ribbon {
@@ -147,7 +150,6 @@
 }
 .connection_request_button_1 {
   padding: 10px;
-  margin-top: 10px !important;
   width: 100px !important;
   color: #414040 !important;
   background-color: #F1C688 !important;
@@ -1177,6 +1179,15 @@ span.icon-bar{
 }
 
 }
+
+@media(max-width: 516px){
+
+  .padding_varies{
+  padding: 10px !important;
+}
+
+}
+
 
 @media(max-width: 814px)
 {

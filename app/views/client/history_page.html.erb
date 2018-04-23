@@ -69,6 +69,7 @@ var myDoughnutChart = new Chart(ctx, {
       }
     ]
     },
+    
     options: {
       animation: {
         animationScale: true
@@ -90,7 +91,19 @@ var myLineChart = new Chart(ctx_1, {
     options: {
       animation: {
         animationScale: true
-      }
+      },
+      scales: {
+        yAxes: [{
+            ticks: {
+                fontSize: 30
+            }
+        }],
+        xAxes: [{
+            ticks: {
+                fontSize: 30
+            }
+        }]
+    }
     }
 });
 
