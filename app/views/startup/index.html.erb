@@ -24,7 +24,7 @@
 </div>
   <% else %>  
 		 <h1 style="text-align: center; margin-top: 10px;">AVAILABLE PROJECTS</h1>
-		<% @projects.each do|project| %>
+		<% @projects.reverse_each do|project| %>
 	
 <%= render(partial: '/startup/project_preview',locals: {project: project}) %> 
 

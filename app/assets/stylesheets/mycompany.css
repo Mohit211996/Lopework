@@ -64,8 +64,8 @@
     -o-transform:      rotate(-45deg);
     position: relative;
     padding: 7px 0;
-    top: 55px;
-    left: -50px;
+    top: 35px;
+    left: -70px;
     width: 250px;
     background-color: #FAD7A0;
     color: black;
@@ -156,6 +156,10 @@
 }
 
 .connection_request_button:hover{
+  box-shadow: 0px 3px 3px 0px black;
+}
+
+.connection_request_button_1:hover{
   box-shadow: 0px 3px 3px 0px black;
 }
 

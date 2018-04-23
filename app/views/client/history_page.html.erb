@@ -4,9 +4,9 @@
     <div class="div_with_text" >
        <h1><%= current_user.company_name %></h1>
        <ul id="myTab">
-      <li class="click_me1" id="details"> <a href="#details" style="text-decoration: none; color: black;">Index</a></li>
+      <li class="click_me1" id="index"> <a href="#index" style="text-decoration: none; color: black;">Index</a></li>
       &nbsp;&nbsp;
-      <li  class="click_me1" id="bids"><a href="#bids" style="text-decoration: none; color: black;">History</a></li>
+      <li  class="click_me1" id="history"><a href="#history" style="text-decoration: none; color: black;">History</a></li>
     </ul>
       
     </div>
@@ -15,8 +15,11 @@
   
 </div>
 
+
 <div class="container">
-  <% @completed_projects.each do |project| %>
+
+  <div id="tab2" style="display: none;">
+    <% @completed_projects.reverse_each do |project| %>
    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card" >
     <div class="card_background product">
       <div class="ribbon-wrapper">
@@ -39,18 +42,61 @@
     </div>
   </div>
   <%end%>
-</div>
-<div>
+  </div>
+  <div id="tab1" style="display: none;">
+    <div>
   <canvas id="doughnut_chart" class="doughnut"></canvas>
 </div>
 <div>
   <canvas id="line_chart" class="doughnut"></canvas>
 </div>
+  </div>
 
+  
+
+
+</div>
 
 <script type="text/javascript">
 
 $(document).ready(function() {
+
+     $("#index").click(function(e){
+      $("#tab1").css("display","block");
+      $("#tab2").css("display","none");
+       var id = $(e.target).attr("href").substr(1);
+       window.location.hash = id;
+    });
+
+    $("#history").click(function(e){
+      $("#tab1").css("display","none");
+      $("#tab2").css("display","block");
+       var id = $(e.target).attr("href").substr(1);
+       window.location.hash = id;
+    });
+    $(window).load(function() {
+  
+  var hash = window.location.href;
+  var hash1 = window.location.hash;
+  if (hash1 == "#history"){
+      $("#tab2").show();
+      $("#tab1").hide();
+     
+      
+}else if (hash1 == "#index") {
+  $("#tab1").show();
+   $("#tab2").hide();
+ 
+ 
+  }
+  else{
+    
+  $("#tab1").show();
+ 
+
+  }
+window.hash.reload();
+  });
 
 
  var ctx = document.getElementById("doughnut_chart");
