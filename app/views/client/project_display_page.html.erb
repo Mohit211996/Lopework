@@ -6,7 +6,21 @@
        <ul id="myTab">
       <li class="click_me1" id="details"> <a href="#details" style="text-decoration: none; color: black;">Project Details</a></li>
       &nbsp;&nbsp;
-      <li  class="click_me1" id="bids"><a href="#bids" style="text-decoration: none; color: black;">Project Bids</a></li>
+
+      <li  class="click_me1" id="bids"><a href="#bids" style="text-decoration: none; color: black;">
+      	<% if @project.project_status_id == 1 %>
+      Under Bidding
+      <% elsif @project.project_status_id == 2 %>
+      Project Bids
+      <% elsif @project.project_status_id == 3 %>
+      Startup Details
+      <% else%>
+      Startup Details
+      <%end%>
+
+
+
+      </a></li>
     </ul>
       
     </div>

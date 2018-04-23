@@ -43,8 +43,33 @@ class ClientController < ApplicationController
 	end
 
 	def history_page
+		@array = Array.new
+		@my_array = Array.new
+		@my_count = Array.new
 		@completed_projects = Project.where(:user_id => current_user.id,:project_status_id => 4)
-		
+		@projects = Project.where(:user_id => current_user.id)
+		@array << @projects.where(:project_status_id  => 1).count
+		@array << @projects.where(:project_status_id  => 2).count
+		@array << @projects.where(:project_status_id  => 3).count
+		@array << @projects.where(:project_status_id  => 4).count
+		count = 0
+		date = current_user.created_at.to_date.beginning_of_month
+		stop = Date.today
+		@project_all = Project.where(:user_id => current_user.id)
+		@project_all = @project_all.where("project_status_id = ? OR project_status_id = ?",3,4)
+		@sum = 0 
+		while (date <= stop)
+			@project_all.where("created_at <= ?",date).each do|project|
+				user_id = StartupProject.where(:project_id => project.id).first.user_id
+				@bid = Bid.where(:project_id => project.id,:user_id => user_id)
+				@sum = @bid.first.installments.map(&:budget).sum + @sum
+			end
+			@my_array << @sum
+			@sum = 0
+			count = count + 1
+			@my_count << count
+		  date = date+6.days
+		end
 	end
 
 end

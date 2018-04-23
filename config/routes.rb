@@ -35,7 +35,7 @@ get 'main', to: 'homes#front_page'
  get '/startup/under_bidding_page', to: 'startup#under_bidding_page'
  get '/startup/project_details', to: 'startup#project_details' 
  get '/client/connections', to: 'client#connections_client'
- get '/client/index', to: 'client#history_page'
+ get '/client/history_page', to: 'client#history_page'
  root to:"homes#front_page"
  
 
