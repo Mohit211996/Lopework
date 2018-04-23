@@ -31,12 +31,19 @@
 
      </div> 
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-        <% byebug %>
-        <% if @bid.nil? %>
+    
+
+        <% if @bid_exist.count == 0 %>
 
 <%= render(partial: '/bids/form',locals: {bid: @bid, project_id: @project.id, url: bids_path}) %>
 <% else %>
-<h1>hhh</h1>
+<% @bid_installment.each do|bi| %>
+Time:
+<%= bi.time %>
+Budget:
+<%= bi.budget %>
+
+<% end %> 
 <% end %> 
 </div>
   </div>  

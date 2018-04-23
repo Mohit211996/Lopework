@@ -31,8 +31,11 @@ end
 		@project = Project.where(id: params[:project]).first
 		@installment = Installment.new
 		@bid = Bid.new
+		 @bid_exist = Bid.where("user_id=? AND project_id =?",current_user.id,@project.id)
 		@startup = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,4)
-	
+	if @bid_exist.count
+@bid_installment = Installment.where(:bid_id => @bid_exist)
+end
 end
 
 def job_offer
