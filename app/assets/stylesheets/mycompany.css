@@ -252,7 +252,8 @@
   display: table;
   height: 700px;
   width: 100%;
-  background: 
+  background-color:#CA6B5A;
+ /* background: 
   linear-gradient(
     rgba(0,0,0,0.5),
     rgba(0,0,0,0.5)
@@ -260,7 +261,7 @@
   url('/assets/card_bg_2.jpg');
   background-position: left-center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 
@@ -310,6 +311,9 @@
 }
 .padding_20 {
   padding-bottom: 20px;
+}
+.padding_5 {
+  padding-bottom: 5px;
 }
 
   .error {
@@ -559,6 +563,20 @@
   text-transform: uppercase;  
   /*245, 199, 149*/
   
+}
+.bid_company_name {
+  font-size: 30px;
+  text-align: center;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  word-break: break-word;
+  color: #E59866;
+  text-transform: uppercase; 
+  
+}
+.bid_budget{
+  text-align: center;
+
 }
 
 .pref {
