@@ -2,6 +2,19 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Niconne');
 
+.padding_top_100 {
+  padding-top: 100px; 
+}
+
+.button_align_signup1 {
+  text-align: right;
+}
+
+.button_align_signup2 {
+  text-align: left;
+}
+
+
 .doughnut {
   height: 400px !important;
   width: 800px !important;
@@ -129,6 +142,15 @@
   letter-spacing: 1.5px;
   padding: 10px;
   width: 100%;
+  color: #414040 !important;
+  background-color: #F1C688 !important;
+}
+.connection_request_button_1 {
+  padding: 10px;
+  margin-top: 10px !important;
+  width: 100px !important;
+  color: #414040 !important;
+  background-color: #F1C688 !important;
 }
 
 .connection_request_button:hover{
@@ -1152,8 +1174,18 @@ span.icon-bar{
   .log{
    
     width: auto !important;
+}
 
+}
 
+@media(max-width: 814px)
+{
+  .button_align_signup1 {
+    text-align: center !important;
+  }
+  .button_align_signup2 {
+    text-align: center !important;
+  }
 }
 
 @media(max-width: 360px){
@@ -1162,7 +1194,7 @@ span.icon-bar{
 }
 }
 
-}
+
 @media(max-width: 390px){
   .log1{
    
@@ -1280,8 +1312,7 @@ background-color: black;
     color: white;
 }
 .frnd{
-  padding-left: 0px;
-  padding-right: 0px;
+ padding: 5px;
 
 
 }
