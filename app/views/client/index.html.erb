@@ -37,7 +37,7 @@
   <% else %> 
     <h1>ALL PROJECTS</h1>
 
-		<% @projects.each do |project|%>
+		<% @projects.reverse_each do |project|%>
 		<%= render(partial: '/client/all_projects',:locals => {:project => project}) %>
 		<%end%>
     <%end%>
@@ -57,7 +57,7 @@
 </div>
   <% else %>  
   <h1 style="text-align: center;">UNDER BIDDING PROJECTS</h1>
-	 <% @project.each do|project|%>
+	 <% @project.reverse_each do|project|%>
 	<%= render(partial: '/client/currently_underbidding', :locals => {:project => project}) %>
 	<%end%>
 
@@ -77,7 +77,7 @@
 </div>
   <% else %>
 <h1 style="text-align: center;">WORKING PROJECTS</h1>
- 	<% @projects_alloted.each do|project|%>
+ 	<% @projects_alloted.reverse_each do|project|%>
  <%= render(partial: '/client/currently_working', :locals => {:project => project}) %>
  <%end%>
 

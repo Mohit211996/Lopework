@@ -25,7 +25,7 @@
 </div>
   <% else %>  
     <h1 style="text-align: center; margin-top: 10px;">SELECTED PROJECTS</h1>
-  <% @startups.each do|startup| %>
+  <% @startups.reverse_each do|startup| %>
 <div class="thumbnail">
 <%@temp=@projects.find(startup.project_id)%>
 <%= render(partial: '/startup/form_job_offer',locals: {project: @temp}) %> 
@@ -50,7 +50,7 @@
 </div>
   <% else %>  
       <h1 style="text-align: center; margin-top: -10px;">BIDDED PROJECTS</h1> 
-      <% @project_available.each do|startup| %>
+      <% @project_available.reverse_each do|startup| %>
       <div class="thumbnail">
 <%= render(partial: '/startup/form_job_offer2',locals: {project: startup}) %> 
 </div>
@@ -61,7 +61,7 @@
   
 </div>
   <% else %> 
- <% @project_to_show.each do|startup| %>
+ <% @project_to_show.reverse_each do|startup| %>
       <div class="thumbnail">
 <%= render(partial: '/startup/form_job_offer2',locals: {project: startup}) %> 
 </div>
