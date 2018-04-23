@@ -27,24 +27,37 @@
 
 <div id="tab2">
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 add_pic" style="height: 500px;">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 add_pic hidden-xs hidden-sm" style="height: 500px;">
 
      </div> 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 " style="margin-top: 20px;">
     
 
         <% if @bid_exist.count == 0 %>
 
 <%= render(partial: '/bids/form',locals: {bid: @bid, project_id: @project.id, url: bids_path}) %>
 <% else %>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bid_company_name padding_20">
+  <% @bid_exist.each do|be| %>
+<%= be.user.company_name %>
+<% end %> 
+
+</div>
+
 <% @bid_installment.each do|bi| %>
-Time:
-<%= bi.time %>
-Budget:
-<%= bi.budget %>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bid_budget padding_5">
+<b><img src="/assets/timer.png" height="35" width="35">Total Time:</b>
+<%= bi.time %> Weeks
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bid_budget padding_5">
+<b><img src="/assets/money_icon.png" height="35" width="35">Total Budget:</b>
+<%= bi.budget %> Rs.
+</div>
+<% end %> 
 
 <% end %> 
-<% end %> 
+</div>
 </div>
   </div>  
 </div>
