@@ -40,26 +40,50 @@
   </div>
   <%end%>
 </div>
+<div>
+  <canvas id="doughnut_chart" class="doughnut"></canvas>
+</div>
+<div>
+  <canvas id="line_chart" class="doughnut"></canvas>
+</div>
 
-<canvas id="myChart" class="doughnut"></canvas>
 
 <script type="text/javascript">
 
 $(document).ready(function() {
 
 
- var ctx = document.getElementById("myChart");
+ var ctx = document.getElementById("doughnut_chart");
+ var ctx_1 = document.getElementById("line_chart");
 
 
 var myDoughnutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['Completed','Underbidding','Alloted','Working'],
+      labels: ['Available','Bidding Completed','Working','Completed'],
       datasets: [
        {
         label: 'Points',
         backgroundColor: ['red','yellow','green','black'],
-        data: [10,20,55,30]
+        data: <%= @array%>
+      }
+    ]
+    },
+    options: {
+      animation: {
+        animationScale: true
+      }
+    }
+});
+
+var myLineChart = new Chart(ctx_1, {
+    type: 'line',
+    data: {
+      labels: <%=@my_count%>,
+      datasets: [
+       {
+        label: 'Points',
+        data: <%= @my_array%>
       }
     ]
     },

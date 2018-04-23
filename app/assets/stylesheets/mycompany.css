@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Niconne');
 
 .doughnut {
-  height: 300px !important;
+  height: 400px !important;
+  width: 800px !important;
 }
 
 .product {
@@ -24,6 +25,16 @@
   top: -3px;
   left: -3px;
 }
+
+.ribbon-wrapper-all_project {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
   .ribbon {
     font: bold 15px sans-serif;
     color: #333;
@@ -40,6 +51,8 @@
     background-color: #FAD7A0;
     color: black;
   }
+
+
 
 .font_size_20 {
   font-size: 20px !important;
