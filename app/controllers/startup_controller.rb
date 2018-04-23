@@ -11,14 +11,10 @@ def project_details
 
 end
 	def my_project
-		 @projects = Project.all
-		# technologies = []
-		# current_user.technologies.each do |technology|
-		# 	technologies << technology.technology_name
+		@projects = Project.all
+		# @startup_projects = StartupProject.all
+		
 
-		# end
-
-  #   @projects = Project.where(project_status_id:4,technology_name:technologies)
 	end
 
 	def index
