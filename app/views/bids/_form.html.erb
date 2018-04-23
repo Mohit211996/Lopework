@@ -1,6 +1,3 @@
-
-
-
 <%= nested_form_for @bid,html: {:id => 'bids', url: url} do |form| %>
 
   <% if bid.errors.any? %>
@@ -14,12 +11,7 @@
       </ul>
     </div>
   <% end %>
-
-
-
-
-
-  <%= form.hidden_field :project_id, :value => @project.id %>
+<%= form.hidden_field :project_id, :value => @project.id %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
 
 
@@ -38,9 +30,9 @@
     <%= fi.label :budget,"Budget",:class => "spacing" %><br>
     <%= fi.text_field :budget, :class=> "budget_field",:required => true, placeholder:"In Rs ..." %>
   </div>
- <!-- <div class="row mar" style="padding-left: 16px!important"> Do you want to Delete? 
-  <%#= form.check_box '_destroy' %>
-    </div> --> 
+
+    <div class="" style="padding-left: 16px!important"> Do you want to Delete? <%= form.check_box '_destroy'%>
+    </div>
  <%end%>
 
 <br>

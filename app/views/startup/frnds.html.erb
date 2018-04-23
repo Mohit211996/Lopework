@@ -1,53 +1,67 @@
 <div class="container-fluid">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 frnds_background">
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 frnds_content">
+		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
+		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 frnds_content">
 			<%if @request_connections.count == 0%>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no_request_message_outer">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no_request_message">
-					<p>YOU DON'T HAVE ANY FRIEND REQUEST</p>
+					<p>YOU DON'T HAVE ANY FRIEND REQUEST<img src="/assets/sad.gif" height="50" width="50" style="margin-bottom: 10px;"></p>
+
 				</div>
 			</div>
 			<%else%>
 			<% @request_connections.each do|rc| %>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 request_text">
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 middle">
-						<div class="middle_table">
-							<p>
-								Company Name  :
+			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+			</div>
+				<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 request_text_frnd">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="padding-right: 0px;">
+						<img src="/assets/person1.png" height="80" width="80" class="img-circle img-responsive">
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top: 10px; padding-left: 0px;">
+						<div class="">
+							<p style="margin-bottom: 0px;">
+							<b>	Company Name:</b>
 								<%= rc.user.company_name %>
 							</p>
-							<p>
-								Email Id :
+							<p style="margin-bottom: 0px;">
+								<b>Email Id:</b>
 								<%= rc.user.email %>
 							</p>
-							<p>
-								Experience :
+							<p style="margin-bottom: 0px;">
+								<b>Experience:</b>
 								<%= rc.user.experience %>
 							</p>
-							<p>
+							<!-- <p>
 								Projects : <%= rc.user.projects.count %> <br>
-								Available : <%= rc.user.projects.where(:project_status_id => 1).count %> |
-								Alloted : <%= rc.user.projects.where(:project_status_id => 3).count %> |
-								Completed : <%= rc.user.projects.where(:project_status_id => 3).count %>
-							</p>
+								Available : <%#= rc.user.projects.where(:project_status_id => 1).count %> |
+								Alloted : <%#= rc.user.projects.where(:project_status_id => 3).count %> |
+								Completed : <%#= rc.user.projects.where(:project_status_id => 3).count %>
+							</p> -->
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 request_text middle">
-						<div class="middle_table">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 request_text">
+						
 							<%text = "ACCEPT"%>
 							<%= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id ,:startup_id => current_user.id,:text => text,:selection => "accept"%>
+						
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 request_text">
+						
+							
 							<% text = "REJECT" %>
 
 							<%= render '/connections/form',:connection => @connection_new,:client_id => rc.user.id,:startup_id => current_user.id ,:text => text,:selection => "reject"%>
-						</div>
+
 					</div>
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+			</div>
 				</div>
+				
 			<%end%>
 			
 			<%end%>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
 	</div>
 </div>
 

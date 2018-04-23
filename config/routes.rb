@@ -25,6 +25,7 @@ get 'main', to: 'homes#front_page'
  get '/client', to: 'client#index'
  get '/startup', to: 'startup#index' 
  get '/startup/friends', to: 'startup#frnds'
+ get '/startup/my_project', to: 'startup#my_project'
  get '/startup/project_page', to: 'startup#project_page', :as => :project_page
  get '/startup/job_offer', to: 'startup#job_offer', :as => :job_offer
  get '/client/all_bids', to: 'client#all_bidding_page'

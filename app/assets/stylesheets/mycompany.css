@@ -16,7 +16,10 @@
   position: relative;
   z-index: 90;
 }
-
+.navbar-inverse .navbar-toggle {
+  border-color: white;
+  color: black;
+}
 .ribbon-wrapper {
   width: 200px;
   height: 200px;
@@ -96,6 +99,7 @@
 .no_request_message_outer {
   display: table;
   background-color: white;
+  margin-top: 50px;
 }
 
 .no_request_message p {
@@ -109,6 +113,11 @@
 
 .request_text {
   padding: 10px;
+}
+.request_text_frnd {
+  padding: 10px;
+  background-color: white;
+  color: black;
 }
 
 .request_text p {
@@ -270,7 +279,7 @@
 
 
 .text_about_us p {
-  padding: 0px 100px;
+ 
   text-align: center;
   font-weight: 0;
   font-size: 40px;
@@ -414,6 +423,19 @@
   color: white;
   vertical-align: middle;
 }
+.outer_div_sign {
+  display: table;
+  height: 100%;
+}
+
+.div_with_text_sign {
+  text-align: center; 
+  display: table-cell; 
+  color: white;
+  vertical-align: middle;
+  height: 500px;
+}
+
 
 .div_with_text h1 {
   margin: 0px;
@@ -638,7 +660,6 @@
   padding-top:10px;
   margin-top: 20px;
   padding: 20px;
-  background-color: #F3F5F4;
   padding-top: 0px;
 
 }
@@ -689,6 +710,13 @@
   width: 100%;
   padding-right: 30px;
   padding-bottom: 10px;
+  text-align: right;
+}
+.alignment_myproject {
+  margin-top: 80px;
+bottom: 20px;
+  width: 100%;
+  padding-right: 10px;
   text-align: right;
 }
 
@@ -1062,19 +1090,22 @@ span.icon-bar{
   color: black;
 
 }
+.session{
+  height: 600px;
+}
 .colo:hover{
   text-decoration: none;
   color:  #F08080;
 }
 .log{
-    width: 360px;
+  width: 360px;
      padding: 1% 0 0;
      margin: auto;
       position: relative;
      background: rgba(255,255,255,0.7);
      padding-left: 30px;
      padding-right: 30px;
-     margin-top: 30px;
+     margin-top: 100px;
      margin-bottom: 30px;
 
 
@@ -1190,13 +1221,13 @@ input[type=submit]:hover {
   width:500px; 
   margin: 0 auto;
    float: middle;
+
 }
 @media (max-width: 390px){
  .center-block{
   width: auto !important; 
  
 }
-
 }
 
 .tab {
@@ -1248,7 +1279,12 @@ display: inline-block;
 background-color: black;
     color: white;
 }
+.frnd{
+  padding-left: 0px;
+  padding-right: 0px;
 
+
+}
 /* Style the tab content */
 .tabcontent {
     display: none;
@@ -1342,6 +1378,11 @@ background-color: black;
  background-size: cover;
 
 }
+.unfrnd_button{
+  width: 40%;
+  margin-left: 30% !important;
+
+}
 .pro_page1{
   background: linear-gradient(0deg,rgba(20,20,20,0.5),rgba(20,20,20,0.5)),url('/assets/project_page.jpg');
   background-repeat: no-repeat;
@@ -1351,13 +1392,16 @@ background-color: black;
 }
 
 .pro_form{
-  background: #797B7E;
+  background:#797b7e5c;
   margin-top: 30px;
      margin-bottom: 30px;
 
 }
 #projects label{
-  color: white;
+  color: black;
+
+
+
 }
 .pro_form1{
   
@@ -1403,10 +1447,10 @@ background-color: black;
   margin-bottom: 20px;
 
 }
-.dropdown-menu li a{
+/*.dropdown-menu li a{
   color: black !important;
 
-}
+}*/
 .accept_btn>a{
   font-size: 15px;
   text-decoration: none;

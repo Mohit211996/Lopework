@@ -1,7 +1,12 @@
 
 <div class="container-fluid">
 	
-<div class="row imgg" style="height: 500px;">
+<div class="row imgg session">
+	<div class="col-lg-4 col-md-4  col-sm-4 col-xs-12"></div>
+	<div class="col-lg-4 col-md-4  col-sm-4 col-xs-12">
+	<div class="outer_div_sign">
+		<div class="div_with_text_sign ">
+		 	
 	<h1 style="text-align: center;">Registration</h1>
 	<h2 style="text-align: center;">Choose Account Type</h2>
 	 
@@ -19,8 +24,19 @@
 		Client
 		 </button>
 		 <% end %>
-		
-	</div>	 
+	</div>	
+	</div>	
+	</div> 
 </div>
 </div>
+<div class="col-lg-4 col-md-4  col-sm-4 col-xs-12"></div>
 </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".session").css("height", $(window).height());
+});
+$(window).resize(function(){
+  $('.session').css('height',$(window).height());
+});
+</script>

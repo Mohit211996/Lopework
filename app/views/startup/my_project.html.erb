@@ -1,0 +1,108 @@
+ <div class="top_image1">
+
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 outer_div">
+    <div class="div_with_text" style="">
+<h1 style="text-align: center; color: white;">  <%= current_user.company_name %></h1>
+ <ul id="myTab">
+      <li class="click_me1" id="my_project"> <a href="#my_project" style="text-decoration: none; color: black;">My Projects</a></li>
+      &nbsp;&nbsp;
+      <li  class="click_me1" id="add_project"><a href="#add_project" style="text-decoration: none; color: black;">Add Project</a></li>
+    </ul>
+    </div>
+    
+  </div>
+  
+</div>
+<div class="container" >
+<div class="row"> 
+  <div class="collapse" id="tab1" >
+<h1 style="text-align: center;">My Projects</h1>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+ <% @projects.each do |project| %>
+ <% if project.project_status_id == 4 %>
+ 	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card" >
+	 	<div class="card_background">
+	 		
+<div class="alignment">
+	
+ <h2><%= project.name %></h2>
+ 
+  <p><img src="/assets/comp.png" height="30px" width="30px" style="padding: 5px;"><%= project.user.company_name %></p>
+  <p><img src="/assets/tech4.png" height="30" width="30" style="padding: 5px;"> <%= project.technology.technology_name %></p>
+  <br>
+  <%# if project.startup_project.user_id == @bid.user_id %>
+		<%= link_to  :controller=> "startup",:action=> "project_page", :project => project  do%>
+	 		<button> View Details </button>
+	 		<%end%>
+	 	
+	</div>
+</div>
+</div>
+ <% end %>
+ <% end %> 
+ </div>
+</div>
+<div id="tab2">
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+       <%#= render(partial: '/projects/form',locals: {project: @project}) %> 
+</div>
+  </div>  
+</div>
+<script>
+
+$(document).ready(function() {
+    setTimeout(function(){
+      $('.notice_wrapper').fadeOut("slow",function(){
+        $(this).remove();
+      })
+    },2000);
+
+});
+// function showInput() {
+//       var count = $("#user_input").val()
+     
+//       $(".fields").each(function(){
+//         $(this).remove()
+//       })
+//       for (var i=1; i<=count; i++)
+//       {
+//         $(".add_nested_fields").click()
+//       }
+//   }
+ $(window).load(function() {
+  var hash = window.location.href;
+  var hash1 = window.location.hash;
+  if (hash1 == "#my_project"){
+      $("#tab1").show();    
+  }
+  else if(hash1 == "#add_project"){
+  $("#tab2").show();
+  }
+  else{
+
+    $("#tab1").show();
+ 
+  }
+
+  });
+
+
+
+$('#my_project').click(function(e) {
+ $("#tab1").show();
+ $("#tab2").hide();
+ var id = $(e.target).attr("href").substr(1);
+  window.location.hash = id;
+
+
+ });
+$('#add_project').click(function(e) {
+ $("#tab2").show();
+ $("#tab1").hide();
+ var id = $(e.target).attr("href").substr(1);
+  window.location.hash = id;
+
+ });
+
+        
+</script>
