@@ -53,9 +53,9 @@
 </li>
             
       <% else %>
-      <li><a href="#my_logo_1">Home</a></li>
-      <li><a href="#about_us_1">About Us</a></li>
-      <li><a href="#our_team_1">Our Team</a></li>
+      <li><a href="http://localhost:3000/#my_logo_1">Home</a></li>
+      <li><a href="http://localhost:3000/#about_us_1">About Us</a></li>
+      <li><a href="http://localhost:3000/#our_team_1">Our Team</a></li>
       <li><a href="#contact_us_1">Contact Us</a></li>
     <li><%= link_to 'Sign In', sign_index_path%></li>
       <li><%= link_to 'Log In', new_user_session_path%></li>
@@ -69,7 +69,7 @@
 <%= yield %>
 </div>
 </div>
-<div class="col-lg-12 foot_my item">
+<div class="col-lg-12 foot_my item" id="contact_us_1">
   <div class="footer_first vertical_center">
     <h1>CONTACT US</h1>
     <p>A-45, Industrial Area, Phase-VIII-B,</p><p> Sector 74, Sahibzada Ajit Singh Nagar,</p><p> Sahibzada Ajit Singh Nagar, Punjab 160059</p>
@@ -87,7 +87,8 @@
 <div class="col-lg-12 foot_my_thankyou">
   <div class="footer_first vertical_center_thankyou">
     <div class="footer_section">
-      <h4>NOUS SERIONS RAVIS DE VOUS PARTAGER NOS NOUVEAUTÉS GOURMANDES, NOS DATES D’ÉVÈNEMENTS ET BIEN PLUS ENCORE !
+      <h4>WE ARE GOOD TO SHARE OUR GOURMET NEWS, OUR EVENT DATES AND MUCH MORE!
+
 </h4>
     <img src="/assets/thankyou.svg" id="thankyou">  
     <span>made by<img src="/assets/logoplay.svg" id="madeby"></span>
