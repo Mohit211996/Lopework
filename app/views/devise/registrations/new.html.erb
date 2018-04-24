@@ -99,10 +99,10 @@
 <% @start = StartupTechnology.new %>
 <% @technology = Technology.all %>
  <div class="selectRow">
-           <%= f.label :technology_ids,"Technology" %>
-           <%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true} %> 
-     </div>
-    <% end %>
+    <%= f.label :technology_ids,"Technology" %>
+    <%= f.collection_select :technology_ids, @technology,:id, :technology_name,{},{:multiple => true} %> 
+  </div>
+<% end %>
    
   <%= f.hidden_field :role_id, :value => params[:role_id] %>
 <%= f.hidden_field :approval_id, :value => '1' %>
