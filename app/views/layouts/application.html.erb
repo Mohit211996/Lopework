@@ -68,15 +68,46 @@
 <%= yield %>
 </div>
 </div>
+<div class="col-lg-12 foot_my item">
+  <div class="footer_first vertical_center">
+    <h1>CONTACT US</h1>
+    <p>A-45, Industrial Area, Phase-VIII-B,</p><p> Sector 74, Sahibzada Ajit Singh Nagar,</p><p> Sahibzada Ajit Singh Nagar, Punjab 160059</p>
+    <p>Phone number : 9041049190</p>
+    <p>Rating : <img src="/assets/star.png" height="20px" width="20px">
+      <img src="/assets/star.png" height="20px" width="20px">
+      <img src="/assets/star.png" height="20px" width="20px">
+      <img src="/assets/star.png" height="20px" width="20px">
+    </p>
+  </div>
+</div>
+<div class="col-lg-12 map">
+</div>
+
+<div class="col-lg-12 foot_my_thankyou">
+  <div class="footer_first vertical_center_thankyou">
+    <div class="footer_section">
+      <h4>NOUS SERIONS RAVIS DE VOUS PARTAGER NOS NOUVEAUTÉS GOURMANDES, NOS DATES D’ÉVÈNEMENTS ET BIEN PLUS ENCORE !
+</h4>
+    <img src="/assets/thankyou.svg" id="thankyou">  
+    <span>made by<img src="/assets/logoplay.svg" id="madeby"></span>
+    </div>
+   
+  </div>
+</div>
+
+
+</div>
        <script>
             $(document).ready(function(){
             $(window).on("scroll",function(){
             var wn = $(window).scrollTop();
-            if(wn > 120){
-            $(".navbar").css("background","rgba(255,255,255,0)");
+            if(wn > 10){
+            $(".navbar").css("background","rgb(20,20,20,0.8)");
+            
             }
             else{
             $(".navbar").css("background","rgba(255,255,255,0)");
+            
             }
              });
             });

@@ -20,8 +20,8 @@
 
 
 .doughnut {
-  height: 400px !important;
-  width: 800px !important;
+  height: 300px !important;
+  width: 600px !important;
 }
 
 .product {
@@ -225,7 +225,7 @@
 }
 
 .map {
-  height: 300px;
+  height: 200px;
   width: 100%;
   background:
   url('/assets/map.jpg');
@@ -233,12 +233,34 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+#madeby{
+    height: 40px;
+    vertical-align: middle;
+}
+#thankyou {
+    display: block;
+    margin: auto;
+    padding: 20px;
+    width: 340px;
+    margin-top: 20px;
+}
+.footer_section{
+font-family: Roboto;
+    margin: auto;
+    padding: 20px 0px;
+    max-width: 850px;
+  }
 .foot_my {
   display: table;
   height: 400px;
   width: 100%;
   background-color:#CA6B5A;
+}
+.foot_my_thankyou {
+  display: table;
+  height: auto;
+  width: 100%;
+  background-color:#aad4b3;
 }
 
 .span_color1 {
@@ -261,6 +283,11 @@
   height: auto;
   display: table-cell;
   vertical-align: middle;
+}
+ .vertical_center_thankyou {
+  height: 250px;
+  display: table-cell;
+  
 }
  
 .first {
@@ -540,7 +567,15 @@
 #technology_id-error {
   margin-top: 10px;
 }
+#user_technology_ids:hover{
+  border-bottom: 1px solid black;
 
+}
+/*.select2-container--default .select2-selection--multiple{
+  border-bottom: 1px solid black;
+
+
+}*/
 .error1 {
   background-color: #69B9A9;
   display: block;
@@ -586,7 +621,6 @@
 .buttons button {
   background-color: #F1C688;
   border: 0px;
-  border-radius: 3px;
 }
 
 .buttons button:hover {
@@ -814,7 +848,6 @@ bottom: 20px;
   margin-top: 7px;
   background-color: #415D52;
   border:0px;
-  border-radius: 5px;
   padding: 5px;
   color: white;
 }
@@ -826,7 +859,6 @@ bottom: 20px;
   width: 100%;
   margin-top: 7px;
   background-color: #2C3E50;
-  border-radius: 5px;
   padding: 5px;
   color: white;
 }
@@ -835,7 +867,6 @@ bottom: 20px;
 }
 .view_button4 {
   background-color: white;
-  border-radius: 5px;
   color: black;
  width: 49%;
  border-color: white;
@@ -848,7 +879,6 @@ bottom: 20px;
   width: 17%;
   margin-top: 7px;
   background-color: #2C3E50;
-  border-radius: 5px;
   padding: 5px;
   color: white;
   float: right;
@@ -1015,9 +1045,21 @@ body {
     text-align: center;
     width: 100%;
 }
+/*.btn-success{
+  background-color: #284949;
+  border-color:#284949;  
+}
+.btn-success:hover{
+  background-color: #284949;
+  border-color:#284949; 
+  opacity: 0.8; 
+}*/
 
 .imgg {
- background-image: url('/assets/4.png');
+ background: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),url('/assets/sign_index.jpg');
  background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
@@ -1137,13 +1179,29 @@ span.icon-bar{
 
 }
 .session{
-  height: 600px;
+  height: 250px;
 }
 .colo:hover{
   text-decoration: none;
   color:  #F08080;
 }
 .log{
+  width: 360px;
+     padding: 1% 0 0;
+     margin: auto;
+      position: relative;
+     background: rgba(255,255,255,0.7);
+     padding-left: 30px;
+     padding-right: 30px;
+     margin-top: 150px;
+     margin-bottom: 30px;
+
+
+}
+.centered {
+    text-align: center; 
+}
+.log_new{
   width: 360px;
      padding: 1% 0 0;
      margin: auto;
@@ -1243,14 +1301,14 @@ input[type=email], input[type=password], input[type=password], input[type=text],
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
-    border-radius: 5px;
+   
     
 }
 
 input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, input[type=text]:focus {
     background-color: #ddd;
     outline: none;
-     border: 1px solid black; 
+     border-bottom: 1px solid black; 
   
   }
  
@@ -1562,9 +1620,9 @@ background-color: black;
 .select2-container {
   min-height: 42px !important;  
 }
-.select2-container--default .select2-selection--multiple{
+.select2-container--default .select2-selection--multiple:hover{
  
-  border-radius: 5px;
+  border-bottom: 1px solid black; 
 }
 /*.disable_class {
    opacity: 0.6;
