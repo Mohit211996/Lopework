@@ -34,9 +34,26 @@ end
   def create
 @bid = Bid.new(bid_params)
 @project =Project.find(params[:bid][:project_id])
+
+@bid_exist = Bid.where("user_id=? AND project_id =?",current_user.id,@project.id)
+    @startup = ClientPreference.where("user_id=? AND startup_status_id =?",current_user.id,4)
+  if @bid_exist.count
+@bid_installment = Installment.where(:bid_id => @bid_exist)
+end
+
+@project_accept_button = ClientPreference.where("user_id=? AND project_id =?",current_user.id,@project.id)
+
+if @project_accept_button.count
+
+@project_accept = @project_accept_button.where(:startup_status_id => 4)
+
+end
+
+
+
 respond_to do |format|
       if @bid.save
-        format.html { redirect_to startup_url , notice: 'Bid was successfully created.' }
+     format.html { redirect_to startup_url , notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bids }
       else
        

@@ -11,11 +11,16 @@ def project_details
 
 end
 	def my_project
-		@projects = Project.all
-		# @startup_projects = StartupProject.all
-		
+		startup_projects = []
 
+		current_user.startup_projects.each do |startup_project|
+			startup_projects << startup_project.project_id
 	end
+		@project_completed = Project.where("project_status_id=? And id in (?)",4,startup_projects)
+end
+
+
+
 
 	def index
 		technologies = []
@@ -44,6 +49,7 @@ if @project_accept_button.count
 @project_accept = @project_accept_button.where(:startup_status_id => 4)
 
 end
+
 end
 
 def job_offer

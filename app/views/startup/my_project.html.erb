@@ -6,7 +6,7 @@
  <ul id="myTab">
       <li class="click_me1" id="my_project"> <a href="#my_project" style="text-decoration: none; color: black;">My Projects</a></li>
       &nbsp;&nbsp;
-      <li  class="click_me1" id="add_project"><a href="#add_project" style="text-decoration: none; color: black;">Add Project</a></li>
+      <li  class="click_me2" id="add_project"><a href="#add_project">Add Project</a></li>
     </ul>
     </div>
     
@@ -16,10 +16,16 @@
 <div class="container" >
 <div class="row"> 
   <div class="collapse" id="tab1" >
+  	<% if @project_completed.count == 0 %>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center; height: 300px;">
+  <h2>YOU DON'T HAVE ANY COMPLETED PROJECTS</h2>
+</div>
+  <% else %> 
 <h2 style="text-align: center;">Completed Projects</h2>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding_20"> 
- <% @projects.reverse_each do |project| %>
- <% if project.project_status_id == 4 %>
+  	
+ <% @project_completed.reverse_each do |project| %>
+ <%# if project.project_status_id == 4 %>
  	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card" >
 	 	<div class="card_background">
 	 		
@@ -30,7 +36,6 @@
   <p><img src="/assets/comp.png" height="30px" width="30px" style="padding: 5px;"><%= project.user.company_name %></p>
   <p><img src="/assets/tech4.png" height="30" width="30" style="padding: 5px;"> <%= project.technology.technology_name %></p>
   <br>
-  <%# if project.startup_project.user_id == @bid.user_id %>
 		<%= link_to  :controller=> "startup",:action=> "project_page", :project => project  do%>
 	 		<button> View Details </button>
 	 		<%end%>
@@ -38,7 +43,8 @@
 	</div>
 </div>
 </div>
- <% end %>
+ <%# end %>
+ <% end %> 
  <% end %> 
  </div>
 </div>
